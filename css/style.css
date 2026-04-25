@@ -505,6 +505,8 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.2;
   color: var(--ct-text);
   margin-bottom: 16px;
+  padding-bottom: .3em;
+  border-bottom: 2px solid var(--ct-border);
 }
 
 .scenario-meta {
@@ -679,6 +681,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .box-title-group { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .box-title { flex: 1; font-weight: 700; font-size: 14px; color: #1a2a3a; }
+/* box-title 内に H1/H2 が入った場合も下線（境界線）を表示する */
+.box-title h1, .box-title h2, .box-title h3, .box-title h4, .box-title h5, .box-title h6 {
+  margin: 0;
+  padding-bottom: .25em;
+  line-height: 1.3;
+  color: inherit;
+}
+.box-title h1 { font-size: 1.7em; border-bottom: 2px solid #b0bdd4; }
+.box-title h2 { font-size: 1.35em; border-bottom: 1px solid #dce6f0; }
+.box-title h3 { font-size: 1.15em; }
+.box-title h4 { font-size: 1em; text-transform: uppercase; letter-spacing: .05em; color: #5a6a8a; }
 .box-subtitle {
   font-size: 13px;
   font-weight: 400;
