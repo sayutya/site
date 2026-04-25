@@ -34,6 +34,27 @@
       border-radius: var(--r);
       border-left: 3px solid var(--ct-border);
     }
+    /* Google フォーム iframe をレスポンシブに */
+    .contact-placeholder iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 819px;
+      border: 0;
+      display: block;
+      margin: 0 auto;
+    }
+    /* スマホ：余白を詰めて、フォームの縦サイズを画面に合わせる */
+    @media (max-width: 600px) {
+      .contact-form-wrap {
+        padding: 12px 8px;
+      }
+      .contact-placeholder {
+        padding: 8px 0;
+      }
+      .contact-placeholder iframe {
+        height: 1100px; /* スマホでは項目が縦長になるので余裕をもたせる */
+      }
+    }
   </style>
 </head>
 <body class="page-info">
@@ -73,7 +94,7 @@
 
       <div class="contact-form-wrap">
         <div class="contact-placeholder">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdULtfHTwyhlGEqTkSU0kaXra7zOgxeArGdB4qEScopMaIGLg/viewform?embedded=true" width="640" height="819" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdULtfHTwyhlGEqTkSU0kaXra7zOgxeArGdB4qEScopMaIGLg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
         </div>
       </div>
 
