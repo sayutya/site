@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シナリオ整形ツール</title>
+  <style>
+/* =====================================================
+   Formatter Tool — Self-contained styles
+   ===================================================== */
+:root {
+  --bg:           #0a0a0a;
+  --bg-s:         #111111;
+  --bg-e:         #181818;
+  --bg-h:         #202020;
+  --bg-a:         #282828;
+  --bd:           #1c1c1c;
+  --bd2:          #262626;
+  --bd3:          #323232;
+  --tx:           #e2e2e2;
+  --tx2:          #aaaaaa;
+  --txm:          #606060;
+  --txf:          #383838;
+  --acc:          #c8c8c8;
+  --r:            6px;
+  --r2:           10px;
+  --tb-h:         44px;
+  --meta-w:       240px;
+  --tr:           0.13s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--tx);font-family:'Meiryo','Yu Gothic UI','Hiragino Sans',system-ui,sans-serif;font-size:13px;display:flex;flex-direction:column}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bd3);border-radius:3px}
+
+/* ---------- Top Bar ---------- */
+#top-bar{
+  height:48px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;background:var(--bg-s);border-bottom:1px solid var(--bd);
+  flex-shrink:0;gap:12px;
+}
+.top-left{display:flex;align-items:center;gap:14px}
+.back-link{font-size:11px;color:var(--txm);text-decoration:none;letter-spacing:.04em;transition:color var(--tr)}
+.back-link:hover{color:var(--tx2)}
+.tool-title{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txf)}
+.top-right{display:flex;align-items:center;gap:8px}
+.tb-main{
+  background:transparent;border:1px solid var(--bd3);border-radius:var(--r);
+  color:var(--tx2);font-size:11px;font-family:inherit;padding:5px 12px;cursor:pointer;
+  transition:color var(--tr),border-color var(--tr),background var(--tr);font-weight:600;letter-spacing:.04em
+}
+.tb-main:hover{color:var(--tx);border-color:var(--txm)}
+.tb-main.primary{background:var(--tx2);color:var(--bg);border-color:var(--tx2)}
+.tb-main.primary:hover{background:var(--tx);border-color:var(--tx)}
+
+/* ---------- App Layout ---------- */
+#app{display:flex;flex:1;overflow:hidden}
+
+/* ---------- Meta Panel ---------- */
+#meta-panel{
+  width:var(--meta-w);flex-shrink:0;
+  background:var(--bg-s);border-right:1px solid var(--bd);
+  overflow-y:auto;padding:16px 14px 24px;display:flex;flex-direction:column;gap:0
+}
+.meta-section-title{
+  font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--txf);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--bd)
+}
+.meta-row{margin-bottom:12px}
+.meta-row label{display:block;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--txm);margin-bottom:5px;text-transform:uppercase}
+.meta-row input,.meta-row textarea{
+  width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:var(--r);
+  color:var(--tx);font-size:12px;font-family:inherit;padding:6px 8px;outline:none;
+  transition:border-color var(--tr);resize:vertical
+}
+.meta-row input:focus,.meta-row textarea:focus{border-color:var(--bd3)}
+.meta-row input::placeholder,.meta-row textarea::placeholder{color:var(--txf)}
+
+/* ---------- Editor Area ---------- */
+#editor-area{flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+/* ---------- Toolbar ---------- */
+#toolbar{
+  height:var(--tb-h);display:flex;align-items:center;gap:1px;padding:0 8px;
+  background:var(--bg-s);border-bottom:1px solid var(--bd);flex-shrink:0;
+  overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap
+}
+.tb-grp{display:flex;align-items:center;gap:1px;flex-shrink:0}
+.tb-div{width:1px;height:20px;background:var(--bd2);margin:0 5px;flex-shrink:0}
+.tb-btn{
+  background:transparent;border:none;border-radius:4px;
+  color:var(--txm);font-size:12px;font-family:inherit;
+  padding:4px 6px;cursor:pointer;transition:color var(--tr),background var(--tr);
+  white-space:nowrap;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center
+}
+.tb-btn:hover{color:var(--tx2);background:var(--bg-h)}
+.tb-btn.active{color:var(--tx);background:var(--bg-a)}
+.tb-btn.heading{font-weight:800;font-size:11px;letter-spacing:-.02em}
+.tb-btn svg{pointer-events:none}
+
+/* Color picker dropdown */
+.tb-dd-wrap{position:relative;display:flex}
+.tb-dd{
+  position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--bg-e);border:1px solid var(--bd2);border-radius:var(--r2);
+  padding:10px;z-index:200;display:none;flex-direction:column;gap:8px;
+  box-shadow:0 6px 24px rgba(0,0,0,.7);min-width:160px
+}
+.tb-dd.open{display:flex}
+.dd-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txf)}
+.dd-swatches{display:flex;flex-wrap:wrap;gap:4px}
+.dd-swatch{
+  width:18px;height:18px;border-radius:3px;cursor:pointer;border:2px solid transparent;
+  transition:border-color var(--tr),transform var(--tr)
+}
+.dd-swatch:hover{transform:scale(1.15)}
+.dd-swatch.selected{border-color:var(--tx)}
+.dd-swatch.none-swatch{
+  background:var(--bg)!important;border-color:var(--bd2)!important;
+  color:var(--txm);font-size:10px;display:flex;align-items:center;justify-content:center
+}
+
+/* ---------- Editor Scroll ---------- */
+#editor-scroll{flex:1;overflow-y:auto;padding:0}
+#editor{
+  min-height:100%;max-width:860px;margin:0 auto;padding:40px 52px 60px;
+  font-size:15px;line-height:1.9;color:var(--tx);outline:none;word-break:break-word;
+  caret-color:var(--tx)
+}
+#editor:empty::before{content:attr(data-placeholder);color:var(--txf);pointer-events:none}
+#editor h1{font-size:1.85em;font-weight:800;margin:1.4em 0 .5em;border-bottom:2px solid var(--bd2);padding-bottom:.3em;line-height:1.25}
+#editor h1:first-child{margin-top:0}
+#editor h2{font-size:1.4em;font-weight:700;margin:1.3em 0 .4em;border-bottom:1px solid var(--bd);padding-bottom:.2em}
+#editor h3{font-size:1.1em;font-weight:700;margin:1.1em 0 .3em}
+#editor h4{font-size:.9em;font-weight:700;color:var(--txm);margin:.9em 0 .25em;text-transform:uppercase;letter-spacing:.07em}
+#editor p{margin:.3em 0}
+#editor ul,#editor ol{margin:.4em 0 .4em 1.6em}
+#editor li{margin:.2em 0}
+#editor b,#editor strong{font-weight:700}
+#editor i,#editor em{font-style:italic}
+#editor s,#editor del{text-decoration:line-through}
+#editor hr{border:none;border-top:1px solid var(--bd2);margin:1.2em 0}
+#editor a.jump-link{color:var(--txm);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* Scenario box (editor mode) */
+#editor .scenario-box{border-radius:var(--r2);overflow:hidden;margin:14px 0;border:1px solid var(--bd2);background:var(--bg-s)}
+#editor .box-header{display:flex;align-items:flex-start;gap:6px;padding:8px 10px;background:var(--bg-e);border-bottom:1px solid var(--bd2)}
+#editor .box-title{flex:1;font-weight:700;font-size:14px;color:var(--tx);outline:none;min-width:0}
+#editor .box-title:empty::before{content:'タイトル';color:var(--txf)}
+#editor .box-subtitle{font-size:12px;color:var(--txm);border-top:1px solid var(--bd2);margin-top:4px;padding-top:4px;outline:none}
+#editor .box-subtitle:empty::before{content:'副タイトル';color:var(--txf)}
+#editor .box-title-group{flex:1;display:flex;flex-direction:column;min-width:0}
+#editor .box-body{padding:12px 14px;font-size:14px;line-height:1.85;outline:none;min-height:40px}
+#editor .box-body:empty::before{content:'本文を入力...';color:var(--txf)}
+#editor .box-delete-btn{
+  background:transparent;border:none;color:var(--txf);cursor:pointer;
+  font-size:12px;padding:2px 4px;border-radius:3px;flex-shrink:0;
+  transition:color var(--tr),background var(--tr)
+}
+#editor .box-delete-btn:hover{color:var(--tx2);background:var(--bg-a)}
+#editor .box-copy-btn,#editor .box-copy-title-btn{
+  background:transparent;border:1px solid var(--bd2);border-radius:4px;
+  color:var(--txf);font-size:11px;font-family:inherit;padding:2px 6px;cursor:pointer;flex-shrink:0;
+  transition:color var(--tr),border-color var(--tr)
+}
+#editor .box-copy-btn:hover,#editor .box-copy-title-btn:hover{color:var(--tx2);border-color:var(--bd3)}
+#editor .box-notitle-actions{display:flex;justify-content:flex-end;gap:4px;padding:4px 8px 0}
+/* Box colors (same as shared) */
+#editor .color-white{border-color:#505050}#editor .color-white .box-header{background:#2c2c2c;border-bottom-color:#505050}#editor .color-white .box-title{color:#e0e0e0}
+#editor .color-gray{border-color:#363636}#editor .color-gray .box-header{background:#222;border-bottom-color:#363636}#editor .color-gray .box-title{color:#888}
+#editor .color-red{border-color:#5c2525}#editor .color-red .box-header{background:#2a1414;border-bottom-color:#5c2525}#editor .color-red .box-title{color:#FF6B6B}
+#editor .color-orange{border-color:#5c3510}#editor .color-orange .box-header{background:#2a1a08;border-bottom-color:#5c3510}#editor .color-orange .box-title{color:#FF9952}
+#editor .color-yellow{border-color:#5a4a10}#editor .color-yellow .box-header{background:#2a2208;border-bottom-color:#5a4a10}#editor .color-yellow .box-title{color:#FFD93D}
+#editor .color-green{border-color:#1e4a2a}#editor .color-green .box-header{background:#102217;border-bottom-color:#1e4a2a}#editor .color-green .box-title{color:#4ADE80}
+#editor .color-cyan{border-color:#10404a}#editor .color-cyan .box-header{background:#081e22;border-bottom-color:#10404a}#editor .color-cyan .box-title{color:#22D3EE}
+#editor .color-blue{border-color:#1e3d6e}#editor .color-blue .box-header{background:#0e1f3a;border-bottom-color:#1e3d6e}#editor .color-blue .box-title{color:#60A5FA}
+#editor .color-purple{border-color:#4a2070}#editor .color-purple .box-header{background:#1e1030;border-bottom-color:#4a2070}#editor .color-purple .box-title{color:#C084FC}
+#editor .color-pink{border-color:#5c1840}#editor .color-pink .box-header{background:#2a0c1e;border-bottom-color:#5c1840}#editor .color-pink .box-title{color:#F472B6}
+#editor .color-gold{border-color:#5c4a10}#editor .color-gold .box-header{background:#261e08;border-bottom-color:#5c4a10}#editor .color-gold .box-title{color:#e5c07b}
+
+/* KV table (editor) */
+#editor .kv-table{width:100%;border-collapse:collapse;font-size:13px}
+#editor .kv-table tr{border-bottom:1px solid var(--bd)}
+#editor .kv-table tr:last-child{border-bottom:none}
+#editor .kv-table td{padding:6px 9px;vertical-align:middle}
+#editor .kv-table td.kv-label{width:38%;color:var(--txm);font-weight:600}
+#editor .kv-table td.kv-value{color:var(--tx);outline:none}
+#editor .kv-table td.kv-value:empty::before{content:'—';color:var(--txf)}
+
+/* Checklist (editor) */
+#editor .task-block{border:1px solid var(--bd2);border-radius:var(--r2);overflow:hidden;margin:12px 0;background:var(--bg-s)}
+#editor .task-block-header{display:flex;align-items:center;justify-content:space-between;padding:7px 11px;background:var(--bg-e);border-bottom:1px solid var(--bd2)}
+#editor .task-block-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txm)}
+#editor .task-list{padding:5px 11px;display:flex;flex-direction:column;gap:1px}
+#editor .task-item{display:flex;align-items:flex-start;gap:8px;padding:3px 2px;border-radius:4px}
+#editor .task-item:hover{background:var(--bg-h)}
+#editor .task-checkbox{margin-top:3px;flex-shrink:0;accent-color:#888;width:13px;height:13px}
+#editor .task-text{flex:1;line-height:1.65;font-size:13px;color:var(--tx);outline:none}
+#editor .task-text:empty::before{content:'項目';color:var(--txf)}
+#editor .task-add-btn{
+  display:block;margin:6px 11px 8px;background:transparent;border:1px dashed var(--bd2);
+  border-radius:4px;color:var(--txm);font-size:11px;font-family:inherit;
+  padding:4px 8px;cursor:pointer;width:calc(100% - 22px);text-align:left;transition:color var(--tr),border-color var(--tr)
+}
+#editor .task-add-btn:hover{color:var(--tx2);border-color:var(--bd3)}
+
+/* Branch tree (editor) */
+#editor .branch-tree{border:1px solid var(--bd2);border-radius:var(--r2);padding:12px 14px;margin:12px 0;background:var(--bg-s);overflow-x:auto}
+#editor .branch-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+#editor .branch-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txm)}
+#editor .branch-root-wrap{display:flex;justify-content:center}
+#editor .branch-root-node{background:rgba(80,80,80,.15);border:1.5px solid #545454;border-radius:6px;padding:8px 14px;min-width:140px;max-width:360px;text-align:center}
+#editor .branch-root-text{color:var(--tx);font-weight:600;font-size:13px;line-height:1.5;outline:none}
+#editor .branch-root-text:empty::before{content:'状況・場面';color:var(--txf)}
+#editor .branch-connector{display:flex;justify-content:center;height:18px;position:relative}
+#editor .branch-connector::before{content:'';width:2px;background:var(--bd2)}
+#editor .branch-children{display:flex;gap:8px;position:relative;border-top:2px solid var(--bd2);min-width:200px}
+#editor .branch-child-col{flex:1;display:flex;flex-direction:column;align-items:center;min-width:100px}
+#editor .branch-child-col::before{content:'';width:2px;height:16px;background:var(--bd2);flex-shrink:0}
+#editor .branch-child-node{width:100%;border:1px solid var(--bd2);border-radius:5px;overflow:hidden}
+#editor .branch-node-bar{display:flex;align-items:flex-start;background:var(--bg);border-bottom:1px solid var(--bd)}
+#editor .branch-choice-text{flex:1;padding:6px 5px 6px 9px;font-size:12px;font-weight:700;color:#7a7a7a;line-height:1.4;outline:none}
+#editor .branch-choice-text:empty::before{content:'選択肢';color:var(--txf)}
+#editor .branch-outcome-text{padding:7px 9px;font-size:12px;color:var(--tx);min-height:28px;line-height:1.55;background:var(--bg-e);outline:none}
+#editor .branch-outcome-text:empty::before{content:'結果・展開';color:var(--txf)}
+#editor .branch-col-add-btn{display:none}
+#editor .branch-add-row{margin-top:8px;display:flex;justify-content:center}
+#editor .branch-add-btn{
+  background:transparent;border:1px dashed var(--bd2);border-radius:4px;
+  color:var(--txm);font-size:11px;font-family:inherit;padding:3px 10px;cursor:pointer;
+  transition:color var(--tr),border-color var(--tr)
+}
+#editor .branch-add-btn:hover{color:var(--tx2);border-color:var(--bd3)}
+#editor .branch-tree-v .branch-children{flex-direction:column;align-items:center;border-top:none;gap:0}
+#editor .branch-tree-v .branch-child-col{width:100%;max-width:500px;align-items:stretch}
+#editor .branch-tree-v .branch-child-col::before{width:2px;height:14px;align-self:center}
+#editor .branch-tree-v .branch-child-node{width:100%}
+#editor .branch-tree-v2 .branch-v2-wrap{padding:4px 12px 6px;display:flex;flex-direction:column;align-items:flex-start}
+#editor .branch-tree-v2 .branch-root-node{min-width:110px;max-width:300px;margin-left:6px}
+#editor .branch-tree-v2 .branch-v2-stem{width:2px;height:12px;background:var(--bd2);margin-left:19px}
+#editor .branch-tree-v2 .branch-v2-children{display:flex;flex-direction:column;gap:4px;border-left:2px solid var(--bd2);margin-left:18px;padding:6px 0 6px 18px;width:calc(100% - 18px)}
+#editor .branch-tree-v2 .branch-v2-item{position:relative;display:flex;align-items:stretch}
+#editor .branch-tree-v2 .branch-v2-item::before{content:'';position:absolute;left:-18px;top:50%;width:18px;height:2px;background:var(--bd2);transform:translateY(-50%)}
+#editor .branch-tree-v2 .branch-child-node{flex:1}
+
+/* ---------- Dialogs ---------- */
+.dlg-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;
+  display:flex;align-items:center;justify-content:center;
+}
+.dlg-overlay.hidden{display:none}
+.dlg{
+  background:var(--bg-e);border:1px solid var(--bd2);border-radius:var(--r2);
+  padding:20px;min-width:320px;max-width:480px;width:92%;
+  box-shadow:0 8px 40px rgba(0,0,0,.8);display:flex;flex-direction:column;gap:14px;
+  max-height:90vh;overflow-y:auto
+}
+.dlg h3{font-size:13px;font-weight:700;color:var(--tx2);letter-spacing:.04em}
+.dlg-row{display:flex;flex-direction:column;gap:4px}
+.dlg-row label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txm)}
+.dlg-row input,.dlg-row textarea{
+  background:var(--bg-s);border:1px solid var(--bd2);border-radius:var(--r);
+  color:var(--tx);font-size:13px;font-family:inherit;padding:6px 9px;outline:none;
+  transition:border-color var(--tr)
+}
+.dlg-row input:focus,.dlg-row textarea:focus{border-color:var(--bd3)}
+.dlg-row input::placeholder,.dlg-row textarea::placeholder{color:var(--txf)}
+.dlg-color-row{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.dlg-color-swatch{
+  width:20px;height:20px;border-radius:4px;cursor:pointer;
+  border:2px solid transparent;transition:border-color var(--tr),transform var(--tr)
+}
+.dlg-color-swatch:hover{transform:scale(1.15)}
+.dlg-color-swatch.selected{border-color:var(--tx)!important}
+.dlg-foot{display:flex;gap:8px;justify-content:flex-end}
+.dlg-btn{
+  background:transparent;border:1px solid var(--bd3);border-radius:var(--r);
+  color:var(--tx2);font-size:12px;font-family:inherit;padding:6px 14px;cursor:pointer;
+  transition:color var(--tr),border-color var(--tr),background var(--tr)
+}
+.dlg-btn:hover{color:var(--tx);border-color:var(--txm)}
+.dlg-btn.ok{background:var(--tx2);color:var(--bg);border-color:var(--tx2)}
+.dlg-btn.ok:hover{background:var(--tx);border-color:var(--tx)}
+.dlg-btn.cancel{color:var(--txm)}
+/* KV rows */
+.kv-rows-wrap{display:flex;flex-direction:column;gap:4px}
+.kv-dlg-row{display:flex;gap:6px;align-items:center}
+.kv-dlg-row input{flex:1}
+.kv-del-btn{background:transparent;border:none;color:var(--txf);cursor:pointer;font-size:14px;padding:2px 6px;border-radius:3px;transition:color var(--tr)}
+.kv-del-btn:hover{color:var(--tx2)}
+.kv-add-btn{
+  background:transparent;border:1px dashed var(--bd2);border-radius:var(--r);
+  color:var(--txm);font-size:11px;font-family:inherit;padding:4px 10px;cursor:pointer;
+  transition:color var(--tr),border-color var(--tr);text-align:left
+}
+.kv-add-btn:hover{color:var(--tx2);border-color:var(--bd3)}
+/* Variant toggle */
+.variant-grp{display:flex;gap:4px}
+.variant-btn{
+  background:transparent;border:1px solid var(--bd2);border-radius:var(--r);
+  color:var(--txm);font-size:11px;font-family:inherit;padding:4px 10px;cursor:pointer;
+  transition:color var(--tr),border-color var(--tr),background var(--tr)
+}
+.variant-btn.active{background:var(--bg-a);color:var(--tx);border-color:var(--bd3)}
+
+/* ---------- Toast ---------- */
+#toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--bg-e);border:1px solid var(--bd2);border-radius:6px;
+  color:var(--tx2);font-size:12px;padding:8px 16px;z-index:500;opacity:0;
+  transition:opacity .2s,transform .2s;pointer-events:none;white-space:nowrap
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---------- Preview overlay ---------- */
+#preview-overlay{
+  position:fixed;inset:0;z-index:400;background:var(--bg);
+  display:flex;flex-direction:column
+}
+#preview-overlay.hidden{display:none}
+#preview-topbar{
+  height:44px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;background:var(--bg-s);border-bottom:1px solid var(--bd);flex-shrink:0
+}
+#preview-topbar span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txm)}
+#preview-frame{flex:1;border:none;background:var(--bg)}
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div id="top-bar">
+  <div class="top-left">
+    <a href="../index.html" class="back-link">← サイトトップ</a>
+    <span class="tool-title">シナリオ整形ツール</span>
+  </div>
+  <div class="top-right">
+    <button class="tb-main" id="btn-preview">プレビュー</button>
+    <button class="tb-main primary" id="btn-export">HTML書き出し</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div id="app">
+
+  <!-- Metadata Panel -->
+  <aside id="meta-panel">
+    <div class="meta-section-title">シナリオ情報</div>
+    <div class="meta-row">
+      <label>タイトル *</label>
+      <input type="text" id="meta-title" placeholder="シナリオタイトル">
+    </div>
+    <div class="meta-row">
+      <label>システム</label>
+      <input type="text" id="meta-system" placeholder="CoC7版, SW2.5 など">
+    </div>
+    <div class="meta-row">
+      <label>プレイヤー数</label>
+      <input type="text" id="meta-players" placeholder="3〜4人">
+    </div>
+    <div class="meta-row">
+      <label>プレイ時間</label>
+      <input type="text" id="meta-playtime" placeholder="3〜4時間">
+    </div>
+    <div class="meta-row">
+      <label>タグ</label>
+      <input type="text" id="meta-tags" placeholder="ホラー, 現代 (カンマ区切り)">
+    </div>
+    <div class="meta-row">
+      <label>あらすじ</label>
+      <textarea id="meta-synopsis" rows="6" placeholder="シナリオのあらすじを入力..."></textarea>
+    </div>
+  </aside>
+
+  <!-- Editor Area -->
+  <div id="editor-area">
+    <!-- Toolbar -->
+    <div id="toolbar">
+      <!-- Heading -->
+      <div class="tb-grp">
+        <button class="tb-btn heading" id="btn-h1" title="見出し1 (H1)">H1</button>
+        <button class="tb-btn heading" id="btn-h2" title="見出し2 (H2)">H2</button>
+        <button class="tb-btn heading" id="btn-h3" title="見出し3 (H3)">H3</button>
+        <button class="tb-btn heading" id="btn-h4" title="見出し4 (H4)">H4</button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Format -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-bold" title="太字 (Ctrl+B)"><b>B</b></button>
+        <button class="tb-btn" id="btn-italic" title="イタリック (Ctrl+I)"><i>I</i></button>
+        <button class="tb-btn" id="btn-strike" title="打ち消し線"><s>S</s></button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Align -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-al" title="左揃え">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="1.5" rx=".75"/><rect x="1" y="5.5" width="10" height="1.5" rx=".75"/><rect x="1" y="9" width="14" height="1.5" rx=".75"/><rect x="1" y="12.5" width="8" height="1.5" rx=".75"/></svg>
+        </button>
+        <button class="tb-btn" id="btn-ac" title="中央揃え">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="1.5" rx=".75"/><rect x="3" y="5.5" width="10" height="1.5" rx=".75"/><rect x="1" y="9" width="14" height="1.5" rx=".75"/><rect x="4" y="12.5" width="8" height="1.5" rx=".75"/></svg>
+        </button>
+        <button class="tb-btn" id="btn-ar" title="右揃え">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="1.5" rx=".75"/><rect x="5" y="5.5" width="10" height="1.5" rx=".75"/><rect x="1" y="9" width="14" height="1.5" rx=".75"/><rect x="7" y="12.5" width="8" height="1.5" rx=".75"/></svg>
+        </button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Lists -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-ul" title="箇条書き">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="5" y="3" width="10" height="1.5" rx=".75"/><rect x="5" y="7.25" width="10" height="1.5" rx=".75"/><rect x="5" y="11.5" width="10" height="1.5" rx=".75"/><circle cx="2" cy="3.75" r="1.2"/><circle cx="2" cy="8" r="1.2"/><circle cx="2" cy="12.25" r="1.2"/></svg>
+        </button>
+        <button class="tb-btn" id="btn-ol" title="番号付きリスト">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="5" y="3" width="10" height="1.5" rx=".75"/><rect x="5" y="7.25" width="10" height="1.5" rx=".75"/><rect x="5" y="11.5" width="10" height="1.5" rx=".75"/><text x="0" y="4.5" font-size="4" font-weight="bold">1.</text><text x="0" y="8.75" font-size="4" font-weight="bold">2.</text><text x="0" y="13" font-size="4" font-weight="bold">3.</text></svg>
+        </button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- HR + Link -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-hr" title="水平線">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="7" width="14" height="2" rx="1"/></svg>
+        </button>
+        <button class="tb-btn" id="btn-link" title="ジャンプリンク（テキストを選択してから）">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 9H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/><path d="M9 5a3 3 0 0 0 0 6h3a3 3 0 0 0 0-6H9zm0 1h3a2 2 0 1 1 0 4H9a2 2 0 0 1 0-4z"/></svg>
+        </button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Color + Highlight -->
+      <div class="tb-grp">
+        <div class="tb-dd-wrap" id="wrap-fc">
+          <button class="tb-btn" id="btn-fc" title="文字色">
+            <span id="fc-preview" style="font-weight:900;font-size:13px;color:#e2e2e2">A</span>
+          </button>
+          <div class="tb-dd" id="dd-fc">
+            <div class="dd-label">文字色</div>
+            <div class="dd-swatches" id="fc-swatches"></div>
+          </div>
+        </div>
+        <div class="tb-dd-wrap" id="wrap-hi">
+          <button class="tb-btn" id="btn-hi" title="マーカー">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="4" width="14" height="6" rx="1.5" opacity=".35"/><rect x="1" y="4" width="14" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="12" width="14" height="2" rx="1"/></svg>
+          </button>
+          <div class="tb-dd" id="dd-hi">
+            <div class="dd-label">マーカー色</div>
+            <div class="dd-swatches" id="hi-swatches"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Insert -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-box" title="テキストボックス挿入" style="font-size:11px;gap:4px;padding:4px 8px">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="14" height="14" rx="2"/><line x1="1" y1="5" x2="15" y2="5"/></svg>ボックス
+        </button>
+        <button class="tb-btn" id="btn-kv" title="KVテーブル挿入" style="font-size:11px;gap:4px;padding:4px 8px">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="14" height="14" rx="1.5"/><line x1="1" y1="6" x2="15" y2="6"/><line x1="1" y1="11" x2="15" y2="11"/><line x1="6" y1="6" x2="6" y2="15"/></svg>KVテーブル
+        </button>
+        <button class="tb-btn" id="btn-check" title="チェックリスト挿入" style="font-size:11px;gap:4px;padding:4px 8px">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1.5" width="5" height="5" rx="1"/><polyline points="2,4 3.5,5.5 5.5,3" stroke-width="1.6"/><rect x="1" y="9.5" width="5" height="5" rx="1"/><line x1="8" y1="4" x2="15" y2="4" stroke-width="1.5"/><line x1="8" y1="12" x2="15" y2="12" stroke-width="1.5"/></svg>チェックリスト
+        </button>
+      </div>
+      <div class="tb-div"></div>
+      <!-- Branch tree -->
+      <div class="tb-grp">
+        <button class="tb-btn" id="btn-branch-h" title="選択肢ツリー（横並び）" style="font-size:11px;padding:4px 8px">選択肢(横)</button>
+        <button class="tb-btn" id="btn-branch-v" title="選択肢ツリー（縦並び・中央線）" style="font-size:11px;padding:4px 8px">選択肢(縦)</button>
+        <button class="tb-btn" id="btn-branch-v2" title="選択肢ツリー（縦並び・左線）" style="font-size:11px;padding:4px 8px">選択肢(左線)</button>
+      </div>
+    </div>
+
+    <!-- Editor -->
+    <div id="editor-scroll">
+      <div id="editor" contenteditable="true" spellcheck="false"
+           data-placeholder="ここにシナリオ本文を入力してください...">
+        <p><br></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Box Insert Dialog -->
+<div class="dlg-overlay hidden" id="box-dlg-overlay">
+  <div class="dlg">
+    <h3>テキストボックスを挿入</h3>
+    <div class="dlg-row">
+      <label>タイプ</label>
+      <div class="variant-grp">
+        <button class="variant-btn active" data-variant="normal">タイトルあり</button>
+        <button class="variant-btn" data-variant="subtitle">副タイトルあり</button>
+        <button class="variant-btn" data-variant="notitle">タイトルなし</button>
+      </div>
+    </div>
+    <div class="dlg-row" id="box-title-row">
+      <label>タイトル</label>
+      <input type="text" id="box-title-inp" placeholder="ボックスのタイトル">
+    </div>
+    <div class="dlg-row hidden" id="box-subtitle-row">
+      <label>副タイトル</label>
+      <input type="text" id="box-subtitle-inp" placeholder="副タイトル">
+    </div>
+    <div class="dlg-row">
+      <label>枠色</label>
+      <div class="dlg-color-row" id="box-colors"></div>
+    </div>
+    <div class="dlg-row">
+      <label>背景色</label>
+      <div class="dlg-color-row" id="box-bgcolors"></div>
+    </div>
+    <div class="dlg-foot">
+      <button class="dlg-btn cancel" id="box-cancel">キャンセル</button>
+      <button class="dlg-btn ok" id="box-ok">挿入</button>
+    </div>
+  </div>
+</div>
+
+<!-- KV Table Dialog -->
+<div class="dlg-overlay hidden" id="kv-dlg-overlay">
+  <div class="dlg">
+    <h3>KVテーブルを挿入</h3>
+    <div class="dlg-row">
+      <label>タイトル</label>
+      <input type="text" id="kv-title-inp" placeholder="ステータス など">
+    </div>
+    <div class="dlg-row">
+      <label>枠色</label>
+      <div class="dlg-color-row" id="kv-colors"></div>
+    </div>
+    <div class="dlg-row">
+      <label>行</label>
+      <div class="kv-rows-wrap" id="kv-rows-wrap"></div>
+      <button class="kv-add-btn" id="kv-add-row">＋ 行を追加</button>
+    </div>
+    <div class="dlg-foot">
+      <button class="dlg-btn cancel" id="kv-cancel">キャンセル</button>
+      <button class="dlg-btn ok" id="kv-ok">挿入</button>
+    </div>
+  </div>
+</div>
+
+<!-- Jump Link Dialog -->
+<div class="dlg-overlay hidden" id="link-dlg-overlay">
+  <div class="dlg">
+    <h3>ジャンプリンクを設定</h3>
+    <div class="dlg-row">
+      <label>選択テキスト</label>
+      <div id="link-sel-text" style="font-size:13px;color:var(--tx2);padding:4px 0;border-bottom:1px solid var(--bd2)"></div>
+    </div>
+    <div class="dlg-row">
+      <label>ジャンプ先の見出し</label>
+      <select id="link-target-sel" style="background:var(--bg-s);border:1px solid var(--bd2);border-radius:var(--r);color:var(--tx);font-size:12px;font-family:inherit;padding:6px 8px;outline:none;width:100%"></select>
+    </div>
+    <div class="dlg-foot">
+      <button class="dlg-btn" id="link-remove" style="display:none;margin-right:auto">リンク解除</button>
+      <button class="dlg-btn cancel" id="link-cancel">キャンセル</button>
+      <button class="dlg-btn ok" id="link-ok">設定</button>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Overlay -->
+<div id="preview-overlay" class="hidden">
+  <div id="preview-topbar">
+    <span>プレビュー（書き出し後のイメージ）</span>
+    <button class="tb-main" id="btn-preview-close">閉じる</button>
+  </div>
+  <iframe id="preview-frame" title="プレビュー"></iframe>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script>
+'use strict';
+// =============================================
+// UTILS
+// =============================================
+let _uid = 0;
+function uid() { return 'n' + (++_uid) + '_' + Math.random().toString(36).slice(2, 5); }
+function esc(s) {
+  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+let _toastT;
+function showToast(msg, ms = 2000) {
+  const t = document.getElementById('toast');
+  clearTimeout(_toastT);
+  t.textContent = msg; t.classList.add('show');
+  _toastT = setTimeout(() => t.classList.remove('show'), ms);
+}
+
+// =============================================
+// SELECTION SAVE/RESTORE
+// =============================================
+let _savedRange = null;
+function saveRange() {
+  const sel = window.getSelection();
+  _savedRange = sel && sel.rangeCount > 0 ? sel.getRangeAt(0).cloneRange() : null;
+}
+function restoreRange() {
+  if (!_savedRange) return;
+  const sel = window.getSelection();
+  sel.removeAllRanges(); sel.addRange(_savedRange);
+}
+function editorFocus() { document.getElementById('editor').focus(); }
+
+// =============================================
+// HEADING / FORMAT
+// =============================================
+function applyHeading(tag) {
+  editorFocus();
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0) return;
+  const node = sel.anchorNode;
+  let block = node;
+  while (block && block !== document.getElementById('editor')) {
+    if (block.nodeType === 1 && /^(p|h[1-6]|div|li)$/i.test(block.tagName)) break;
+    block = block.parentNode;
+  }
+  document.execCommand('formatBlock', false,
+    block && block.tagName.toLowerCase() === tag ? 'p' : tag);
+}
+function applyFormat(cmd) { editorFocus(); document.execCommand(cmd, false); }
+function applyAlign(dir) { editorFocus(); document.execCommand('justify' + dir[0].toUpperCase() + dir.slice(1), false); }
+
+function insertHR() {
+  editorFocus();
+  document.execCommand('insertHTML', false, '<hr><p></p>');
+}
+
+// =============================================
+// BRANCH TREE HELPERS
+// =============================================
+function makeBranchChildHTML(label) {
+  return `<div class="branch-child-col">` +
+    `<div class="branch-child-node">` +
+      `<div class="branch-node-bar"><div class="branch-choice-text" contenteditable="true">${esc(label)}</div></div>` +
+      `<div class="branch-outcome-text" contenteditable="true"></div>` +
+    `</div>` +
+  `</div>`;
+}
+function makeBranchV2ItemHTML(label) {
+  return `<div class="branch-v2-item">` +
+    `<div class="branch-child-node">` +
+      `<div class="branch-node-bar"><div class="branch-choice-text" contenteditable="true">${esc(label)}</div></div>` +
+      `<div class="branch-outcome-text" contenteditable="true"></div>` +
+    `</div>` +
+  `</div>`;
+}
+
+function insertBranchTree(mode) {
+  editorFocus();
+  const id = uid();
+  let html = '<p></p>';
+  if (mode === 'v2') {
+    html += `<div class="branch-tree branch-tree-v2" contenteditable="false" data-box-id="${id}">` +
+      `<div class="branch-header"><span class="branch-badge">選択肢ツリー（左線）</span>` +
+        `<button class="box-delete-btn" type="button">✕</button></div>` +
+      `<div class="branch-v2-wrap">` +
+        `<div class="branch-root-node"><div class="branch-root-text" contenteditable="true">状況・場面の説明</div></div>` +
+        `<div class="branch-v2-stem"></div>` +
+        `<div class="branch-v2-children">${makeBranchV2ItemHTML('選択肢A')}${makeBranchV2ItemHTML('選択肢B')}</div>` +
+        `<div class="branch-add-row"><button class="branch-add-btn" type="button">＋ 選択肢を追加</button></div>` +
+      `</div>` +
+    `</div><p></p>`;
+  } else {
+    const cls = mode === 'v' ? 'branch-tree branch-tree-v' : 'branch-tree';
+    html += `<div class="${cls}" contenteditable="false" data-box-id="${id}">` +
+      `<div class="branch-header"><span class="branch-badge">選択肢ツリー</span>` +
+        `<button class="box-delete-btn" type="button">✕</button></div>` +
+      `<div class="branch-root-wrap"><div class="branch-root-node">` +
+        `<div class="branch-root-text" contenteditable="true">状況・場面の説明</div>` +
+      `</div></div>` +
+      `<div class="branch-connector"></div>` +
+      `<div class="branch-children">${makeBranchChildHTML('選択肢A')}${makeBranchChildHTML('選択肢B')}</div>` +
+      `<div class="branch-add-row"><button class="branch-add-btn" type="button">＋ 選択肢を追加</button></div>` +
+    `</div><p></p>`;
+  }
+  document.execCommand('insertHTML', false, html);
+}
+
+function addBranchChild(tree) {
+  if (tree.classList.contains('branch-tree-v2')) {
+    const wrap = tree.querySelector('.branch-v2-children');
+    if (!wrap) return;
+    const n = wrap.querySelectorAll('.branch-v2-item').length + 1;
+    const el = document.createElement('div');
+    el.className = 'branch-v2-item';
+    el.innerHTML = `<div class="branch-child-node">` +
+      `<div class="branch-node-bar"><div class="branch-choice-text" contenteditable="true">選択肢${n}</div></div>` +
+      `<div class="branch-outcome-text" contenteditable="true"></div>` +
+    `</div>`;
+    wrap.appendChild(el);
+    el.querySelector('.branch-choice-text').focus();
+  } else {
+    const wrap = tree.querySelector('.branch-children');
+    if (!wrap) return;
+    const n = wrap.querySelectorAll('.branch-child-col').length + 1;
+    const el = document.createElement('div');
+    el.className = 'branch-child-col';
+    el.innerHTML = `<div class="branch-child-node">` +
+      `<div class="branch-node-bar"><div class="branch-choice-text" contenteditable="true">選択肢${n}</div></div>` +
+      `<div class="branch-outcome-text" contenteditable="true"></div>` +
+    `</div>`;
+    wrap.appendChild(el);
+    el.querySelector('.branch-choice-text').focus();
+  }
+}
+
+// =============================================
+// CHECKLIST
+// =============================================
+function insertChecklistBlock() {
+  editorFocus();
+  const id = uid();
+  const html = `<p></p>` +
+    `<div class="task-block" contenteditable="false" data-box-id="${id}">` +
+      `<div class="task-block-header"><span class="task-block-title">チェックリスト</span>` +
+        `<button class="box-delete-btn" type="button">✕</button></div>` +
+      `<div class="task-list">` +
+        `<div class="task-item"><input type="checkbox" class="task-checkbox">` +
+          `<span class="task-text" contenteditable="true">項目1</span></div>` +
+        `<div class="task-item"><input type="checkbox" class="task-checkbox">` +
+          `<span class="task-text" contenteditable="true">項目2</span></div>` +
+      `</div>` +
+      `<button class="task-add-btn" type="button">＋ 項目を追加</button>` +
+    `</div><p></p>`;
+  document.execCommand('insertHTML', false, html);
+}
+function addTaskItem(block) {
+  const list = block.querySelector('.task-list');
+  if (!list) return;
+  const item = document.createElement('div');
+  item.className = 'task-item';
+  item.innerHTML = `<input type="checkbox" class="task-checkbox"><span class="task-text" contenteditable="true">新しい項目</span>`;
+  list.appendChild(item);
+  const span = item.querySelector('.task-text');
+  span.focus();
+  const r = document.createRange(); r.selectNodeContents(span);
+  const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+
+// =============================================
+// COLOR SWATCHES
+// =============================================
+const BOX_COLORS = [
+  { name:'default', hex:'#3a3a3a', label:'デフォルト' },
+  { name:'white',   hex:'#d0d0d0', label:'白' },
+  { name:'gray',    hex:'#888888', label:'グレー' },
+  { name:'red',     hex:'#FF6B6B', label:'赤' },
+  { name:'orange',  hex:'#FF9952', label:'オレンジ' },
+  { name:'yellow',  hex:'#FFD93D', label:'黄' },
+  { name:'green',   hex:'#4ADE80', label:'緑' },
+  { name:'cyan',    hex:'#22D3EE', label:'シアン' },
+  { name:'blue',    hex:'#60A5FA', label:'青' },
+  { name:'purple',  hex:'#C084FC', label:'紫' },
+  { name:'pink',    hex:'#F472B6', label:'ピンク' },
+  { name:'gold',    hex:'#e5c07b', label:'金' },
+];
+const BOX_BG_COLORS = [
+  { name:'none',   hex:null,      label:'なし' },
+  { name:'white',  hex:'#2e3a4a', label:'白' },
+  { name:'gray',   hex:'#1a2130', label:'グレー' },
+  { name:'red',    hex:'#2e1a1a', label:'赤' },
+  { name:'orange', hex:'#2c1e12', label:'橙' },
+  { name:'yellow', hex:'#262218', label:'黄' },
+  { name:'green',  hex:'#182c1e', label:'緑' },
+  { name:'cyan',   hex:'#14242e', label:'青緑' },
+  { name:'blue',   hex:'#161e32', label:'青' },
+  { name:'purple', hex:'#1e1630', label:'紫' },
+  { name:'pink',   hex:'#2c1622', label:'ピンク' },
+];
+const FC_COLORS = [
+  { hex:'#e2e2e2', label:'白' }, { hex:'#888888', label:'グレー' },
+  { hex:'#FF6B6B', label:'赤' }, { hex:'#FF9952', label:'橙' },
+  { hex:'#FFD93D', label:'黄' }, { hex:'#4ADE80', label:'緑' },
+  { hex:'#22D3EE', label:'シアン' }, { hex:'#60A5FA', label:'青' },
+  { hex:'#C084FC', label:'紫' }, { hex:'#F472B6', label:'ピンク' },
+  { hex:'#e5c07b', label:'金' }, { hex:'none', label:'解除' },
+];
+const HI_COLORS = [
+  { hex:'rgba(253,224,71,.45)', label:'黄' }, { hex:'rgba(134,239,172,.4)', label:'緑' },
+  { hex:'rgba(147,197,253,.4)', label:'青' }, { hex:'rgba(192,132,252,.4)', label:'紫' },
+  { hex:'rgba(252,165,165,.4)', label:'赤' }, { hex:'rgba(253,186,116,.4)', label:'橙' },
+  { hex:'none', label:'解除' },
+];
+
+function buildSwatches(container, colors, selected, onChange) {
+  container.innerHTML = '';
+  colors.forEach(c => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dlg-color-swatch' + (c.name === selected || c.hex === selected ? ' selected' : '');
+    btn.title = c.label;
+    if (c.hex) btn.style.background = c.hex;
+    else { btn.style.background='var(--bg)'; btn.style.border='1px solid var(--bd3)'; btn.textContent='✕'; btn.style.fontSize='10px'; btn.style.color='var(--txm)'; }
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.dlg-color-swatch').forEach(s => s.classList.remove('selected'));
+      btn.classList.add('selected');
+      onChange(c.name || c.hex);
+    });
+    container.appendChild(btn);
+  });
+}
+function buildDDSwatches(container, colors, onPick) {
+  container.innerHTML = '';
+  colors.forEach(c => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dd-swatch';
+    btn.title = c.label;
+    if (c.hex && c.hex !== 'none') btn.style.background = c.hex;
+    else { btn.className += ' none-swatch'; btn.textContent = '✕'; }
+    btn.addEventListener('click', () => onPick(c));
+    container.appendChild(btn);
+  });
+}
+
+// =============================================
+// BOX INSERT DIALOG
+// =============================================
+let _boxVariant = 'normal', _boxColor = 'default', _boxBgColor = 'none';
+function openBoxDialog() {
+  saveRange();
+  _boxVariant = 'normal'; _boxColor = 'default'; _boxBgColor = 'none';
+  document.getElementById('box-title-inp').value = '';
+  document.getElementById('box-subtitle-inp').value = '';
+  document.getElementById('box-title-row').classList.remove('hidden');
+  document.getElementById('box-subtitle-row').classList.add('hidden');
+  document.querySelectorAll('#box-dlg-overlay .variant-btn').forEach((b,i) => b.classList.toggle('active', i===0));
+  buildSwatches(document.getElementById('box-colors'), BOX_COLORS, 'default', v => { _boxColor = v; });
+  buildSwatches(document.getElementById('box-bgcolors'), BOX_BG_COLORS, 'none', v => { _boxBgColor = v; });
+  document.getElementById('box-dlg-overlay').classList.remove('hidden');
+  setTimeout(() => document.getElementById('box-title-inp').focus(), 50);
+}
+function insertTextBox() {
+  const title    = document.getElementById('box-title-inp').value;
+  const subtitle = document.getElementById('box-subtitle-inp').value;
+  const variant  = _boxVariant;
+  const colorCls = _boxColor;
+  const bgColor  = _boxBgColor;
+  const id = uid();
+  const bgAttr = (bgColor && bgColor !== 'none') ? ` data-box-bgcolor="${esc(bgColor)}"` : '';
+  let headerHtml;
+  if (variant === 'notitle') {
+    headerHtml = `<div class="box-notitle-actions"><button class="box-copy-btn" type="button">コピー</button><button class="box-delete-btn" type="button">✕</button></div>`;
+  } else if (variant === 'subtitle') {
+    headerHtml = `<div class="box-header"><div class="box-title-group"><div class="box-title" contenteditable="true">${esc(title)||'タイトル'}</div><div class="box-subtitle" contenteditable="true">${esc(subtitle)||'副タイトル'}</div></div><button class="box-copy-title-btn" type="button">T+コピー</button><button class="box-copy-btn" type="button">コピー</button><button class="box-delete-btn" type="button">✕</button></div>`;
+  } else {
+    headerHtml = `<div class="box-header"><div class="box-title" contenteditable="true">${esc(title)||'タイトル'}</div><button class="box-copy-title-btn" type="button">T+コピー</button><button class="box-copy-btn" type="button">コピー</button><button class="box-delete-btn" type="button">✕</button></div>`;
+  }
+  const html = `<p></p>` +
+    `<div class="scenario-box color-${esc(colorCls)}" contenteditable="false" data-box-id="${id}" data-box-variant="${esc(variant)}"${bgAttr}>` +
+      headerHtml +
+      `<div class="box-body" contenteditable="true"></div>` +
+    `</div><p></p>`;
+  restoreRange();
+  document.execCommand('insertHTML', false, html);
+  document.getElementById('box-dlg-overlay').classList.add('hidden');
+}
+function setupBoxDialog() {
+  document.querySelectorAll('#box-dlg-overlay .variant-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#box-dlg-overlay .variant-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      _boxVariant = btn.dataset.variant;
+      document.getElementById('box-title-row').classList.toggle('hidden', _boxVariant === 'notitle');
+      document.getElementById('box-subtitle-row').classList.toggle('hidden', _boxVariant !== 'subtitle');
+    });
+  });
+  document.getElementById('box-cancel').addEventListener('click', () => document.getElementById('box-dlg-overlay').classList.add('hidden'));
+  document.getElementById('box-ok').addEventListener('click', insertTextBox);
+  document.getElementById('box-dlg-overlay').addEventListener('click', e => { if (e.target === document.getElementById('box-dlg-overlay')) document.getElementById('box-dlg-overlay').classList.add('hidden'); });
+}
+
+// =============================================
+// KV TABLE DIALOG
+// =============================================
+let _kvColor = 'default';
+function openKVDialog() {
+  saveRange();
+  _kvColor = 'default';
+  document.getElementById('kv-title-inp').value = '';
+  buildSwatches(document.getElementById('kv-colors'), BOX_COLORS, 'default', v => { _kvColor = v; });
+  // Reset rows
+  const wrap = document.getElementById('kv-rows-wrap');
+  wrap.innerHTML = '';
+  addKVRow('', '');
+  addKVRow('', '');
+  document.getElementById('kv-dlg-overlay').classList.remove('hidden');
+  setTimeout(() => document.getElementById('kv-title-inp').focus(), 50);
+}
+function addKVRow(label = '', value = '') {
+  const wrap = document.getElementById('kv-rows-wrap');
+  const row = document.createElement('div');
+  row.className = 'kv-dlg-row';
+  row.innerHTML =
+    `<input type="text" placeholder="ラベル" value="${esc(label)}" class="kv-label-inp">` +
+    `<input type="text" placeholder="値" value="${esc(value)}" class="kv-value-inp">` +
+    `<button class="kv-del-btn" type="button" title="削除">✕</button>`;
+  row.querySelector('.kv-del-btn').addEventListener('click', () => row.remove());
+  wrap.appendChild(row);
+}
+function getKVRows() {
+  return Array.from(document.querySelectorAll('#kv-rows-wrap .kv-dlg-row')).map(r => ({
+    label: r.querySelector('.kv-label-inp').value,
+    value: r.querySelector('.kv-value-inp').value,
+  })).filter(r => r.label || r.value);
+}
+function insertKVTable() {
+  const title = document.getElementById('kv-title-inp').value;
+  const rows  = getKVRows();
+  const id    = uid();
+  const rowsHtml = (rows.length ? rows : [{ label:'ラベル', value:'' }]).map(r =>
+    `<tr><td class="kv-label">${esc(r.label)}</td><td class="kv-value" contenteditable="true">${esc(r.value)}</td></tr>`
+  ).join('');
+  const html = `<p></p>` +
+    `<div class="scenario-box color-${esc(_kvColor)}" contenteditable="false" data-box-id="${id}" data-box-type="kv">` +
+      `<div class="box-header"><div class="box-title" contenteditable="true">${esc(title)||'ステータス'}</div>` +
+        `<button class="box-delete-btn" type="button">✕</button></div>` +
+      `<table class="kv-table">${rowsHtml}</table>` +
+    `</div><p></p>`;
+  restoreRange();
+  document.execCommand('insertHTML', false, html);
+  document.getElementById('kv-dlg-overlay').classList.add('hidden');
+}
+function setupKVDialog() {
+  document.getElementById('kv-add-row').addEventListener('click', () => addKVRow());
+  document.getElementById('kv-cancel').addEventListener('click', () => document.getElementById('kv-dlg-overlay').classList.add('hidden'));
+  document.getElementById('kv-ok').addEventListener('click', insertKVTable);
+  document.getElementById('kv-dlg-overlay').addEventListener('click', e => { if (e.target === document.getElementById('kv-dlg-overlay')) document.getElementById('kv-dlg-overlay').classList.add('hidden'); });
+}
+
+// =============================================
+// JUMP LINK DIALOG
+// =============================================
+let _linkRange = null;
+function openLinkDialog() {
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { showToast('テキストを選択してからボタンを押してください'); return; }
+  _linkRange = sel.getRangeAt(0).cloneRange();
+  document.getElementById('link-sel-text').textContent = sel.toString().slice(0, 60);
+  const select = document.getElementById('link-target-sel');
+  select.innerHTML = '<option value="">— 見出しを選択 —</option>';
+  document.getElementById('editor').querySelectorAll('h1,h2,h3,h4').forEach((h, i) => {
+    if (!h.id) h.id = 'h-' + i;
+    const opt = document.createElement('option');
+    opt.value = h.id; opt.textContent = `[${h.tagName}] ${h.textContent.trim() || '(空)'}`;
+    const anchor = sel.anchorNode?.parentElement?.closest('a.jump-link');
+    if (anchor && anchor.dataset.target === h.id) opt.selected = true;
+    select.appendChild(opt);
+  });
+  const anchor = sel.anchorNode?.parentElement?.closest('a.jump-link');
+  document.getElementById('link-remove').style.display = anchor ? 'inline-flex' : 'none';
+  document.getElementById('link-dlg-overlay').classList.remove('hidden');
+}
+function applyLink() {
+  const targetId = document.getElementById('link-target-sel').value;
+  if (!targetId) { showToast('ジャンプ先を選択してください'); return; }
+  if (!_linkRange) return;
+  const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(_linkRange);
+  document.execCommand('unlink', false);
+  const text = sel.toString();
+  document.execCommand('insertHTML', false, `<a class="jump-link" data-target="${esc(targetId)}" href="#${esc(targetId)}">${esc(text)}</a>`);
+  document.getElementById('link-dlg-overlay').classList.add('hidden');
+}
+function removeLink() {
+  if (!_linkRange) return;
+  const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(_linkRange);
+  document.execCommand('unlink', false);
+  document.getElementById('link-dlg-overlay').classList.add('hidden');
+}
+function setupLinkDialog() {
+  document.getElementById('link-cancel').addEventListener('click', () => document.getElementById('link-dlg-overlay').classList.add('hidden'));
+  document.getElementById('link-ok').addEventListener('click', applyLink);
+  document.getElementById('link-remove').addEventListener('click', removeLink);
+  document.getElementById('link-dlg-overlay').addEventListener('click', e => { if (e.target === document.getElementById('link-dlg-overlay')) document.getElementById('link-dlg-overlay').classList.add('hidden'); });
+}
+
+// =============================================
+// TEXT COLOR + HIGHLIGHT
+// =============================================
+let _savedFcRange = null;
+function setupColorPickers() {
+  // Font color
+  buildDDSwatches(document.getElementById('fc-swatches'), FC_COLORS, c => {
+    restoreFcRange();
+    if (c.hex === 'none') document.execCommand('removeFormat', false);
+    else document.execCommand('foreColor', false, c.hex);
+    document.getElementById('fc-preview').style.color = c.hex === 'none' ? '#e2e2e2' : c.hex;
+    document.getElementById('dd-fc').classList.remove('open');
+  });
+  // Highlight
+  buildDDSwatches(document.getElementById('hi-swatches'), HI_COLORS, c => {
+    restoreFcRange();
+    if (c.hex === 'none') document.execCommand('hiliteColor', false, 'transparent');
+    else document.execCommand('hiliteColor', false, c.hex);
+    document.getElementById('dd-hi').classList.remove('open');
+  });
+  document.getElementById('btn-fc').addEventListener('mousedown', e => {
+    e.preventDefault();
+    const sel = window.getSelection();
+    _savedFcRange = sel && sel.rangeCount > 0 ? sel.getRangeAt(0).cloneRange() : null;
+    document.getElementById('dd-fc').classList.toggle('open');
+    document.getElementById('dd-hi').classList.remove('open');
+  });
+  document.getElementById('btn-hi').addEventListener('mousedown', e => {
+    e.preventDefault();
+    const sel = window.getSelection();
+    _savedFcRange = sel && sel.rangeCount > 0 ? sel.getRangeAt(0).cloneRange() : null;
+    document.getElementById('dd-hi').classList.toggle('open');
+    document.getElementById('dd-fc').classList.remove('open');
+  });
+}
+function restoreFcRange() {
+  if (!_savedFcRange) return;
+  const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(_savedFcRange);
+}
+
+// =============================================
+// EDITOR EVENT DELEGATION
+// =============================================
+function setupEditorEvents() {
+  const editor = document.getElementById('editor');
+  editor.addEventListener('click', e => {
+    // Jump link in editor → scroll to heading
+    const link = e.target.closest('a.jump-link');
+    if (link) {
+      e.preventDefault();
+      const id = link.dataset.target;
+      if (id) { const t = editor.querySelector('#' + id); if (t) t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    }
+  });
+  editor.addEventListener('click', e => {
+    // Delete button
+    const del = e.target.closest('.box-delete-btn');
+    if (!del) return;
+    const box = del.closest('[contenteditable="false"]');
+    if (box) box.remove();
+  });
+  editor.addEventListener('click', e => {
+    // Branch tree: add child
+    const addBtn = e.target.closest('.branch-add-btn');
+    if (!addBtn) return;
+    const tree = addBtn.closest('.branch-tree');
+    if (tree) addBranchChild(tree);
+  });
+  editor.addEventListener('click', e => {
+    // Checklist: add item
+    const addBtn = e.target.closest('.task-add-btn');
+    if (!addBtn) return;
+    const block = addBtn.closest('.task-block');
+    if (block) addTaskItem(block);
+  });
+  editor.addEventListener('click', e => {
+    // Checklist checkbox toggle
+    const cb = e.target.closest('.task-checkbox');
+    if (!cb) return;
+    const item = cb.closest('.task-item');
+    if (item) item.classList.toggle('task-done', cb.checked);
+  });
+  // Copy buttons (editor preview)
+  editor.addEventListener('click', async e => {
+    const btn = e.target.closest('.box-copy-btn, .box-copy-title-btn');
+    if (!btn) return;
+    const box = btn.closest('.scenario-box');
+    if (!box) return;
+    let text = '';
+    if (btn.classList.contains('box-copy-title-btn')) {
+      const t = box.querySelector('.box-title'), s = box.querySelector('.box-subtitle'), b = box.querySelector('.box-body');
+      text = [t?.textContent?.trim(), s?.textContent?.trim(), b?.innerText?.trim()].filter(Boolean).join('\n');
+    } else {
+      text = box.querySelector('.box-body')?.innerText?.trim() || '';
+    }
+    if (!text) return;
+    try { await navigator.clipboard.writeText(text); } catch {}
+    const orig = btn.textContent;
+    btn.textContent = '✓ コピー完了';
+    setTimeout(() => btn.textContent = orig, 1800);
+  });
+}
+
+// =============================================
+// TOOLBAR SETUP
+// =============================================
+function setupToolbar() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  on('btn-h1', () => applyHeading('h1'));
+  on('btn-h2', () => applyHeading('h2'));
+  on('btn-h3', () => applyHeading('h3'));
+  on('btn-h4', () => applyHeading('h4'));
+  on('btn-bold',   () => applyFormat('bold'));
+  on('btn-italic', () => applyFormat('italic'));
+  on('btn-strike', () => applyFormat('strikeThrough'));
+  on('btn-al', () => applyAlign('left'));
+  on('btn-ac', () => applyAlign('center'));
+  on('btn-ar', () => applyAlign('right'));
+  on('btn-ul', () => { editorFocus(); document.execCommand('insertUnorderedList', false); });
+  on('btn-ol', () => { editorFocus(); document.execCommand('insertOrderedList', false); });
+  on('btn-hr', insertHR);
+  on('btn-link', openLinkDialog);
+  on('btn-box',   openBoxDialog);
+  on('btn-kv',    openKVDialog);
+  on('btn-check', insertChecklistBlock);
+  on('btn-branch-h',  () => insertBranchTree('h'));
+  on('btn-branch-v',  () => insertBranchTree('v'));
+  on('btn-branch-v2', () => insertBranchTree('v2'));
+}
+
+// =============================================
+// CLOSE DROPDOWNS ON OUTSIDE CLICK
+// =============================================
+document.addEventListener('click', e => {
+  if (!e.target.closest('#wrap-fc') && !e.target.closest('#dd-fc')) document.getElementById('dd-fc').classList.remove('open');
+  if (!e.target.closest('#wrap-hi') && !e.target.closest('#dd-hi')) document.getElementById('dd-hi').classList.remove('open');
+});
+
+// =============================================
+// EXPORT
+// =============================================
+function getMeta() {
+  return {
+    title:    document.getElementById('meta-title').value.trim()   || '無題のシナリオ',
+    system:   document.getElementById('meta-system').value.trim(),
+    players:  document.getElementById('meta-players').value.trim(),
+    playtime: document.getElementById('meta-playtime').value.trim(),
+    tagsRaw:  document.getElementById('meta-tags').value.trim(),
+    synopsis: document.getElementById('meta-synopsis').value.trim(),
+  };
+}
+function getCleanContent() {
+  const clone = document.getElementById('editor').cloneNode(true);
+  clone.removeAttribute('contenteditable');
+  clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+  clone.querySelectorAll('.box-delete-btn').forEach(el => el.remove());
+  clone.querySelectorAll('.task-add-btn').forEach(el => el.remove());
+  clone.querySelectorAll('.branch-add-row').forEach(el => el.remove());
+  return clone.innerHTML;
+}
+function buildMetaHtml(m) {
+  const tags = m.tagsRaw.split(/[,、]/).map(t => t.trim()).filter(Boolean);
+  return [
+    m.system   && `<span class="meta-system">${esc(m.system)}</span>`,
+    m.players  && `<span class="meta-item"><span class="meta-label">PL</span>${esc(m.players)}</span>`,
+    m.playtime && `<span class="meta-item"><span class="meta-label">Time</span>${esc(m.playtime)}</span>`,
+    ...tags.map(t => `<span class="meta-tag">${esc(t)}</span>`),
+  ].filter(Boolean).join('');
+}
+function buildScenarioHtml(forPreview = false) {
+  const m = getMeta();
+  const content = getCleanContent();
+  const relPath = forPreview ? '' : '../';
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${esc(m.title)} — TRPG Scenarios</title>
+  <meta name="sc-system" content="${esc(m.system)}">
+  <meta name="sc-players" content="${esc(m.players)}">
+  <meta name="sc-time" content="${esc(m.playtime)}">
+  <meta name="sc-tags" content="${esc(m.tagsRaw)}">
+  <link rel="stylesheet" href="${relPath}css/style.css">
+</head>
+<body class="page-scenario">
+  <nav id="site-nav">
+    <a href="${relPath}index.html" class="nav-home">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5v-4h3v4H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146z"/></svg>
+      TRPG Scenarios
+    </a>
+    <span class="nav-sep">/</span>
+    <span class="nav-current">${esc(m.title)}</span>
+  </nav>
+  <div id="progress-bar"></div>
+  <div id="scenario-header">
+    <h1 class="scenario-title">${esc(m.title)}</h1>
+    <div class="scenario-meta">${buildMetaHtml(m)}</div>
+    ${m.synopsis ? `<p class="scenario-synopsis">${esc(m.synopsis).replace(/\n/g,'<br>')}</p>` : ''}
+  </div>
+  <div id="page-body">
+    <div id="toc-sidebar">
+      <div class="toc-title">目次</div>
+      <div id="toc-list"></div>
+    </div>
+    <main id="c">${content}</main>
+  </div>
+  <footer class="site-footer">
+    <a href="${relPath}index.html">← シナリオ一覧に戻る</a>
+  </footer>
+  <script src="${relPath}js/main.js"><\/script>
+</body>
+</html>`;
+}
+function exportScenario() {
+  const m = getMeta();
+  if (!document.getElementById('editor').textContent.trim() && !document.getElementById('editor').querySelector('[data-box-id]')) {
+    showToast('本文が空です'); return;
+  }
+  const filename = m.title.replace(/[\\/:*?"<>|]/g, '_') + '.html';
+  const html = buildScenarioHtml(false);
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`「${filename}」を書き出しました。scenarios/ フォルダに置いてください。`, 3000);
+}
+
+// =============================================
+// PREVIEW
+// =============================================
+function openPreview() {
+  const html = buildScenarioHtml(true);
+  const frame = document.getElementById('preview-frame');
+  frame.srcdoc = html;
+  document.getElementById('preview-overlay').classList.remove('hidden');
+}
+
+// =============================================
+// INIT
+// =============================================
+document.addEventListener('DOMContentLoaded', () => {
+  setupToolbar();
+  setupBoxDialog();
+  setupKVDialog();
+  setupLinkDialog();
+  setupEditorEvents();
+  setupColorPickers();
+
+  document.getElementById('btn-export').addEventListener('click', exportScenario);
+  document.getElementById('btn-preview').addEventListener('click', openPreview);
+  document.getElementById('btn-preview-close').addEventListener('click', () => document.getElementById('preview-overlay').classList.add('hidden'));
+
+  // Keep editor focused when toolbar buttons clicked
+  document.getElementById('toolbar').addEventListener('mousedown', e => {
+    if (e.target.closest('button') && !e.target.closest('.tb-dd')) e.preventDefault();
+  });
+});
+</script>
+</body>
+</html>
