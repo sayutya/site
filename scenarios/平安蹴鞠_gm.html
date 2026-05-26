@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>平安蹴鞠 — シナリオ置き場</title>
+  <meta name="robots"       content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot"    content="noindex, nofollow">
+  <meta name="GPTBot"       content="noindex">
+  <meta name="anthropic-ai" content="noindex">
+  <meta name="sc-title"      content="平安蹴鞠">
+  <meta name="sc-system"     content="シノビガミ">
+  <meta name="sc-players"    content="１人">
+  <meta name="sc-time"       content="４～５時間">
+  <meta name="sc-regulation" content="現代編">
+  <meta name="sc-type"       content="協力型">
+  <meta name="sc-tags"       content="">
+  <meta name="sc-synopsis"   content="まことや、次なる舞台は平安の御世なるか――？　時は平安、蹴鞠こそが雅の極みなり。されど、その玉遊び、ただの戯れにあらず。 忍びの技を極めしPC①、時空を越え、都の闇を祓わんとす。蹴鞠の一蹴、悪を討ち、陰陽の理、いまここに示さん。 和歌詠み交わし、都の運命を問う者あり。　まこと、かの者は何を成さんとするか――次回、「平安蹴鞠編」、見参せよ！">
+  <meta name="sc-pagetype"   content="gm">
+  <meta name="sc-updated"    content="2026-05-26">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-scenario page-scenario-gm">
+
+  <div id="sb-overlay"></div>
+  <button id="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="site-sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-back">← 一覧に戻る</a>
+      <a href="../index.html" class="sidebar-logo">シナリオ<br>置き場</a>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="sidebar-nav-section">MENU</span>
+      <a href="../pages/hajimeni.html" class="sidebar-nav-item">はじめに</a>
+      <a href="../index.html"    class="sidebar-nav-item">シナリオ一覧</a>
+      <a href="../pages/terms.html"    class="sidebar-nav-item">利用規約</a>
+      <a href="../pages/contact.html"  class="sidebar-nav-item">お問い合わせ</a>
+    </nav>
+    <div class="sidebar-toc">
+      <div class="toc-heading">目次</div>
+      <nav id="sc-tree"><ul class="sc-tree-list"><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>概要</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779710345847gyt5" data-file-id="n1779710345847gyt5">GM向け概要</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>ハンドアウト</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779710345847e39s" data-file-id="n1779710345847e39s">PC①</a></li><li class="sc-tree-file"><a href="#file-n17797103458474w47" data-file-id="n17797103458474w47">菖蒲姫</a></li><li class="sc-tree-file"><a href="#file-n17797117431388f7j" data-file-id="n17797117431388f7j">藤原成通</a></li><li class="sc-tree-file"><a href="#file-n1779711745390ffqe" data-file-id="n1779711745390ffqe">賀茂忠行</a></li><li class="sc-tree-file"><a href="#file-n1779711747116yigx" data-file-id="n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a></li><li class="sc-tree-file"><a href="#file-n1779711748944885u" data-file-id="n1779711748944885u">紫雲雅鞠会(しうんがきゅうかい)</a></li><li class="sc-tree-file"><a href="#file-n1779711750448kp6c" data-file-id="n1779711750448kp6c">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a></li><li class="sc-tree-file"><a href="#file-n177971175188228sh" data-file-id="n177971175188228sh">百鬼夜行</a></li><li class="sc-tree-file"><a href="#file-n1779714538326wnld" data-file-id="n1779714538326wnld">節花(せつか)</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>導入フェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779710345847fp6g" data-file-id="n1779710345847fp6g">01_タイムスリップ</a></li><li class="sc-tree-file"><a href="#file-n1779710345847gyll" data-file-id="n1779710345847gyll">02_平安時代へ</a></li><li class="sc-tree-file"><a href="#file-n1779714704680lqsz" data-file-id="n1779714704680lqsz">03_菖蒲姫</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>メインフェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779710345847nobw" data-file-id="n1779710345847nobw">メインフェイズについて</a></li><li class="sc-tree-file"><a href="#file-n1779710345847vj2r" data-file-id="n1779710345847vj2r">襲撃</a></li><li class="sc-tree-file"><a href="#file-n1779710345847r999" data-file-id="n1779710345847r999">名足の依頼</a></li><li class="sc-tree-file"><a href="#file-n1779714998463oh9q" data-file-id="n1779714998463oh9q">蹴鞠の精霊</a></li><li class="sc-tree-file"><a href="#file-n1779714999991ey24" data-file-id="n1779714999991ey24">秋の夜</a></li><li class="sc-tree-file"><a href="#file-n1779714996745qg99" data-file-id="n1779714996745qg99">陰陽師の正体</a></li><li class="sc-tree-file"><a href="#file-n1779715188015sqrt" data-file-id="n1779715188015sqrt">秋の午時</a></li><li class="sc-tree-file"><a href="#file-n17797151860082yyc" data-file-id="n17797151860082yyc">強襲</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>クライマックスフェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779716193489ruxc" data-file-id="n1779716193489ruxc">分岐について</a></li><li class="sc-tree-file"><a href="#file-n1779710345847whx9" data-file-id="n1779710345847whx9">クライマックス戦闘前描写</a></li><li class="sc-tree-file"><a href="#file-n17797167079247qsb" data-file-id="n17797167079247qsb">パターン１</a></li><li class="sc-tree-file"><a href="#file-n17797478671391qvi" data-file-id="n17797478671391qvi">パターン２</a></li><li class="sc-tree-file"><a href="#file-n1779747869236x7s3" data-file-id="n1779747869236x7s3">パターン３</a></li><li class="sc-tree-file"><a href="#file-n1779747871114sfkf" data-file-id="n1779747871114sfkf">パターン４</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>結末</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n17797483103220q9g" data-file-id="n17797483103220q9g">結末A</a></li><li class="sc-tree-file"><a href="#file-n1779748360074a9kk" data-file-id="n1779748360074a9kk">結末B</a></li><li class="sc-tree-file"><a href="#file-n1779748362302ykbt" data-file-id="n1779748362302ykbt">結末C</a></li><li class="sc-tree-file"><a href="#file-n1779748365939ahug" data-file-id="n1779748365939ahug">結末D</a></li><li class="sc-tree-file"><a href="#file-n1779748364088av9h" data-file-id="n1779748364088av9h">結末E</a></li><li class="sc-tree-file"><a href="#file-n1779748405643qmpe" data-file-id="n1779748405643qmpe">結末F</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>NPC</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1779748534566kyyy" data-file-id="n1779748534566kyyy">菖蒲姫</a></li><li class="sc-tree-file"><a href="#file-n1779748619544ozf5" data-file-id="n1779748619544ozf5">殺姫</a></li><li class="sc-tree-file"><a href="#file-n17797487668853cu8" data-file-id="n17797487668853cu8">藤原成通</a></li><li class="sc-tree-file"><a href="#file-n1779748903654cptp" data-file-id="n1779748903654cptp">賀茂忠行</a></li><li class="sc-tree-file"><a href="#file-n1779748953629q3d6" data-file-id="n1779748953629q3d6">「夏安林」「春楊花」「秋園」</a></li><li class="sc-tree-file"><a href="#file-n17797491375193wqz" data-file-id="n17797491375193wqz">節花</a></li></ul></li></ul></nav>
+    </div>
+  </aside>
+
+  <div id="main-wrapper">
+    <div id="progress-bar"></div>
+
+    <div id="scenario-header">
+      <h1 class="scenario-title">平安蹴鞠</h1>
+      <div class="scenario-meta">
+        <span class="meta-pagetype meta-pagetype-gm">🔒 GM用</span>
+        <span class="meta-system">シノビガミ</span>
+        <span class="meta-item"><span class="meta-label">PL</span>１人</span>
+        <span class="meta-item"><span class="meta-label">Time</span>４～５時間</span>
+        <span class="meta-item"><span class="meta-label">Reg</span>現代編</span>
+        <span class="meta-item"><span class="meta-label">Type</span>協力型</span>
+      </div>
+      
+    </div>
+
+    <main id="c">
+<section class="sc-page" id="file-n1779710345847gyt5" data-file-id="n1779710345847gyt5">
+<h1 id="heading-n1779750261113nubp">GM向け概要</h1><h2 id="heading-n1779750261113x7u0">■シナリオ背景&nbsp;</h2><p>　平安時代後期のPC①がタイムスリップした年代から数十年ほど前、百鬼夜行を率いる隠忍の姫がいた。名を殺姫(あやめひめ)という。百鬼夜行はたびたび都に訪れては食料や酒を強奪し人間を襲っておった。<br>　ある時、殺姫は人間の若者(蹴鞠の名人でPC①に似た特徴を持つ)に恋をしてしまい、その恋心を利用して陰陽師たちによって討ち滅ぼされた。姫と若者は森の奥深くで逢瀬の約束を交わしていたが、そこに若者は現れず、張り巡らされた陰陽師の方陣によって殺姫は弱体化、滅ぼされたのじゃった。<br>　その殺姫の生まれ変わりが菖蒲姫(あやめひめ)じゃ。菖蒲姫には隠忍であった頃の記憶は無く、力も眠っている状態じゃ。陰陽寮の陰陽師たちは菖蒲姫の正体に気づいているが、この状況をうまくコントロールできれば殺姫の復活を阻止できるため、定期的に菖蒲姫の記憶を封印する呪術として蹴鞠の大会「紫雲雅鞠会」を執り行っていたのじゃ。陰陽師たちは数十年前の出来事を「百鬼夜行絵巻物」として記録し、後の世に伝えようとしておった。<br>　一方、残された百鬼夜行の隠忍たちは同胞の敵討ちと殺姫を裏切り傷つけた人間への報復を計画しておった。隠忍たちは殺姫が菖蒲姫という人間に生まれ変わっていることに気づく。殺姫の記憶を呼び起こすため、過去の状況を再現することにする。とはいえ反魂は難しかったので呪術で未来から姫が恋した人間の若者に容姿や魂が近い者を呼び寄せた。これがPC①なのじゃ。そうしてPC①は時空の穴に落ち、平安時代へとタイムスリップしたのじゃった。<br>　平安時代にタイムスリップしたPC①は、百鬼夜行の現在の主である「節花」の策略によって菖蒲姫の住む屋敷に落下し、菖蒲姫に一目惚れをされるんじゃ。菖蒲姫にかつての記憶が無いとはいえ、惚れた男に似ておったからじゃ。さらに百鬼夜行の小妖怪を退けたPC①の噂は都を席巻し、「紫雲雅鞠会（しうんがきゅうかい）」にて蹴鞠を披露する実力者を探しておった「藤原成通(ふじわらのなりみち)」の目に留まることになる。そうしてPC①は紫雲雅鞠会に参加することになるんじゃな。<br>　紫雲雅鞠会に参加させられることになったPC①の前に、自らを蹴鞠の精霊と称する謎の精霊「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」が現れる。彼らの話によると、もうすぐ都で開催される「紫雲雅鞠会」が成功すれば帰る方法を探す協力をするという。実はこの精霊たちの正体は殺姫を慕う節花の部下の隠忍たちで、PC①を利用して姫を取り戻す策略の一環だったのじゃ。かつて殺姫が惚れた男に似た容姿と蹴鞠の腕前、そしてその男に約束を裏切られるという状況を作り出して殺姫としての記憶を取り戻させようとしておるんじゃの。<br>　果たしてPC①は菖蒲姫との約束を守ることができるのか。そして無事に元の時代に戻ることはできるのか。いったいどうなるのかの～<br></p><p><span style="color: var(--text);"><br></span></p><h2 id="heading-n17797502611134t9q"><span style="color: var(--text);">■使用するサプリ</span></h2><p><span style="color: var(--text);">・正忍記(掲載されている忍法が必須)</span></p><p><span style="color: var(--text);">・流派ブック比良坂機関(惟神がギミックに必須)</span></p><p>・流派ブック隠忍の血統(奥義の仕掛けを使用、他のもので代用可<span style="color: var(--text);">)</span></p><p><span style="color: var(--text);">・平安リプレイうたものがたり(平安忍法や「歌を詠む」のルールを使用)</span></p><p><br></p><h2 id="heading-n17797502611134r6l">&nbsp;■適正PC</h2>　新規・継続は問わないが、サッカー経験者か足技の達人など、蹴鞠をやる(させられる)自然な理由があるPCが適切。さらに、姫に惚れられるという恋愛要素を含むため、男性キャラクターまたは男性の容姿に見えるキャラクターだと自然。年齢は18～28歳程度を想定。また、一部のハンドアウトを書き換える都合上、できれば特徴的な容姿だとよい(例：太眉、黒以外の髪色、黒以外の瞳の色など)。<p><br></p><h2 id="heading-n17797502611137cxa">■死亡(ロスト)について</h2>　PCが死亡またはそれに準ずる状態になることは無い。特定のパターン(<a class="jump-link" data-target-file="n1779747871114sfkf" href="#file-n1779747871114sfkf">パターン④</a>)で敗北した場合にPCの死亡演出があるが夢オチとなる。<br>　NPCは死亡する場合がある。クライマックスフェイズで倒したNPCは全て殺害可能。また、PCが殺害を選ばなかった場合でも演出で死亡することがある。<br>　PCの死亡が無いことやNPCの死亡があることは、必要ならば事前にPLに伝えても差し支えない。<p><br></p><h2 id="heading-n1779750261113ofta">■シナリオの難易度</h2><h3 id="heading-n1779750261113wcui">○メインフェイズ</h3>　難易度はかなり高め。複雑なギミックがあり、メインフェイズでの行動や選択、結果によってクライマックスフェイズのパターンが変化する。シナリオ全体の【秘密】の数が多いため、２回程度は情報判定に失敗する可能性を予め組み込んで８サイクルとしている。また、「都シーン表」の効果やNPCからの感情修正を活かしてある程度情報判定を安定して成功させることを意図している。<p><br></p><h3 id="heading-n177975026111320oe">○クライマックスフェイズ</h3>　難易度は低め。殆どのパターンで強力な味方NPCが加勢するため、戦闘自体は６ラウンド前後(１時間～１時間半程度)で勝利できることを想定している。特定のパターン(<a class="jump-link" data-target-file="n1779747871114sfkf" href="#file-n1779747871114sfkf">パターン④</a>)のみ非常に高難易度の戦闘になるが、判定の結果によらないことや選びにくい選択肢であるためこのパターンになる可能性はかなり低いと思われる。<p><br></p><h2 id="heading-n1779750261113eq9k">■バランス調整について</h2>　６割程度の確率でクライマックスフェイズの<a class="jump-link" data-target-file="n1779747869236x7s3" href="#file-n1779747869236x7s3">パターン③</a>(グッドエンド相当)へ、３割程度の確率で<a class="jump-link" data-target-file="n17797478671391qvi" href="#file-n17797478671391qvi">パターン②</a>(ノーマルエンド相当)へ、それ以外は<a class="jump-link" data-target-file="n17797167079247qsb" href="#file-n17797167079247qsb">パターン①</a>(ノーマルエンド相当)か<a class="jump-link" data-target-file="n1779747871114sfkf" href="#file-n1779747871114sfkf">パターン④</a>(ほぼバッドエンド相当)になることを想定している。<p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);"><br></span></p><p><br></p><p><br></p><p></p><div><br></div><div><br></div><div><br></div><div><br></div><p></p>
+</section>
+<section class="sc-page" id="file-n1779710345847e39s" data-file-id="n1779710345847e39s">
+<h1 id="heading-n1779796436334y95a">PC①</h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><font color="#000000">PC①</font></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　あなたは忍者である。突然謎の現象に巻き込まれ、気が付くと平安時代にタイムスリップしていた。そこで何故か、三日後に執り行われる一年に一度の蹴鞠会「紫雲雅鞠会（しうんがきゅうかい）」で蹴鞠を披露することになってしまった。<br>　あなたの【使命】は「紫雲雅鞠会を成功させる」ことである。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><font color="#000000">PC①</font></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　あなたの【本当の使命】は「元の世界に無事に帰還する」ことである。<br></div></div><p>&nbsp;</p><p>※「あなたは忍者である。」という一文はPCに合わせて適宜盛ったり変更したりしてください。辻褄が合えばどのような変更でも構いませんが、PCにサッカー経験者や足技の達人などの設定があれば違和感なく蹴鞠をさせられる理由になるでしょう。<br></p>
+</section>
+<section class="sc-page" id="file-n17797103458474w47" data-file-id="n17797103458474w47">
+<h1 id="heading-n1779749366066ttdf"><span style="color:rgb(34, 34, 34)">菖蒲姫(あやめひめ)</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">菖蒲姫(あやめひめ)</span><br></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　あなたは名だたる貴族「物部(もののべ)家」の姫君である。艶やかな濡烏色の髪と世にも珍しい菖蒲色の瞳を持ち、その神秘的な美貌は多くの貴族の噂の的になっている。蹴鞠の観覧のため、三日後の「紫雲雅鞠会」に訪れる予定だ。<div>　【使命】は「静かに平穏に暮らす」ことである。<br></div></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">菖蒲姫(あやめひめ)</span><br></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　実はあなたはPC①を一目見たときから恋に落ちてしまった。あなたはPC①に「愛情」の【感情】を獲得している。PCからの指示があれば感情修正を行う。あなたは紫雲雅鞠会が終了した後にPC①に想いを伝えようと思っている。<div>　【本当の使命】は「PC①から歌をもらう」ことだ(PC①はセッション上で歌を詠むことができるタイミングがあるため、感情判定を行う必要はない)。<br> 　この【秘密】は一度獲得すると、以降このハンドアウトの【秘密】に対する情報判定にマイナス３の修正が付く。<br> 　あなたは「姫」(忍秘p134)のデータを持つが、プライズとしては扱わないものとする。<br> 　この【秘密】をPC①が獲得すると、マスターシーン「<a class="jump-link" data-target-file="n1779714999991ey24" href="#file-n1779714999991ey24">秋の夜</a>」が発生する。<br></div></div></div><p></p><p>※<span style="color: var(--text);">重要</span></p>この【秘密】が公開されたら「<a class="jump-link" data-target-file="n1779748534566kyyy" href="#file-n1779748534566kyyy">菖蒲姫</a>」のキャラクターシートをPCに公開してください。<br><div><strong><br></strong></div><div>※補足１</div><div><span style="color:rgb(34, 34, 34)">クライマックスフェイズの分岐に関わる重要な【秘密】。一度獲得してもタイミングや戦闘結果次第では失ってしまう。この場合は次回以降の情報判定にマイナス３の修正が付く。</span><strong><br></strong></div><div><strong><br></strong></div><div>※補足２</div><div><span style="color:rgb(34, 34, 34)">「PCからの指示があれば感情修正を行う。」という一文はこの【秘密】を失った状態では感情修正を依頼できないということ。菖蒲姫と藤原成通の感情修正で二度目の【秘密】獲得が簡単になりすぎることを防ぐため。</span><strong><br></strong></div><div><strong><br></strong></div><div><strong><br></strong></div>
+</section>
+<section class="sc-page" id="file-n17797117431388f7j" data-file-id="n17797117431388f7j">
+<h1 id="heading-n17797504566490gwm"><span style="color:rgb(34, 34, 34)">藤原成通(ふじわらのなりみち)</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">藤原成通(ふじわらのなりみち)</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　あなたは「蹴聖」と呼ばれる名足(蹴鞠の名人のこと)だ。眉目秀麗で宮中での人望も厚い。紫雲雅鞠会で蹴鞠を披露する予定だった貴族たちが次々と謎の病で倒れてしまったため、急遽PC①に協力を依頼した。<br>　【使命】は「紫雲雅鞠会を成功させる」ことである。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">藤原成通(ふじわらのなりみち)</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　実はあなたは貴族でありながら忍者としての鍛錬を積んでいる。<br> あなたは陰陽師である「賀茂忠行(かものただゆき)」から紫雲雅鞠会は都の平和を維持するための重要な儀式であると伝えられている。<br> 　あなたはPC①の実力を高く評価しており、PC①に「友情」の【感情】を獲得している。PCからの指示があれば感情修正を行う。PC①ならば、紫雲雅鞠会を成功させ、近頃都で問題になっている百鬼夜行も解決するだろうと期待している。<br> 【本当の使命】は「都の平和を守る」ことだ。<br> 　<br>　PC①がこの【秘密】を獲得すると、ハンドアウト「<a class="jump-link" data-target-file="n1779711745390ffqe" href="#file-n1779711745390ffqe">賀茂忠行</a>」が公開される。<br></div></div><p></p><p>※重要</p><p><span style="color: rgb(34, 34, 34);">　</span>この【秘密】が公開になったら「<a class="jump-link" data-target-file="n17797487668853cu8" href="#file-n17797487668853cu8">藤原成通</a>」のキャラクターシートを公開してください。<br></p><p><br></p><p>※補足</p><p><span style="color:rgb(34, 34, 34)">　ほとんどのパターンのクライマックスフェイズでPC①の味方として登場するNPC。感情修正および【蹴速】の追加効果を活かすためにPC①への【感情】を獲得している。藤原成通に紫雲雅鞠会のことを伝えた賀茂忠行は本物。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1779711745390ffqe" data-file-id="n1779711745390ffqe">
+<h1 id="heading-n1779750465073v00u"><span style="color:rgb(34, 34, 34)">賀茂忠行(かものただゆき)</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">賀茂忠行(かものただゆき)</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　あなたは陰陽寮を統括する陰陽師である。紫雲雅鞠会では蹴鞠が披露された後に例年通り加持祈祷を行う予定だ。<br> 【使命】は「百鬼夜行を討伐し、都の平和を守る」ことである。<br>　このハンドアウトに【居所】は無い。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">賀茂忠行(かものただゆき)</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　実はあなたは本物の賀茂忠行ではない。何者かが化けた偽物だ。本物の賀茂忠行は既に死亡している。<br> 【本当の使命】は不明。<br> 　あなたはプライズ「百鬼夜行絵巻物」を所持している。<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>のハンドアウトが公開される。<br> 　賀茂忠行に化けている者のハンドアウトの【居所】は情報判定で獲得することが出来る。その人物がプライズ「百鬼夜行絵巻物」を所持しているものとして扱う。<br> 　PC①がこの【秘密】を獲得すると、マスターシーン「<a class="jump-link" data-target-file="n1779714996745qg99" href="#file-n1779714996745qg99">陰陽師の正体</a>」が発生する。<br></div></div><p></p>
+</section>
+<section class="sc-page" id="file-n1779711747116yigx" data-file-id="n1779711747116yigx">
+<h1 id="heading-n17797504983142p5x"><span style="color:rgb(34, 34, 34)">プライズ「百鬼夜行絵巻物」</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「百鬼夜行絵巻物」</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　百鬼夜行を討伐する陰陽師たちが描かれた絵巻物。百鬼夜行の中心に描かれているのは、長い白髪と捻じれた角を持つ、巨大な金棒を手にした女の姿の妖怪だ。<br>　このハンドアウトの【秘密】は、このプライズの所持者であればいつでも見ることができる。このハンドアウトを情報判定の目標に選ぶことはできない。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「百鬼夜行絵巻物」</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　実は紫雲雅鞠会は数十年前に陰陽寮の総力をかけて討伐した大妖怪「殺姫」の封印のための儀式である。強い恨みの感情を抱いて死んだ殺姫はいずれ必ず蘇るだろうと恐れた陰陽寮の陰陽師たちはこの絵巻物を残していた。<br>　絵巻物には「殺姫」と蹴鞠をする「（PC①の特徴）」の物語が記されている。殺姫は太眉の青年と都近くの山奥で逢瀬の約束をしていたが、そこに青年は現れず、陰陽師の軍勢だけが現れた。そうして陰陽寮は殺姫を討伐したものの、その魂を取り逃がしてしまった。そして、その魂が再び都を混乱に陥れぬように紫雲雅鞠会を執り行うようになったといった内容の物語だ。<br></div></div><p></p><p>※補足１</p><p>&nbsp;「 (PC①の特徴)&nbsp;」という箇所はPCの外見的特徴に合わせて適宜変更してください。外見的特徴が一致していたため、殺姫の生まれ変わりである菖蒲姫はPC①に一目惚れします。この設定の都合上、わかりやすい外見的特徴があるPCだとよいでしょう。なお、PC①と青年は似ている点が多いというだけで必ずしも前世や先祖ではありません。<br></p><p><br></p><p>※補足２</p><p><span style="color:rgb(34, 34, 34)">　シナリオ上で青年が約束を守らなかった理由は明らかになりませんが、青年が殺姫と通じていることを知った陰陽師たちによって妨害されて間に合わなかった、もしくは妨害に抵抗して殺害されたというものを想定しています。この理由は厳密には設定していないのでPCに合わせて自由に変更してください。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1779711748944885u" data-file-id="n1779711748944885u">
+<h1 id="heading-n1779796448172om9l"><span style="color:rgb(34, 34, 34)">紫雲雅鞠会(しうんがきゅうかい)</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">紫雲雅鞠会(しうんがきゅうかい)</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　三日後の二百十日（にひゃくとおか）の晡時(ほじ)に執り行われる一年に一度の蹴鞠会。名足たちが集い、それを見物しに都中の貴族たちが訪れる。三日後とはクライマックスフェイズ開始時である。<br>このハンドアウトに【秘密】は無い。<div><br>※二百十日：立春から数えて210日目の日。九月一日ごろに当たる。この前後には台風が多いとか必ず暴風雨があるとされている。<br>※晡時：十二支の申(さる)に対応。15時～17時のこと。<br></div></div></div><p><br></p><p>※補足１</p><p><span style="color:rgb(34, 34, 34)">　二百十日なのは嵐の前の静けさということ。晡時なのは「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」が猿のような尾を持つことから。</span><br></p><p><span style="color:rgb(34, 34, 34)"><br></span></p><p><font color="#222222">※補足２</font></p><p><span style="color:rgb(34, 34, 34)">　三日後と書いてはいるが、ここは厳密でなくてもいい。もしPLに質問された場合、マスターシーンの演出の都合上一日が終わることもあるので、三日という日にちはあまり重要ではなく、メインフェイズの全てのサイクルが終了した時が紫雲雅鞠会が開催される日というように説明してください。</span><font color="#222222"><br></font></p>
+</section>
+<section class="sc-page" id="file-n1779711750448kp6c" data-file-id="n1779711750448kp6c">
+<h1 id="heading-n177979646037646ro"><span style="color:rgb(34, 34, 34)">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">　PC①の前に現れた蹴鞠の精霊。猿のような尻尾と小さな羽をもつ。蹴鞠の才能を見込んだものの前に現れるのだという。満足のいく蹴鞠を鑑賞することができればPC①に協力するとのことだ。</span><br><span style="color:rgb(34, 34, 34)">　【使命】は「紫雲雅鞠会で最高の蹴鞠を鑑賞する」ことである。</span></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　実はあなたたちの正体は百鬼夜行に所属する妖怪だ。都で謎の病が流行しているのはあなたたちの仕業である。<br>　【本当の使命】は「都を混乱に陥れる」ことだ。<br>　また、あなたたちはタイムスリップした者が元の時代に戻る方法を知っている。PC①が平安時代にタイムスリップしたのは百鬼夜行のとある妖怪による大妖術が原因だ。時間遡行の妖術は対象を一時的に術者のいる時代に送り留める術であるため、術者を倒す、もしくは術者が術を解くことで元の時代に帰ることが出来る。<br></div></div><p></p><p>※補足</p><p><span style="color:rgb(34, 34, 34)">百鬼夜行のとある妖怪とは「節花」のこと。夏安林たちは「節花」の部下に当たる。</span><br></p>
+</section>
+<section class="sc-page" id="file-n177971175188228sh" data-file-id="n177971175188228sh">
+<h1 id="heading-n1779750536323feum"><span style="color:rgb(34, 34, 34)">百鬼夜行</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">百鬼夜行</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">　近頃都に現れるようになった無数の妖怪たち。食料や酒を強奪し、無差別に人間を襲っている。</span></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">百鬼夜行</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　百鬼夜行は数十年ほど前にも都を襲っていたが、陰陽師たちによって百鬼夜行の主を含めて大部分が討伐されて以来姿を現すことはなかった。しかし、最近になって再び都を襲うようになった。<br>　百鬼夜行は有象無象の妖怪たちで構成されているが、三つの尾と獣の耳を持つ男の姿をした妖怪「節花(せつか)」が指揮しているようだ。<br>　PC①がこの【秘密】を獲得すると、ハンドアウト「<a class="jump-link" data-target-file="n1779714538326wnld" href="#file-n1779714538326wnld">節花</a>」が公開される。<br></div></div><p></p><p>※補足</p><p><span style="color:rgb(34, 34, 34)">　数十年前とは、</span><a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a><span style="color:rgb(34, 34, 34)">にもあるように「殺姫」が討伐された時期。姫と多くの同胞を失った生き残りの百鬼夜行の妖怪たちは姿を消していた。しかし、「節花」が新たに指揮を執るようになり、「殺姫」復活のために動き出した。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1779714538326wnld" data-file-id="n1779714538326wnld">
+<h1 id="heading-n1779750540381c7uu"><span style="color:rgb(34, 34, 34)">節花(せつか)</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">節花(せつか)</span><br></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp;　男の姿をした妖怪。三つの尾と獣の耳を持つ。<br>【使命】は「都を支配する」ことである。<br>　ドラマシーンには登場しないが、情報判定の目標に選ぶことはできる。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">節花(せつか)</span><br></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">&nbsp; 　あなたは変化の術を得意とする三尾の妖狐だ。人間や他の妖怪に化けて人々を騙す狡猾さを持つ。あなたは時間遡行の大妖術を使った代償に、本来の力の大部分を失っている。<br>　あなたは数十年前に陰陽師に討伐された百鬼夜行の主「殺姫」を慕っている。あなたは卑劣な手段で殺姫を討伐した人間に深い憤りを感じていたが、殺姫の魂は菖蒲姫として生まれ変わったことに気が付いた。現在菖蒲姫はかつての記憶を失っているようであるが、殺姫が討伐された際の状況を再現できればかつての記憶を取り戻し、再び百鬼夜行の姫として君臨するだろう。<br>　【本当の使命】は「殺姫を復活させる」ことである。<br></div></div><p></p><p>※補足１</p><p><span style="color:rgb(34, 34, 34)">　「節花」の【秘密】の「人間や他の妖怪に化けて人々を騙す狡猾さを持つ。」という一文は賀茂忠行を指す。「節花」の【居所】があれば戦闘を仕掛けることができる。また、「節花」もプライズ「百鬼夜行絵巻物」を所持しているものとして扱う。</span><br></p><p><span style="color:rgb(34, 34, 34)"><br></span></p><p><span style="color:rgb(34, 34, 34)">※補足２</span></p><p><span style="color:rgb(34, 34, 34)">　「本来の力の大部分を失っている」というのは上忍級のスペックのキャラクターデータではないということ。階級制限のある忍法を所持しておらず、忍法数と特技数が本来の上忍よりも少ない。</span><span style="color:rgb(34, 34, 34)"><br></span></p>
+</section>
+<section class="sc-page" id="file-n1779710345847fp6g" data-file-id="n1779710345847fp6g">
+<h1>タイムスリップ</h1><p><span style="color:rgb(34, 34, 34)">　いつもの日常を送るPC①。だが、突然足元に黒い闇が広がり、そのまま深い闇に落下してしまう。どこまでも闇の中を落下していく感覚だけがあり、時間の感覚が失われていく。どれほどの時間が経ったのだろうか。突然、眩しい光が遠くに見え、落下するにつれてどんどん光が強くなった。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1779710345847gyll" data-file-id="n1779710345847gyll">
+<h1><span style="color:rgb(34, 34, 34)">平安時代へ</span><br></h1><p>&nbsp;　ひと際強くなる眩しい光に思わず目を閉じると、PC①は空中へと投げ出されていた。そのまま重力に従って落下すると、水面に激しく叩きつけられた。どうやら水に落下したようだ。<br>　PC①が水面から上がろうとすると、自分が池に落下したことに気が付く。また、周囲から人々の怒号や困惑、恐怖が混ざった騒めきが聴こえてくる。池から上がろうとすると、日本史の授業で見たような記憶がある着物と鎧を着て刀を持った十数人の男が池を取り囲んでいる。<br>　PC①が何かしらの手段でこの場をおさめるか切り抜けようとしていると、その場に物静かながら凛とした女性の声が響いた。「お待ちください。その方は突然空に空いた穴から降ってまいりました。このようなお方は決して刺客などではないでしょう。まずはお話を伺ってみませんか？それに、濡れていては風邪をひいてしまいます。」女性は長い黒髪を持ち、高貴そうな着物(十二単)を纏っている。周囲の人物の様子や女性の服装や振る舞いから、女性は明らかに身分が高いということがわかるでしょう。女性の指示によってPC①は池から救助される。<br></p><p><br></p><p><br></p><p></p>
+</section>
+<section class="sc-page" id="file-n1779714704680lqsz" data-file-id="n1779714704680lqsz">
+<h1 id="heading-n1779750596153nv9r"><font color="#222222">菖蒲姫</font></h1><p>&nbsp;　屋敷に通されたPC①は簡易的な衣服などを借りることができます。その後、監視はついているものの屋敷奥の部屋へと案内されます。そこには先ほどの女性がおり、自らを「菖蒲姫(あやめひめ)」と名乗りました。ここでPC①は自己紹介をしてください。<br>　その後、PC①が大変な状況にあることを慮り、菖蒲姫はpc①にしばらくの衣食住の提供を申し出ます。<br>　<strong>ここで、「</strong><a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a><strong>」のハンドアウトを公開してください。</strong><br></p><p><br></p><p></p>
+</section>
+<section class="sc-page" id="file-n1779710345847nobw" data-file-id="n1779710345847nobw">
+<h1 id="heading-n1779750656659y8y9">メインフェイズについて</h1><p>​<span style="color: var(--text);">　メインフェイズには以下のマスターシーンが発生する可能性があります。シーン表は「</span><a class="jump-link" data-target="heading-n1779750656659lyd5" href="#heading-n1779750656659lyd5">都シーン表</a><span style="color: var(--text);">」を使用してください。また、メインフェイズ開始時に追加ルール「歌を詠む」について以下の説明をしてください。</span></p><p><span style="color: var(--text);"><br></span></p><h2 id="heading-n1779750656659lyd5"><span style="color: var(--text);">〇都シーン表</span></h2><p>&nbsp;　メインフェイズのドラマシーンには以下のシーン表の使用を推奨します。<br>この表はココフォリアの/roll-tableコマンドに対応しています。</p><p><br></p><div class="scenario-box color-cyan" data-box-id="n1779796337443e3x9" data-box-variant="normal" data-box-bgcolor="white"><div class="box-header"><div class="box-title">都シーン表</div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">/roll-table<br>都シーン表<br>2d6<br>2:陰陽寮の前。式神の気配がかすかに漂う。誰かが占いの結果を読み上げる声が、門の奥から響いてくる。シーンプレイヤーはランダムに選んだ妖術分野の特技で判定を行う。成功すると、好きな忍具を１つ獲得する。失敗すると集団戦ダメージ１点をうける。<br>3:街外れの寺。鐘の音が静かに響き渡る中、僧侶が経を唱えている。境内に佇むあなたを、猫がじっと見つめている。このシーンでは主要な行動の他に回復判定を１回行うことができる。<br>4:物部邸の納戸。古びた調度や衣が積まれた中、ひとつだけ封印された文箱が置かれている。それは開けるべきものなのか？このシーンでは情報判定にプラス１の修正が付く。<br>5:貴族の屋敷前。牛車がゆっくりと通り過ぎ、香の香りが漂う。<br>6:薄曇りの空の下、都の大通りの人波で視線を感じる。振り向くと見覚えのある顔がちらりと見えた気がする。いや、そんなはずは…？<br>7:賀茂川のほとり。水面に花が浮かび、子供たちが遊んでいる。遠くから笛の音が風に乗って聞こえてくる。<br>8:白拍子の稽古場。舞の音にあわせて扇が舞う。忍びの目で見れば、その動きには戦いの型が潜んでいる。<br>9:鞠庭。四隅には松・桜・柳・楓など四季木が植えられている。<br>10:図書寮の書庫。古びた巻物が並ぶ静謐な空間に、風が巻物をめくる音が響く。あなたはふと、一冊の巻物に手を伸ばした。このシーンでは情報判定にプラス１の修正が付く。<br>11:朝の市場。魚や野菜の売り声が飛び交い、活気にあふれている。シーンプレイヤーは≪兵糧術≫か≪対人術≫か≪人脈≫で判定することができる。成功すると、好きな忍具を１つ獲得する。<br>12:夜の物部邸。庭園に灯火が揺れている。月を仰ぐ誰かの影が揺らめく。シーンプレイヤーはこのシーンでは主要な行動の他に情報判定を１回行うことができる。</div></div><p><br></p><h2 id="heading-n17797506566590iwx">○歌を詠む</h2>　平安リプレイp247記載。<br>
+</section>
+<section class="sc-page" id="file-n1779710345847vj2r" data-file-id="n1779710345847vj2r">
+<h1 id="heading-n1776659762221kv09">襲撃<br></h1><p>　１サイクル１シーン目に発生。PC①が登場します。</p><p><br>　タイムスリップしたその日の夜、PC①が与えられた屋敷内の部屋で眠りに着こうとすると、遠くから大きな破壊音や焦ったような怒声が聞こえてくる。音の方向に向かうと、屋敷の門の外側に無数の妖怪がいた。屋敷の見張り番曰く、妖怪たちは屋敷の結界を破って侵入しようとしており、結界が破られるのは時間の問題だということ。そこで、PC①が撃退することになる。</p><p><br></p><h2 id="heading-n177979639660264oh">○妖怪の撃退</h2>　妖怪は全て低級妖魔相当であり結界内という安全圏からの攻撃なので、戦闘無しで特技の判定で倒すことができる。PCが好きな特技を選び、判定する。<br><h3 id="heading-n17797963966022pge">・成功</h3>　見事な攻撃を的確に命中させ、妖怪を追い払うことが出来る。<br><h3 id="heading-n1779796396602yckh">・失敗</h3>　妖怪の攻撃に当たってしまい射撃戦ダメージを１点受けるが、妖怪を追い払うことが出来る。<br>　その後、妖怪を追い払ったPC①の腕前に感嘆や賞賛の声が次々に上がる。また、見張りの人間か菖蒲姫から、これが近頃都で起こっている百鬼夜行であることが告げられる。<p><br></p><p>　<strong>ここで、「</strong><a class="jump-link" data-target-file="n177971175188228sh" href="#file-n177971175188228sh">百鬼夜行</a><strong>」のハンドアウトを公開してください。</strong><br></p><p><br></p>
+</section>
+<section class="sc-page" id="file-n1779710345847r999" data-file-id="n1779710345847r999">
+<h1 id="heading-n1779796434250o7tk">名足の依頼</h1><p>&nbsp;　１サイクル２シーン目に発生。PC①が登場する。　<br>　翌朝、PC①が百鬼夜行を追い払ったという噂を聞きつけた「藤原成通(ふじわらのなりみち)」がPC①が滞在中の物部邸を訪ねてくる。藤原成通はPC①を一目見て蹴鞠の才能を見抜く。そして、PC①に三日後に執り行われる紫雲雅鞠会への参加を要請する。<br>　<strong>ここで、「</strong><a class="jump-link" data-target-file="n1779710345847e39s" href="#file-n1779710345847e39s">PC①</a><strong>」と「</strong><a class="jump-link" data-target-file="n17797117431388f7j" href="#file-n17797117431388f7j">藤原成通</a><strong>」と「</strong><a class="jump-link" data-target-file="n1779711748944885u" href="#file-n1779711748944885u">紫雲雅鞠会</a><strong>」のハンドアウトを公開してください。</strong><br></p><div><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1779714998463oh9q" data-file-id="n1779714998463oh9q">
+<h1 id="heading-n1779796456828y252"><span style="color:rgb(34, 34, 34)">蹴鞠の精霊</span><br></h1><p>&nbsp;　１サイクル３シーン目に発生。PC①が登場。</p><p><br>　屋敷の部屋で一人になったPC①の前に、突然小さな羽をもった妖精のような生物が３匹現れる。彼らは自らを蹴鞠の精霊だと言い、それぞれ名前を「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」と名乗る。<br>　<strong>ここで</strong><a class="jump-link" data-target-file="n1779711750448kp6c" href="#file-n1779711750448kp6c">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a><strong>のハンドアウトを公開してください。</strong></p><p><b><br></b>　彼らはPC①の蹴鞠の才能を見込んで現れたのだという。彼らは紫雲雅鞠会で最高の蹴鞠を披露してくれればPC①の手伝い(元の時代に帰る方法を探すなど)をすると申し出る。そこで、紫雲雅鞠会のために蹴鞠の練習を提案してくる。</p><p><br></p><h2 id="heading-n1779796456828wuhx">○蹴鞠の練習</h2>　PCの好きな特技で判定を行う。<br><h3 id="heading-n1779796456828r94k">・成功</h3>　判定に成功すると、平安忍法「蹴速」(平安リプレイp246)と≪身体操術≫をこのセッション中に限り特例修得する。<br><h3 id="heading-n1779796456828hlac">・失敗</h3>　判定に失敗すると、ランダムに選んだ変調を一つ受ける。これを判定が成功するまで繰り返す。<br>　精霊たちはPC①があっという間に蹴鞠の技を修得した様子を見て大いに喜び、紫雲雅鞠会は必ず成功するとPC①を激励する。<p><br></p><p>※補足１</p><p><span style="color:rgb(34, 34, 34)">　夏安林たちがPC①に蹴鞠をさせようとしているのは、菖蒲姫のかつての記憶と紐づかせてより菖蒲姫のPC①への恋心を強くするため。</span><br></p><div><span><br></span></div><div><span>※補足２</span></div><div><span style="color:rgb(34, 34, 34)">　夏安林たちが屋敷の結界の中に入ることができるのは、結界がかなり低級の妖怪の侵入を防ぐ程度の効果しかないから。低級の中でもそれなりの力を持つ夏安林たちは結界を突破できるし、節花も突破できる。</span><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1779714999991ey24" data-file-id="n1779714999991ey24">
+<h1 id="heading-n1779749373757cf8r">秋の夜</h1><p>​<span style="color: var(--text);">　PC①が「</span><a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a><span style="color: var(--text);">」の【秘密】を獲得した直後にマスターシーンとして発生。PC①と菖蒲姫が登場する。</span></p><p><span style="color: var(--text);"><br></span></p>　夜に屋敷を歩いていたPC①は月を眺めている菖蒲姫に出会う。そこで、菖蒲姫は意を決したように紫雲雅鞠会が終わった後（黄昏時くらい）に大切な話があるので二人で話がしたい旨をPC①に伝える。<br>　ここで快諾した場合は菖蒲姫は嬉しそうに顔をほころばせる。断った場合は悲しそうな表情になるが、必死に食い下がる。シナリオの都合上、必ず約束を取り付けるまで粘ってください。<br><div><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1779714996745qg99" data-file-id="n1779714996745qg99">
+<h1 id="heading-n1779750509435ghbf"><span style="color:rgb(34, 34, 34)">陰陽師の正体</span><br></h1><p>&nbsp;　PC①が「<a class="jump-link" data-target-file="n1779711745390ffqe" href="#file-n1779711745390ffqe">賀茂忠行</a>」の【秘密】を獲得した際に発生。PC①と賀茂忠行が登場する。<br><br><strong>　発生時点でPC①が「</strong><a class="jump-link" data-target-file="n1779714538326wnld" href="#file-n1779714538326wnld">節花</a><strong>」や「</strong><a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a><strong>」の【秘密】を獲得しているかで分岐することに注意してください。</strong></p><p><b><br></b></p><h2 id="heading-n177975050943531m1">○PC①が「節花」の【秘密】を獲得していない、かつ、「菖蒲姫」の【秘密】を獲得していない</h2>　PC①が賀茂忠行が偽物であることに気が付くと、偽の賀茂忠行は不気味な笑みを浮かべながら姿をくらまそうとする。PC①は望むなら戦闘を仕掛けることが出来ます。PC①が戦闘を仕掛ける場合、偽の賀茂忠行は背景【整備班】で【魔界転生】を指定します。偽の賀茂忠行の正体は節花ですが、この時点ではPC①には判別できません。<div><br>　この戦闘では次のルールが適用されることを事前にPLに説明してください。<br><ul><li>この戦闘シーンはPC①と偽の賀茂忠行のみが登場する。</li><li>２ラウンド以内に決着がつかなければ勝者無しとなる。</li><li>PC①が勝利した場合、戦果として<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>を獲得できる。</li><li>PC①が敗北した場合、偽の賀茂忠行は戦果としてPC①に「妬み」の【感情】を獲得する。</li></ul><div><br></div><span style="color:transparent"></span>　以下はGM向けの情報です。<br><span style="color:transparent"></span>偽の賀茂忠行のデータは「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」のものを使用。【生命力】や所持している忍具や【情報】などは共通として扱う。<br><span style="color:transparent"></span>逃げと防御に徹したプロットを心掛ける。【完全成功/続き/攻撃禁止】などを駆使して勝者無しを狙ってください。<p><br></p><h2 id="heading-n1779750509435z3kx">○PC①が「節花」の【秘密】を獲得していない、かつ、「菖蒲姫」の【秘密】を獲得している</h2>　PC①が賀茂忠行が偽物であることに気が付くと、偽の賀茂忠行は不気味な笑みを浮かべながらPC①に戦闘を仕掛けてくる。ここで偽の賀茂忠行は背景【整備班】で【魔界転生】を指定します。偽の賀茂忠行の正体は節花であるが、この時点ではPC①には判別できない。<br>　この戦闘では次のルールが適用されることを事前にPLに説明してください。</div><div><br><ul><li>この戦闘シーンはPC①と偽の賀茂忠行のみが登場する。</li><li>２ラウンド以内に決着がつかなければ勝者無しとなる。</li><li>PC①が勝利した場合、戦果として<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>を獲得できる。</li><li>PC①が敗北した場合、偽の賀茂忠行は戦果としてPC①に「妬み」の【感情】を獲得する。</li></ul><div><br></div><span style="color:transparent"></span>　以下はGM向けの情報です。<br><span style="color:transparent"></span>偽の賀茂忠行のデータは「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」のものを使用。【生命力】や所持している忍具や【情報】などは共通として扱う。<br><span style="color:transparent"></span>１ラウンド目は６をプロットして背景【整備班】を使用して【魔界転生】を成功させる。自分がシーンプレイヤーのドラマシーンになったら節花のみを登場させる。節花は【惟神・漂流神】で【酔夢】を特例修得して、【詭道】(正忍p139)で【猫撫】(正忍p139)を成功させ、PC①をシーンに強制的に登場させる。その後、【完全成功/続き/攻撃禁止】で【酔夢】を成功させてPC①の「菖蒲姫」の【秘密】を未獲得にさせる。万が一失敗したら神通丸を使って絶対に成功させてください。この【酔夢】が成功した場合、PC①は菖蒲姫との紫雲雅鞠会で会うという約束を忘れてしまいます。この場合、再び「菖蒲姫」の【秘密】を獲得すれば約束を思い出すことが出来ます。ただし、菖蒲姫の【秘密】に対する二度目の情報判定にはマイナス３の修正が付きます。<br><span style="color:transparent"></span>以上の処理の結果、PC①は節花の【完全成功/続き/攻撃禁止】の【情報】を獲得します。【惟神・漂流神】はPC①がシーンに登場する前に使用しているので、PC①はこの奥義の【情報】を獲得できません。<br><span style="color:transparent"></span>菖蒲姫の【秘密】をPC①から奪った以降の戦闘シーンでは逃げと防御に徹したプロットを心掛ける。【完全成功/続き/攻撃禁止】などを駆使して勝者無しを狙ってください。<br><span style="color:transparent"></span>ドラマシーンの主要な行動としては、【魔界転生】と【猫撫】により【生命力】が減少しているので回復判定を行ってください。<p><br></p><h2 id="heading-n1779750509435ppij">○PC①が「節花」の【秘密】を獲得している、かつ、「菖蒲姫」の【秘密】を獲得していない</h2>　PC①が賀茂忠行が偽物であり、その正体が節花であることに気が付くと偽の賀茂忠行は不気味な笑みを浮かべながら正体を現す。その正体は三つの尾を持つ男性の姿をした妖怪「節花」だった。節花はPC①が想定以上に真実に近づいてしまったことを予想外だと言い、我々の姫を復活させる計画に協力するのならば無事に現代に帰すと提案してくる。PC①が承諾すると、<a class="jump-link" data-target-file="n1779711750448kp6c" href="#file-n1779711750448kp6c">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a>の【秘密】を獲得でき、クライマックスフェイズの<a class="jump-link" data-target-file="n1779747871114sfkf" href="#file-n1779747871114sfkf">パターン④</a>まで飛ぶ。PC①が拒否すると、節花は姿をくらまそうとしますが、PC①は望むなら戦闘を仕掛けることが出来ます。PC①が戦闘を仕掛ける場合、偽の賀茂忠行は背景【整備班】で【魔界転生】を指定します。</div><div><br>この戦闘では次のルールが適用されることを事前にPLに説明してください。<br><ul><li>この戦闘シーンはPC①と偽の賀茂忠行のみが登場する。</li><li>２ラウンド以内に決着がつかなければ勝者無しとなる。</li><li>PC①が勝利した場合、戦果として<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>を獲得できる。</li><li>PC①が敗北した場合、偽の賀茂忠行は戦果としてPC①に「妬み」の【感情】を獲得する。</li></ul><div><br></div><span style="color:transparent"></span>　以下はGM向けの情報です。<br><span style="color:transparent"></span>偽の賀茂忠行のデータは「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」のものを使用。【生命力】や所持している忍具や【情報】などは共通として扱う。<br><span style="color:transparent"></span>逃げと防御に徹したプロットを心掛ける。【完全成功/続き/攻撃禁止】などを駆使して勝者無しを狙ってください。<p></p><p><br></p><h2 id="heading-n1779750509435gl4q">○PC①が「節花」の【秘密】を獲得している、かつ、「菖蒲姫」の【秘密】を獲得している</h2>　PC①が賀茂忠行が偽物であり、その正体が節花であることに気が付くと偽の賀茂忠行は不気味な笑みを浮かべながら正体を現す。その正体は三つの尾を持つ男性の姿をした妖怪「節花」だった。節花はPC①が想定以上に真実に近づいてしまったことを予想外だと言い、姫を復活させる計画に協力するのならば元の時代に帰すと提案してくる。PC①が承諾すると、<a class="jump-link" data-target-file="n1779711750448kp6c" href="#file-n1779711750448kp6c">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a>の【秘密】を獲得でき、クライマックスフェイズの<a class="jump-link" data-target-file="n1779747871114sfkf" href="#file-n1779747871114sfkf">パターン④</a>まで飛ぶ。PC①が拒否すると、節花はPC①に戦闘を仕掛けてきます。ここで偽の賀茂忠行は背景【整備班】で【魔界転生】を指定します。<p><br></p><p>※重要<br>　PC①の【本当の使命】上、節花の提案を飲むことは非常に合理的な選択ですがシナリオの都合上それほど想定していません。クライマックスフェイズのパターン④ではかなり厳しい戦闘を強いられることになります。もしPCが承諾しそうになっていたら菖蒲姫との約束のことを思い出させてなるべく引き留めてください。</p><p><br>この戦闘では次のルールが適用されることを事前にPLに説明してください。<br></p><ul><li>この戦闘シーンはPC①と節花(偽の賀茂忠行)のみが登場する。</li><li>２ラウンド以内に決着がつかなければ勝者無しとなる。</li><li>PC①が勝利した場合、戦果として<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>を獲得できる。</li><li>PC①が敗北した場合、節花(偽の賀茂忠行)は戦果としてPC①に「妬み」の【感情】を獲得する。また、PC①は「節花」の【居所】を獲得する。</li></ul><div><br></div><span style="color:transparent"></span>　以下はGM向けの情報です。<br><span style="color:transparent"></span>偽の賀茂忠行のデータは「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」のものを使用。【生命力】や所持している忍具や【情報】などは共通として扱う。<br><span style="color:transparent"></span>１ラウンド目は６をプロットして背景【整備班】を使用して【魔界転生】を成功させる。自分がシーンプレイヤーのドラマシーンになったら節花のみを登場させる。節花は【惟神・漂流神】で【酔夢】を特例修得して、【詭道】(正忍p139)で【猫撫】(正忍p139)を成功させ、PC①をシーンに強制的に登場させる。その後、【完全成功/続き/攻撃禁止】で【酔夢】を成功させてPC①の「菖蒲姫」の【秘密】を未獲得にさせる。万が一失敗したら神通丸を使って絶対に成功させてください。この【酔夢】が成功した場合、PC①は菖蒲姫との紫雲雅鞠会で会うという約束を忘れてしまいます。この場合、再び「菖蒲姫」の【秘密】を獲得すれば約束を思い出すことが出来ます。ただし、菖蒲姫の【秘密】に対する二度目の情報判定にはマイナス３の修正が付きます。<br><span style="color:transparent"></span>以上の処理の結果、PC①は節花の【完全成功/続き/攻撃禁止】の【情報】を獲得します。【惟神・漂流神】はPC①がシーンに登場する前に使用しているので、PC①はこの奥義の【情報】を獲得できません。<br><span style="color:transparent"></span>菖蒲姫の【秘密】をPC①から奪った以降の戦闘シーンでは逃げと防御に徹したプロットを心掛ける。【完全成功/続き/攻撃禁止】などを駆使して勝者無しを狙ってください。<br><span style="color:transparent"></span>ドラマシーンの主要な行動としては、【魔界転生】と【猫撫】により【生命力】が減少しているので回復判定を行ってください。<p><br></p><hr><p><span style="color: var(--text);">※補足１</span><br></p><p>　節花がPC①から菖蒲姫の【秘密】を失わせるギミックはこのシナリオの核になっています。PC①のキャラクターデータによっては途中の手順が妨害されて失敗に終わることもあるかもしれないので、事前にPCの忍法や奥義などをよく確認してください。もし失敗する可能性がありそうなら、節花の奥義の強みを変更したり忍具を増やすなどして対応してください。</p><p><br>※補足２<br>　PC①が【秘密】を獲得する順番によってはそもそもギミックが発動しないこともあります。この場合は特に何か変更して対応する必要はありませんが、菖蒲姫の【秘密】を獲得する前にこのマスターシーンが発生した場合はなるべく戦闘で勝者無しか勝利を狙い、PC①がまた後から戦闘を仕掛けてくるように仕向けるとよいでしょう。この時、【完全成功/続き(基本p160)/攻撃禁止(隠忍p40)】の奥義の【情報】をPC①に獲得されてしまうと、【魔界転生】でドラマシーンを発生させて【酔夢】に奥義を使う際にPC①が奥義破り判定をできるようになることに注意してください。PC①の奥義や節花の忍具を勘案して成功率が高い行動をするとよいでしょう。<br></p><div><span><br></span></div><div><br></div><p><br></p></div>
+</section>
+<section class="sc-page" id="file-n1779715188015sqrt" data-file-id="n1779715188015sqrt">
+<h1 id="heading-n1779796768654874y"><span style="color:rgb(34, 34, 34)">秋の午時</span><br></h1><p>​<span style="color: var(--text);">　このシーンは、４サイクル目の最初のシーンとして、PC①が以下の条件を満たした場合にのみ発生します。PC①と菖蒲姫が登場する。</span></p><p><span style="color: var(--text);"><br></span></p><strong>発生条件</strong>： PC①が一度も「<a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a>」の【秘密】を獲得していない場合<br>　物部家の屋敷にいるPC①はやけに視線を感じる。視線の先には菖蒲姫がいた。ここで、「<a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a>」の【秘密】に対する情報判定を行うことが出来る。<br><div><span><br></span></div><div><span>※補足</span></div><div><span style="color:rgb(34, 34, 34)">　この先の展開的になるべく菖蒲姫の【秘密】を持っていてほしいので、その機会を増やす調整用のシーンです。このシーンの情報判定で失敗した場合でも特にGMは何らかの調整をする必要はありません。</span><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n17797151860082yyc" data-file-id="n17797151860082yyc">
+<h1 id="heading-n1779796819750kwsc"><span style="color:rgb(34, 34, 34)">強襲</span><br></h1><p>​<span style="color: var(--text);">　このシーンは、８サイクル目の最後のシーン(リミット調整をしている場合は最後のサイクルの最終シーン)として以下の条件を満たした場合にのみ発生します。PC①と賀茂忠行が登場する。</span></p><p><span style="color: var(--text);"><br></span></p><p><b>発生条件</b><span style="font-weight: normal;">：マスターシーン「</span><a class="jump-link" data-target-file="n1779714996745qg99" href="#file-n1779714996745qg99">陰陽師の正体</a><span style="font-weight: normal;">」が発生しておらず、PC①が「</span><a class="jump-link" data-target-file="n17797103458474w47" href="#file-n17797103458474w47">菖蒲姫</a><span style="font-weight: normal;">」の【秘密】を獲得している場合</span></p>　PC①の前に陰陽師の賀茂忠行が現れる。そして不意打ちでPC①に襲い掛かる。賀茂忠行は背景【整備班】で【魔界転生】を指定します。<div><br>※補足<br>　この賀茂忠行の正体は節花で、PC①に菖蒲姫を裏切らせるために記憶を奪いに来た。</div><div><br>　この戦闘では次のルールが適用されることを事前にPLに説明してください。<br><ul><li>この戦闘シーンはPC①と偽の賀茂忠行のみが登場する。</li><li>２ラウンド以内に決着がつかなければ勝者無しとなる。</li><li>PC①が勝利した場合、戦果として<a class="jump-link" data-target-file="n1779711747116yigx" href="#file-n1779711747116yigx">プライズ「百鬼夜行絵巻物」</a>を獲得できる。</li><li>PC①が敗北した場合、偽の賀茂忠行は戦果としてPC①に「妬み」の【感情】を獲得する。</li></ul><span style="color:transparent"></span><div><br></div>　以下はGM向けの情報です。<br><span style="color:transparent"></span>偽の賀茂忠行のデータは「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」のものを使用。【生命力】や所持している忍具や【情報】などは共通として扱う。<br><span style="color:transparent"></span>１ラウンド目は６をプロットして背景【整備班】を使用して【魔界転生】を成功させる。自分がシーンプレイヤーのドラマシーンになったら節花のみを登場させる。節花は【惟神・漂流神】で【酔夢】を特例修得して、【詭道】(正忍p139)で【猫撫】(正忍p139)を成功させ、PC①をシーンに強制的に登場させる。その後、【完全成功/続き/攻撃禁止】で【酔夢】を成功させてPC①の「菖蒲姫」の【秘密】を未獲得にさせる。万が一失敗したら神通丸を使って絶対に成功させてください。この【酔夢】が成功した場合、PC①は菖蒲姫との紫雲雅鞠会で会うという約束を忘れてしまいます。この場合、再び「菖蒲姫」の【秘密】を獲得すれば約束を思い出すことが出来ます。ただし、菖蒲姫の【秘密】に対する二度目の情報判定にはマイナス３の修正が付きます。<br><span style="color:transparent"></span>以上の処理の結果、PC①は節花の【完全成功/続き/攻撃禁止】の【情報】を獲得します。【惟神・漂流神】はPC①がシーンに登場する前に使用しているので、PC①はこの奥義の【情報】を獲得できません。<br><span style="color:transparent"></span>菖蒲姫の【秘密】をPC①から奪った以降の戦闘シーンでは逃げと防御に徹したプロットを心掛ける。【完全成功/続き/攻撃禁止】などを駆使して勝者無しを狙ってください。<br><span style="color:transparent"></span>ドラマシーンの主要な行動としては、【魔界転生】と【猫撫】により【生命力】が減少しているので回復判定を行ってください。<br><div><span><br></span></div><div><br></div><p><br></p></div>
+</section>
+<section class="sc-page" id="file-n1779716193489ruxc" data-file-id="n1779716193489ruxc">
+<h1 id="heading-n1779796866241q9du">分岐について</h1><p>&nbsp;　クライマックスフェイズ開始時に導入として以下のシーンが入ります。</p><p><br></p><h2>紫雲雅鞠会<br></h2>　ここから先のシーンはPC①の【秘密】の獲得状況によって分岐します。分岐条件を確認してください。<p><br></p><h2 id="heading-n17797968662415es6">パターン①<br></h2>分岐条件：以下を満たすこと。<br><ul><li>PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を持っていない</li></ul><p><br></p><h2 id="heading-n1779796866241hetp">パターン②<br></h2>分岐条件：以下二つを同時に満たすこと。<br><ul><li>PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を獲得している。</li><li>「菖蒲姫」の【秘密】を現在獲得していない。</li></ul><p><br></p><h2 id="heading-n1779796866241n1c4">パターン③<br></h2>分岐条件：以下二つを同時に満たすこと。<br><ul><li>PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を獲得している。</li><li>「菖蒲姫」の【秘密】を現在獲得している。</li></ul><p><br></p><h2 id="heading-n1779796866241hjb4">パターン④<br></h2>分岐条件：以下を満たすこと。<br><ul><li>PC①がマスターシーン「陰陽師の正体」で節花の提案を受け入れる。</li></ul><p></p>
+</section>
+<section class="sc-page" id="file-n1779710345847whx9" data-file-id="n1779710345847whx9">
+<h1 id="heading-n17765982902259uh5">クライマックス戦闘前描写</h1><div class="scenario-box color-cyan variant-subtitle" data-box-id="n1779716366800wyas" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title">補足情報</div><div class="box-subtitle"><span style="color:rgb(26, 34, 56)">&nbsp;</span><strong>PC①が一度も菖蒲姫の【秘密】を獲得していない場合のみ以下のシーンを追加。</strong></div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　一度でも獲得後に失った場合にはこのシーンは不要です。<br>　紫雲雅鞠会を目前に控えたPC①の元に菖蒲姫がやってきて、紫雲雅鞠会が終わった後に二人きりで話したいことがあるので屋敷の部屋に来てほしいと言われる。<br>ここで今後の展開のために約束を取り付けてください。この場合は少々無理があるシナリオ展開になるので、できれば菖蒲姫の【秘密】はメインフェイズ中に一度は獲得できるようにGMが適宜誘導するとよいでしょう。<br></div></div><p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);">以下共通描写↓</span><br></p><p>　二百十日の言い伝えが嘘のような晴天。都中の高貴な方々が集まり、鞠庭は大歓声で溢れる。その大歓声が鳴りやみ厳かな雰囲気が会場を包むと、いよいよ蹴鞠が披露される。PC①や藤原成通の蹴鞠は会場を大いに沸かせ、大成功に終わる。PC①は蹴鞠をしている最中、鞠の軌道が五芒星を描くようになっていることに気が付くことができる。その後、都の平穏を祈る加持祈祷など全ての行事が終わると、日が傾くにつれてあたりは徐々に夕焼け色に染まっていく。</p><p><br></p><div class="scenario-box variant-subtitle color-yellow" data-box-id="n1779716544546mugd" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title">おまけ</div><div class="box-subtitle">描写の古語バージョン</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　二百十日の凶兆も、今は昔の夢語めきて、空は紺青に澄み渡りたり。都の貴顕、上達部(かんだちめ)より姫君に至るまで、こぞりて参集し給ふ。鞠庭には、紅梅の香を思わす華やぎと、波濤のごとき歓声のひびき満ちたり。<br>　されど、やがてその歓声もしづまりぬれば、庭は一転、慎ましくも荘厳なる気色に包まれぬ。ここに蹴鞠の儀、いよいよ始まりぬ。PC①および藤原成通の蹴り給ふ様は、あたかも風に舞ふ花のごとく優雅にして、座の面々、目を奪はれ、声を惜しまず讃えぬ。まこと、此度の蹴鞠、天晴れなる出来栄えにてありけり。<br>　その折、PC①はふと気づき給ふ。空を飛びかふ鞠の軌道、まるで天つ星の導きによりて、秘められし五芒星の形を描きたりける。<br>　蹴鞠も、また都の鎮護を願ふ加持祈祷も、滞りなく執り行はれぬれば、日も既に傾き、空はうっすらと茜に染まりゆく。夕映えの光、金襴の錦を広げし如く、庭を照らし、万象は絢爛に彩られて、宴の名残惜しさばかり胸に満ちたりける。<br></div></div><p><br>　<strong>ここから先のシーンはPC①の【秘密】の獲得状況によって分岐します。分岐条件を確認してください。</strong></p><p><br></p><p><br></p><p><br></p><div><span><br></span></div><div style="text-align: left;"><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n17797167079247qsb" data-file-id="n17797167079247qsb">
+<h1 id="heading-n1779750369493ti3g">パターン１</h1><p>​<strong style="color: var(--text);">分岐条件</strong><span style="color: var(--text);">：以下を満たすこと。</span></p><ul><li>PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を持っていない</li></ul><div><br></div><div>　紫雲雅鞠会が終了したが、いまだに帰る方法がわからないPC①の元に蹴鞠の精霊たちが現れ、元の時代へと帰る方法が見つかったこと、今すぐ出発しないと間に合わないことを慌てた様子で伝えにくる。精霊たちが言うには、二百十日の黄昏時に比叡山の山奥に一瞬だけ現れる回廊を渡ることで元の時代に帰ることができるとのことだ(この場合のPC①にはわからないことだがこれは完全に嘘)。<br>　急いで現地に向かってもそこには何もなく、その場で待つことになる。夜になり周囲が暗闇になると、都の方角の空が赤くなっていることに気が付くことができる。都に戻ると、あたりは大火事で次々と建物が焼け落ちていき人々が悲鳴を上げて逃げ回る惨状を目撃する。ここで、PC①がプライズ「百鬼夜行絵巻物」の【秘密】を獲得していなければ獲得することができる(落ちていたことなどにする)。PC①の元に白い長髪に捻じれた角を持つ女の妖怪が現れ、自らを殺姫と名乗り、殺姫はPC①に何故裏切ったのか問いかけるが、その答えによらず襲い掛かってくる。演出はPC①の【秘密】の獲得状況によって適宜盛ってください。</div><div><br><span style="color:transparent"></span>戦闘：「<a class="jump-link" data-target-file="n1779748619544ozf5" href="#file-n1779748619544ozf5">殺姫</a>」と「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」との戦闘。味方として「<a class="jump-link" data-target-file="n17797487668853cu8" href="#file-n17797487668853cu8">藤原成通</a>」が登場。戦場は「平地」。<br><span style="color:transparent"></span>勝利条件：敵を全滅させること。<br><span style="color:transparent"></span>特殊ルール：４ラウンド目開始時に戦場が「極地」に変更される。<br><span style="color:transparent"></span>結果：PC①が勝利→<a class="jump-link" data-target-file="n17797483103220q9g" href="#file-n17797483103220q9g">結末A</a>へ、PC①が敗北→<a class="jump-link" data-target-file="n1779748360074a9kk" href="#file-n1779748360074a9kk">結末B</a>へ</div><div><br>※補足<br>　このパターンでは都から距離がある山奥から向かうため、都に辿り着くために時間がかかってしまい延焼が広がります。よって、４ラウンド目開始時に戦場が「極地」になります。<br></div>
+</section>
+<section class="sc-page" id="file-n17797478671391qvi" data-file-id="n17797478671391qvi">
+<h1 id="heading-n17797503560809qvi">パターン２</h1><p>​<strong style="color: var(--text);">分岐条件</strong><span style="color: var(--text);">：以下を満たすこと。</span></p><ul><li><span style="color: var(--text);">&nbsp;PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を獲得している。</span></li><li><span style="color: var(--text);">「菖蒲姫」の【秘密】を現在獲得していない。</span></li></ul><div><br></div><div>&nbsp;　紫雲雅鞠会が終了した後、PC①は時間遡行の妖術の術者(「節花」の【秘密】を獲得しているなら節花)を探しに行くことになります。PC①は何か大切なことを忘れていることがあるような気がしますが思い出せません。<br>　その日の夜、PC①が術者の捜索のために都を探索していると、物部家の屋敷の方角から爆発音が轟き火の手が上がります。ここで、PC①がプライズ「百鬼夜行絵巻物」の【秘密】を獲得していなければ、獲得することができます(落ちていたことなどにする)。急いで屋敷に戻ると、屋敷は炎に包まれ無数の妖怪が跋扈し、見張り番の男衆や侍女たちが血の海に倒れ伏していました。そして、PC①は震えて動けずにいる菖蒲姫の元に節花が迫り、菖蒲姫に巨大な古びた金棒を突き立てる様子を目撃します。その瞬間、強大な禍々しい妖気が放たれ、菖蒲姫は白い長髪に捻じれた角を持つ姿に変貌していました。姫は自らを殺姫と名乗り、PC①に何故裏切ったのか問いかけてきます。その後、その答えによらず襲い掛かってきます。演出はPC①の【秘密】の獲得状況によって適宜盛ってください。</div><div><br>※補足<br>　「節花」の【秘密】を獲得していれば菖蒲姫の正体にも気づけるし、さらに「百鬼夜行絵巻物」の【秘密】を獲得していれば状況を推察できそうだが、約束自体を思い出せないので意図せずに裏切ってしまうことになる。この場合は術者を探しに行くよりは菖蒲姫を探しに行ったが見つけ出すことができなかったなどのように適宜変更すること。</div><div><br><ul><li>戦闘：「<a class="jump-link" data-target-file="n1779748619544ozf5" href="#file-n1779748619544ozf5">殺姫</a>」と「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」との戦闘。味方として「<a class="jump-link" data-target-file="n17797487668853cu8" href="#file-n17797487668853cu8">藤原成通</a>」が登場。戦場は「平地」。</li><li>勝利条件：敵を全滅させること。</li><li>特殊ルール：勝利した場合、戦果として「菖蒲姫」の【秘密】を選択できる。</li><li>結果：PC①が勝利→<a class="jump-link" data-target-file="n17797483103220q9g" href="#file-n17797483103220q9g">結末A</a>へ、PC①が敗北→<a class="jump-link" data-target-file="n1779748360074a9kk" href="#file-n1779748360074a9kk">結末B</a>へ</li></ul><span style="color:transparent"></span></div><div><br></div><div>※補足<br>　特殊ルールは結末での演出に「菖蒲姫」の【秘密】を使用したい場合があることを想定したロールプレイ上の措置です。必ずしも戦果として「菖蒲姫」の【秘密】を獲得する必要はありません。<br></div>
+</section>
+<section class="sc-page" id="file-n1779747869236x7s3" data-file-id="n1779747869236x7s3">
+<h1 id="heading-n17797503446425g7z">パターン３</h1><p>​<strong style="color: var(--text);">分岐条件</strong><span style="color: var(--text);">：以下を満たすこと。</span></p><ul><li><span style="color: var(--text);">&nbsp;PC①が「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」の【秘密】を獲得している。</span></li><li><span style="color: var(--text);">「菖蒲姫」の【秘密】を現在獲得している。</span></li></ul><div><br></div><div>&nbsp;　PC①は約束通り、菖蒲姫の元に向かいます。ここで、PC①は<strong>歌を詠んで気持ちを伝えるとよいでしょう</strong>(PC①の【本当の使命】の関係上断ることを想定)。PC①の返答を聞くと菖蒲姫は気持ちを押し殺してPC①が自分の想いを聞いてくれたことへの感謝の気持ちを返歌します。<br>　その直後、近くで爆発音が響くとともに火の手が上がり、無数の百鬼夜行の妖怪たちが物部邸の結界を破って侵入してきます。PC①と菖蒲姫の前に現れた節花は、PC①によって姫の復活計画が破綻したことを忌々し気に告げて落胆します。ここで、PC①がプライズ「百鬼夜行絵巻物」の【秘密】を獲得していなければ、獲得することができます。だが、PC①を菖蒲姫の目の前で殺せばもしかしたら姫の記憶は蘇るかもしれないという理由で襲い掛かってきます。</div><div><br><ul><li>戦闘：「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」と<a class="jump-link" data-target-file="n1779711750448kp6c" href="#file-n1779711750448kp6c">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a>との戦闘。味方として「<a class="jump-link" data-target-file="n17797487668853cu8" href="#file-n17797487668853cu8">藤原成通</a>」と「<a class="jump-link" data-target-file="n1779748534566kyyy" href="#file-n1779748534566kyyy">菖蒲姫</a>」が登場。戦場は「平地」。</li><li>勝利条件：「節花」を倒すこと。「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」は「節花」の従者として扱う。</li><li>結果：PC①が勝利→<a class="jump-link" data-target-file="n1779748362302ykbt" href="#file-n1779748362302ykbt">結末C</a>へ、PC①が敗北→<a class="jump-link" data-target-file="n1779748365939ahug" href="#file-n1779748365939ahug">結末D</a>へ</li></ul><span style="color:transparent"></span></div>
+</section>
+<section class="sc-page" id="file-n1779747871114sfkf" data-file-id="n1779747871114sfkf">
+<h1 id="heading-n1779750265113ijte">パターン４</h1><p>​<strong style="color: var(--text);">分岐条件</strong><span style="color: var(--text);">：以下を満たすこと。</span></p><ul><li><span style="color:rgb(34, 34, 34)">PC①がマスターシーン「</span><span style="color:rgb(34, 34, 34)"><a class="jump-link" data-target-file="n1779714996745qg99" href="#file-n1779714996745qg99">陰陽師の正体</a>」で節花の提案を受け入れる。</span><br></li></ul><div><br></div><div>&nbsp;　PC①は節花と比叡山の山奥で落ち合います。都では火の手が上がり、遠い夜空が赤く染まっていくことに気づくでしょう。ここで、PC①がプライズ「百鬼夜行絵巻物」の【秘密】を獲得することができ、殺姫が復活したことを悟ります。節花はPC①が殺姫の復活に協力してくれたお礼に元の時代に帰すと言うが、PC①が数十年前の男に似すぎていて妬ましいことを忌々しげに告げます。節花は私怨でPC①を殺そうとしてきます。</div><div><br><span style="color:transparent"></span>戦闘：「<a class="jump-link" data-target-file="n17797491375193wqz" href="#file-n17797491375193wqz">節花</a>」と<a class="jump-link" data-target-file="n1779748953629q3d6" href="#file-n1779748953629q3d6">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</a>との戦闘。戦場は「平地」。<br><span style="color:transparent"></span>勝利条件：「節花」を倒すこと。「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」は「節花」の従者として扱う。<br><span style="color:transparent"></span>結果：PC①が勝利→<a class="jump-link" data-target-file="n1779748364088av9h" href="#file-n1779748364088av9h">結末E</a>へ、 PC①が敗北→<a class="jump-link" data-target-file="n1779748405643qmpe" href="#file-n1779748405643qmpe">結末F</a>へ</div><div><br>※補足<br>　このパターンでは、都から距離がある山奥での戦闘のため、味方NPCの「藤原成通」が登場しません。高確率でのPC側の敗北を想定しています。なるべくこのパターンにならないようにGMは適宜誘導してください。<br></div>
+</section>
+<section class="sc-page" id="file-n17797483103220q9g" data-file-id="n17797483103220q9g">
+<h1 id="heading-n1779797022858vuyd">結末A</h1><p>&nbsp;　殺姫は地に倒れ、PC①に何故何度も裏切ったのか涙ながらに問いかけてきます。姫は死を目前に過去の青年の裏切りや現在の約束の反故を混同している様子に見えるでしょう。PC①が何か答えを返すと、その言葉を最後まで聞いてゆっくりと目を閉じました。その後、時間遡行の術者の節花を倒したことでPC①を眩しい光が包み込み、気が付くと現代へと戻っています。<br>　「菖蒲姫」の【秘密】を獲得していれば歌を詠もう！<br>　<strong>PC①は【本当の使命】を達成したものとして扱う。</strong><br></p>
+</section>
+<section class="sc-page" id="file-n1779748360074a9kk" data-file-id="n1779748360074a9kk">
+<h1 id="heading-n1779797031044hju3">結末B</h1><p>&nbsp;　殺姫は倒れたPC①を見下げると、愛していることを告げる。ここでPC①が何か言葉を返すと、その瞬間PC①の体を眩しい光が包み込む。時間遡行の術を節花が解除したため、PC①は強制的に現代へと戻される。<br><br></p><p>※補足<br>　PC①の返答次第では姫はPC①を殺害しようとしたり自分のものにしようとしてくる。しかし、節花は姫にも内密に今回の計画を進めていたことやPC①への嫉妬心からPC①を強制的に現代へと返す。</p><p><br>　<strong>PC①は【本当の使命】を達成したものとして扱う。</strong><br></p>
+</section>
+<section class="sc-page" id="file-n1779748362302ykbt" data-file-id="n1779748362302ykbt">
+<h1 id="heading-n1779797157106izdt">結末C</h1><p>&nbsp;　菖蒲姫は目の前で起こる惨状を理解できていないようだが、自分のせいで何か大変なことを起こしてしまったことを悔やむ。ある程度の会話を終える頃、PC①の体を眩しい光が包み込む。その後、時間遡行の術者の節花を倒したことでPC①を眩しい光が包み込み、気が付くと現代へと戻っている。<br>「菖蒲姫」の【秘密】を獲得していれば歌を詠もう！<br>　<strong>PC①は【本当の使命】を達成したものとして扱う。</strong><br></p>
+</section>
+<section class="sc-page" id="file-n1779748365939ahug" data-file-id="n1779748365939ahug">
+<h1 id="heading-n1779797163572swv7">結末D</h1><p>&nbsp;　節花に殺されるかのように思われた瞬間、陰陽師たちが駆けつけて節花を殺害・封印する。PC①の体を眩しい光が包み込む。時間遡行の術者の節花が倒されたことでPC①を眩しい光が包み込み、気が付くと現代へと戻っている。<br>　<strong>PC①は【本当の使命】を達成したものとして扱う。</strong><br></p>
+</section>
+<section class="sc-page" id="file-n1779748364088av9h" data-file-id="n1779748364088av9h">
+<h1 id="heading-n17797972146944va1">結末E</h1><p>&nbsp;　時間遡行の術者の節花を倒したことでPC①を眩しい光が包み込み、気が付くと現代へと戻っている。<br>PC①がいなくなった都では殺姫が復活し、人間を虐殺して回る。人間や愛を完全に見限った殺姫は都中の人間を殺しまわると、今度は仲間であるはずの百鬼夜行の妖怪たちも殺し始め、最後には一人になった。いずれは当時の忍者の手によって討伐されるが、もたらした被害は甚大だった。<br>　<strong>PC①は【本当の使命】を達成したものとして扱う。</strong><br></p>
+</section>
+<section class="sc-page" id="file-n1779748405643qmpe" data-file-id="n1779748405643qmpe">
+<h1 id="heading-n1779797222100atuz">結末F</h1><p><span style="color: var(--text);">　節花に殺される。応援の陰陽師たちも間に合わないので普通に死ぬ。</span><br></p>PC①がいなくなった都では殺姫が復活し、人間を虐殺して回る。人間や愛を完全に見限った殺姫は都中の人間を殺しまわると、今度は仲間であるはずの百鬼夜行の妖怪たちも殺し始め、最後には一人になった。いずれは当時の忍者の手によって討伐されるが、もたらした被害は甚大だった。<br>　<strong>PC①は【本当の使命】を達成できなかったものとして扱う。平安時代にタイムスリップしたことは夢オチになる。</strong><br><div><strong><br></strong></div><div>※補足</div><div>ロスト防止のため夢オチとする。</div>
+</section>
+<section class="sc-page" id="file-n1779748534566kyyy" data-file-id="n1779748534566kyyy">
+<h1 id="heading-n1779750427350joke">菖蒲姫(あやめひめ)</h1><h2 id="heading-n17797504273503124">&nbsp;■概要</h2>　都の名だたる貴族「物部(もののべ)家」の姫君。品があり心優しい性格だが、芯の通った真っすぐなところがある。<div><br><h2 id="heading-n1779750427350f7sh">■外見</h2>　艶やかな濡烏色の髪と世にも珍しい菖蒲色の瞳という神秘的な美貌を持つ妙齢の女性。</div><div><br><h2 id="heading-n17797504273504umj">■正体</h2>　数十年前に滅ぼされた大妖怪「殺姫」の生まれ変わり。現在は妖怪であった頃の記憶や力を失っている。</div><div><br><h2 id="heading-n1779750427350qx3s">■キャラクターデータ</h2>　クライマックスフェイズのパターン③になった場合のみ戦闘にPC①の味方として登場。<br>データは忍秘p134の「姫」を使用するが、処理の煩雑性を避けるために【美姫】でプライズとしては扱わないこととする。エネミーとして扱うため、【生命力】を失っても特技は使用不能にならない。</div><div><br><h3 id="heading-n1779750427350npqy">○運用方法</h3>　基本的に敵NPCからは狙われない。<br>　常に１をプロットし、毎ラウンドごとに【秘密】で獲得している「愛情」でPC①への感情修正および回避判定や敵NPCの奥義の奥義破り判定を行う。攻撃忍法やサポート忍法は処理の煩雑性や戦闘が簡単になりすぎることを考慮して行わない。ただし、戦況が悪い場合には【接近戦攻撃】で攻撃を行ってもよい。また、PC①からの指示があれば【誘導】を行ってもよい。【感情操作】は使用しない。</div><div><br><h3 id="heading-n1779750427350o9yp">○信念</h3>和<br><p>​</p></div>
+</section>
+<section class="sc-page" id="file-n1779748619544ozf5" data-file-id="n1779748619544ozf5">
+<h1 id="heading-n17797970006743g2g">殺姫(あやめひめ)</h1><h2 id="heading-n1779797000674hmdg"><span style="color: var(--text);">■概要</span></h2><div>　数十年ほど前に百鬼夜行を率いていた大妖怪。人間に対しても同胞である妖怪に対しても冷酷で無慈悲、残忍な性格。不意の恋愛感情に弱い。</div><div><br><h2 id="heading-n1779797000674s0lj">■外見</h2>　長い白髪と捻じれた角を持つ美女の姿を持つ。「菖蒲姫」と同一人物なのでそれ以外の外見的特徴や声は一致。　</div><div><br><h2 id="heading-n17797970006744et2">■正体</h2>　「菖蒲姫」の覚醒後。「菖蒲姫」が裏切りによって記憶を取り戻すとこの姿になる。</div><div><br><h2 id="heading-n17797970006740gf7">■キャラクターデータ</h2>　特殊エネミー(御斎p31)として扱う。PCと同様に失った分野の特技を使用不能になる。</div><div><br><h3 id="heading-n1779797000674l8n6">○運用方法</h3>　基本的な運用方針としては、【飢渇】を使用するために【閃軌】を積極的に使用して経過ラウンド数を増やしたい。最初の１ラウンド目は４をプロットして【範囲攻撃】を使用し、ラウンド終了時に【閃軌】を使用。以降は基本的に３をプロットして【金棒】で攻撃を行い、４ラウンド以上経過するまではラウンド終了時に【閃軌】を使用。これ以降は３～４をプロットして【凶声】を使用しつつ【金棒】で攻撃する。<br>PC側が４以上をプロットする傾向があるならば、【金棒】の効果を活かすためにPC側よりも１高い位置をプロットできるように心がける。<br>【不死身】は適宜使用する。【逆鱗】を早い段階で活かすために【生命力】は「体術」から減少させる(【彼岸】で特技は使用可能)。</div><div><br><h3 id="heading-n1779797000674ovtj">○階級</h3>上忍</div><div><br><h3 id="heading-n1779797000674gkc9">○流派</h3>隠忍の血統</div><div><br><h3 id="heading-n1779797000674gk8h">○信念</h3>凶</div><div><br><h3 id="heading-n1779797000674jfsx">○生命力</h3>６点</div><div><br><h3 id="heading-n1779797000674idvh">○特技</h3>≪騎乗術≫<br>≪骨法術≫<br>≪怪力≫<br>≪用兵術≫<br>≪異形化≫<br>≪言霊術≫<br>≪呪術≫</div><div><br><h3 id="heading-n1779797000674ne34">○忍法</h3>【接近戦攻撃】≪呪術≫(基本p78)<br>【金棒】≪怪力≫(基本p107)<br>【凶声】≪言霊術≫(基本p107)<br>【閃軌】≪騎乗術≫(基本p81)<br>【彼岸】≪なし≫(基本p85)　体術指定<br>【飢渇】≪なし≫(基本p84)<br>【逆鱗】≪なし≫(基本p106)　体術指定</div><div><br><h3 id="heading-n1779797000674nn0i">○奥義</h3>怪力乱鬼/【範囲攻撃】/≪怪力≫<br>身を焦がす激情/【不死身】/≪呪術≫</div><div><br></div><div class="scenario-box ccfolia-card color-default" data-box-id="n1779797502784dzcf" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title">&nbsp;殺姫<br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪呪術≫<div>2SG@12#2&gt;=5　命中判定【金棒】≪怪力≫ 
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+2SG@12#2&gt;=5　サポート忍法の判定 【凶声】≪言霊術≫
+2SG@12#2&gt;=5　サポート忍法の判定 【閃軌】≪騎乗術≫
+怪力乱鬼/【範囲攻撃】/≪怪力≫<br>身を焦がす激情/【不死身】/≪呪術≫ <br></div></div></div></div><p></p><div><p>​</p></div>
+</section>
+<section class="sc-page" id="file-n17797487668853cu8" data-file-id="n17797487668853cu8">
+<h1 id="heading-n1779750476880wu02"><span style="color:rgb(34, 34, 34)">藤原成通(ふじわらのなりみち)</span><br></h1><h2 id="heading-n1779750476880avmd">&nbsp;■概要</h2>　蹴鞠の名人で「蹴聖」と呼ばれる。いつも笑顔で飄々としているが情に厚い一面がある。高貴で遊びと女が好き。宮中での人望も厚い。<div><br><h2 id="heading-n1779750476880gwbt">■外見</h2>　眉目秀麗な男性。PC①と外見上の特徴が被らないように自由に設定してください。</div><div><br><h2 id="heading-n17797504768807c77">■キャラクターデータ</h2>　PCと同様に【生命力】を失うと対応した分野の特技が使用不能となる。<br>　GMの処理を簡略化する都合上、PLに運用を一任するとよいでしょう。</div><div><br><h3 id="heading-n1779750476880lkf0">○階級</h3>中忍頭</div><div><br><h3 id="heading-n1779750476880ee2i">○流派</h3>鞍馬神流</div><div><br><h3 id="heading-n17797504768800oy9">○信念</h3>情</div><div><br><h3 id="heading-n1779750476880an8e">○生命力</h3>８点(【頑健】込み)</div><div><br><h3 id="heading-n1779750476880gq2f">○特技</h3>≪砲術≫<br>≪身体操術≫<br>≪骨法術≫<br>≪遊芸≫<br>≪鳥獣術≫<br>≪人脈≫</div><div><br><h3 id="heading-n17797504768801dk1">○忍法</h3>【接近戦攻撃】≪鳥獣術≫(基本p78)<br>【蹴速】≪身体操術≫(平安p246)<br>【春雷】≪骨法術≫(基本p90)<br>【連撃】≪なし≫(基本p81)<br>【先の先】≪なし≫(基本p90)<br>【頑健】≪なし≫(基本p84)</div><div><br><h3 id="heading-n17797504768803xbe">○奥義</h3>蹴聖の妙技/【絶対防御】/≪身体操術≫</div><div><br><h3 id="heading-n1779750476880k2hk">○忍具</h3>兵糧丸１個、遁甲符１個</div><div><br>※小ネタ<br>【春雷】を修得しているのは足技だから。</div><div><br></div><div><div class="scenario-box ccfolia-card color-default" data-box-id="n1779797642953g3eu" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">藤原成通</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">生命力</td><td class="ccfolia-stat-val">2</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">2</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪鳥獣術≫<div>2SG@12#2&gt;=5　命中判定【蹴速】≪身体操術≫</div><div>2SG@12#2&gt;=5　命中判定【春雷】≪骨法術≫
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+蹴聖の妙技/【絶対防御】/≪身体操術≫</div></div></div></div><p></p><p>​</p></div>
+</section>
+<section class="sc-page" id="file-n1779748903654cptp" data-file-id="n1779748903654cptp">
+<h1><span style="color:rgb(34, 34, 34)">賀茂忠行(かものただゆき)</span><br></h1><div><h2>&nbsp;■概要</h2>　穏やかで物腰柔らかい。シナリオ中に登場するのは節花が化けている偽物で、本物は既に死亡している。</div><div><br><h2>■外見</h2>　壮年の男性。陰陽師の装束を纏っている。</div><div><br><h2>■キャラクターデータ</h2>「節花」と共通。<br></div>
+</section>
+<section class="sc-page" id="file-n1779748953629q3d6" data-file-id="n1779748953629q3d6">
+<h1 id="heading-n1779796575663yk39"><span style="color:rgb(34, 34, 34)">「夏安林（げあんりん）」、「春楊花（しゅんようか）」、「秋園（しゅうおん）」</span><br></h1><div><h2 id="heading-n177979657566318vz"><span style="color: var(--text);">■概要</span></h2></div><div>　３体ともいたずらっぽい無邪気な性格がベースだが個体差があり、夏安林が特に活発な性格、春楊花はおしとやかな性格、秋園は冷静な性格。</div><div><br><h2 id="heading-n1779796575663ihr6">■外見</h2>　３体とも共通して、猿のような尻尾と小さな羽をもつ小型の妖精のような外見。髪や瞳はそれぞれの名に含まれる季節を想起させる色合いをしている。</div><div><br><h2 id="heading-n1779796575663nk9u">■正体</h2>　蹴鞠の精霊というのは半分嘘で、正体は精霊が邪気をまとって妖怪へと変じたもの。現在は殺姫と節花に忠誠を誓う百鬼夜行の小妖怪。PC①を助ける素振りをするがその目的は都に病を流行らせることと、PC①と菖蒲姫の動向を監視すること。</div><div><br><h2 id="heading-n1779796575663c6xr">■キャラクターデータ</h2>　データは３体とも共通。【生命力】などは別個体として計算。<br>「節花」の従者として扱うため、「節花」が戦闘シーンから脱落すると自動的に脱落する。<br>エネミーとして扱うため、【生命力】を失っても特技は使用不能にならない。</div><div><br><h3 id="heading-n1779796575663ini7">○運用方法</h3>　基本的に５をプロットして【幻兵】を使用する。「節花」の【生命力】が減少させられた場合、積極的に【かばう】を使用する。【幻兵】の命中判定には【黒贄】の効果が乗ることに注意。<br>PCたちが高頻度で３以下をプロットして攻撃が届かない、かつ、一方的に攻撃を受けるような場合には４以下をプロットすることも考慮に入れる。</div><div><br><h3 id="heading-n1779796575663yixc">○階級</h3>下忍</div><div><br><h3 id="heading-n17797965756636nwv">○流派</h3>隠忍の血統</div><div><br><h3 id="heading-n1779796575663xl39">○信念</h3>忠</div><div><br><h3 id="heading-n1779796575663354e">○生命力</h3>３点</div><div><br><h3 id="heading-n17797965756635tr6">○特技</h3></div><div>≪召喚術≫<br>≪幻術≫</div><div><br><h3 id="heading-n1779796575663gcwm">○忍法</h3>【接近戦攻撃】≪召喚術≫(基本p78)<br>【幻兵】≪幻術≫(基本p80)<br>【かばう】≪なし≫(基本p81)<br>【黒贄】≪なし≫(基本p106)</div><div><br><h3 id="heading-n1779796575663wsvp">○奥義</h3>無し</div><div><br><h3 id="heading-n1779796575663umj2">○忍具</h3>無し</div><div><br></div><div><div class="scenario-box ccfolia-card color-default" data-box-id="n177979777827598y8" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title">キャラクター名</div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true" class=""><td class="ccfolia-stat-label">生命力</td><td class="ccfolia-stat-val">3</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">3</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block">■忍法
+接近戦攻撃
+
+</div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪召喚術≫
+2SG@12#2&gt;=5　命中判定【幻兵】≪幻術≫
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定<br></div></div></div><p></p></div>
+</section>
+<section class="sc-page" id="file-n17797491375193wqz" data-file-id="n17797491375193wqz">
+<h1 id="heading-n1779796555581jtjl"><span style="color:rgb(34, 34, 34)">節花(せつか)</span></h1><h2 id="heading-n177979655558121p2">​<span style="color: var(--text);">■概要</span></h2>　穏やかで丁寧な語り口調。にこやかだが非常に嫉妬深い性格。殺姫に絶対の忠誠を誓うと同時に深く愛している。<div><br><h2 id="heading-n1779796555581wd5x">■外見</h2>　三つの尾と獣の耳を持つ男の妖怪。妖狐。</div><div><br><h2 id="heading-n1779796555581ky83">■正体</h2>　このシナリオの黒幕。PC①が突然平安時代にタイムスリップしたのは殺姫復活を目論む節花の計画だった。</div><div><br><h2 id="heading-n1779796555581gzy6">■キャラクターデータ</h2>　特殊エネミー(御斎p31)として扱う。PCと同様に失った分野の特技を使用不能になる。</div><div><br><h3 id="heading-n1779796555581lg7b">○運用方法</h3>　クライマックスフェイズにおける基本的な運用方針としては、【獣化】をして【血旋渦】を中心に攻撃を行う。もしメインフェイズ中にPC①に「妬み」の【感情】を獲得しているのならば、【惟神・漂流神】で【鬼道】を特例修得すると効果的。<br>クライマックスフェイズのパターン①とパターン②では基本的には２～５をプロットしてPC側からの攻撃の目標に選ばれるように動きつつ、殺姫をサポートする。<br>パターン③とパターン④では間合の長さを活かして極力PC側の攻撃の間合に入らないように、１や６など極端なプロットを心掛ける。【完全成功/続き(基本p160)/攻撃禁止(隠忍p40)】は奥義破り判定や回避判定に使用する。</div><div><br><h3 id="heading-n1779796555581wukt">○階級</h3>上忍(下方調整済み)</div><div><br><h3 id="heading-n177979655558131gs">○流派</h3>隠忍の血統_凶尾</div><div><br><h3 id="heading-n177979655558156s2">○信念</h3>凶</div><div><br><h3 id="heading-n1779796555581fmc5">○背景</h3>【加持祈祷】(比良坂p37)<br>【整備班】(基本p123)　※【魔界転生】に使用</div><div><br><h3 id="heading-n1779796555581asbq">○生命力</h3>６点(メインフェイズで受けたダメージは回復しない)</div><div><br><h3 id="heading-n1779796555581i38v">○特技</h3>≪仕込み≫<br>≪遊芸≫<br>≪用兵術≫<br>≪異形化≫<br>≪幻術≫<br>≪憑依術≫</div><div><br><h3 id="heading-n1779796555581a3t8">○忍法</h3>【接近戦攻撃】≪遊芸≫(基本p78)<br>【血旋渦】≪異形化≫(基本p106)<br>【魔界転生】≪憑依術≫(基本p106)<br>【猫撫】≪可変≫(正忍p139)<br>【詭道】≪なし≫(正忍p139)<br>【獣化】≪異形化≫(基本p109)<br>以下、惟神で特例修得<br>【酔夢】≪遊芸≫(基本p109)<br>【鬼道】≪なし≫(基本p106)</div><div><br><h3 id="heading-n1779796555581fgbf">○奥義</h3>ヒルコの呪詛/【惟神・漂流神】(【酔夢】【鬼道】)/≪憑依術≫<br>微睡の夢/【完全成功/続き(基本p160)/攻撃禁止(隠忍p40)】/≪幻術≫</div><div><br><h3 id="heading-n1779796555581rewv">○忍具</h3>神通丸１個、遁甲符１個<br></div><div><p></p><div class="scenario-box ccfolia-card color-default" data-box-id="n17797979361717397" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">節花</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block">■忍法
+接近戦攻撃
+
+</div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪遊芸≫<div>2SG@12#2&gt;=5　命中判定【血旋渦】≪異形化≫
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+2SG@12#2&gt;=5　サポート忍法の判定 【魔界転生】≪憑依術≫
+2SG@12#2&gt;=5　サポート忍法の判定 【猫撫】≪可変≫</div><div>2SG@12#2&gt;=5　サポート忍法の判定 【獣化】≪異形化≫
+2SG@12#2&gt;=5　サポート忍法の判定 【酔夢】≪遊芸≫<br><div>ヒルコの呪詛/【惟神・漂流神】(【酔夢】【鬼道】)/≪憑依術≫<br>微睡の夢/【完全成功/続き(基本p160)/攻撃禁止(隠忍p40)】/≪幻術≫
+</div></div></div></div></div><p></p></div>
+</section>
+
+    </main>
+
+    <!-- PL/GM ページ切り替えバー（JS で表示・リンク設定） -->
+    <div class="page-link-bar hidden" id="page-link-bar">
+      <div class="page-link-inner">
+        <div class="page-link-note" id="page-link-note"></div>
+        <a href="#" id="page-partner-btn" class="page-partner-btn"></a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <a href="../index.html">← シナリオ一覧に戻る</a>
+      <div class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> シナリオ置き場 — All Rights Reserved.</div>
+      <div class="footer-note">当サイトで公開しているシナリオは個人が制作した二次創作物です。各TRPGシステムの著作権は各権利者に帰属します。無断転載・商用利用・AI学習への利用を禁止します。</div>
+    </footer>
+  </div>
+
+  <style>
+    /* シナリオツリーサイドバー */
+    #sc-tree { font-size: 13px; }
+    #sc-tree ul.sc-tree-list { list-style: none; padding: 0; margin: 0; }
+    #sc-tree ul.sc-tree-list ul.sc-tree-list { padding-left: 14px; }
+    #sc-tree .sc-tree-file > a {
+      display: block; padding: 3px 8px; color: inherit; text-decoration: none;
+      border-radius: 4px; word-break: break-all; line-height: 1.4;
+    }
+    #sc-tree .sc-tree-file > a { color: #bbbbbb; }
+    #sc-tree .sc-tree-file > a:hover { background: rgba(255,255,255,.06); color: #eeeeee; }
+    #sc-tree .sc-tree-file > a.active { background: rgba(255,255,255,.10); color: #f5f5f5; font-weight: 600; }
+    #sc-tree .sc-tree-folder-label {
+      display: flex; align-items: center; gap: 4px;
+      padding: 3px 6px; cursor: pointer; border-radius: 4px;
+      user-select: none; font-weight: 600;
+      color: #d4d4d4;
+    }
+    #sc-tree .sc-tree-folder-label:hover { background: rgba(255,255,255,.08); color: #ffffff; }
+    #sc-tree .sc-tree-triangle {
+      display: inline-block; width: 12px; font-size: 10px;
+      transition: transform .15s; flex-shrink: 0;
+    }
+    #sc-tree .sc-tree-folder:not(.open) > .sc-tree-folder-label .sc-tree-triangle {
+      transform: rotate(-90deg);
+    }
+    #sc-tree .sc-tree-folder:not(.open) > ul.sc-tree-list { display: none; }
+    /* セクション切替: ツリーで選択中のセクションのみ表示 (PL/GM共通) */
+    .sc-page { display: none; }
+    .sc-page.active { display: block; }
+    .sc-page-title {
+      font-size: 1.6em; margin: 0 0 .8em; padding-bottom: .3em;
+      border-bottom: 2px solid rgba(127,127,127,.3);
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function() {
+    // --- PL/GM パートナーリンク ---
+    var partner = "平安蹴鞠_pl.html";
+    var bar  = document.getElementById('page-link-bar');
+    var note = document.getElementById('page-link-note');
+    var btn  = document.getElementById('page-partner-btn');
+    var btnTop = document.getElementById('page-partner-btn-top');
+    var isPL = false;
+    var label = isPL ? '🔒 GM用ページを見る →' : '👥 PL用ページを見る →';
+    if (bar && btn && partner) {
+      bar.classList.remove('hidden');
+      if (isPL) {
+        if (note) note.innerHTML = '<strong>このページはPL用です。</strong> GMの方は以下からGM用ページをご覧ください。';
+        btn.href = partner; btn.textContent = label; btn.classList.add('btn-gm');
+      } else {
+        if (note) note.innerHTML = '<strong>このページはGM用です。</strong> PL用ページも用意されています。';
+        btn.href = partner; btn.textContent = label; btn.classList.add('btn-pl');
+      }
+    }
+    if (btnTop && partner) { btnTop.href = partner; btnTop.textContent = label; }
+
+    // --- シナリオツリー動作（GMページのみ） ---
+    var tree = document.getElementById('sc-tree');
+    if (!tree) return;  // PLページなど、ツリーなしなら何もしない
+
+    // フォルダ展開トグル
+    tree.addEventListener('click', function(e) {
+      var lbl = e.target.closest('.sc-tree-folder-label');
+      if (lbl && tree.contains(lbl)) {
+        lbl.parentElement.classList.toggle('open');
+      }
+    });
+
+    // ファイルリンククリック: セクション切替
+    var allSections = document.querySelectorAll('.sc-page');
+    var allLinks    = tree.querySelectorAll('.sc-tree-file > a');
+
+    function showFile(id) {
+      var found = false;
+      allSections.forEach(function(s) {
+        var on = s.dataset.fileId === id;
+        s.classList.toggle('active', on);
+        if (on) found = true;
+      });
+      allLinks.forEach(function(a) {
+        a.classList.toggle('active', a.dataset.fileId === id);
+      });
+      if (found) {
+        var mw = document.getElementById('main-wrapper');
+        if (mw) mw.scrollTop = 0;
+        else window.scrollTo(0, 0);
+      }
+      return found;
+    }
+
+    tree.addEventListener('click', function(e) {
+      var a = e.target.closest('.sc-tree-file > a');
+      if (!a) return;
+      e.preventDefault();
+      var id = a.dataset.fileId;
+      showFile(id);
+      history.replaceState(null, '', '#file-' + id);
+    });
+
+    // ジャンプリンク（クロスファイル + PL/GM横断対応）
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a.jump-link');
+      if (!link) return;
+      var fileId = link.getAttribute('data-target-file');
+      var targetId = link.getAttribute('data-target');
+      if (!fileId && !targetId) return;
+      e.preventDefault();
+      // まず自ページ内で解決を試みる
+      var handled = false;
+      if (fileId) {
+        if (showFile(fileId)) handled = true;
+      } else if (targetId) {
+        // fileId 指定なし → 現在表示中のまま見出しへスクロール
+        var t0 = document.getElementById(targetId);
+        if (t0) { t0.scrollIntoView({ behavior: 'smooth', block: 'start' }); handled = true; }
+        else if (document.getElementById(targetId)) { handled = true; }
+      }
+      if (handled) {
+        if (targetId) {
+          setTimeout(function() {
+            var t = document.getElementById(targetId);
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 30);
+        }
+        return;
+      }
+      // 自ページに該当無し → パートナーページ（PL↔GM）へリダイレクト
+      if (partner) {
+        var hashPart = targetId ? ('#' + targetId) : (fileId ? ('#file-' + fileId) : '');
+        window.location.href = partner + hashPart;
+      }
+    });
+
+    // 初期表示（#file-xxx / #heading-xxx どちらにも対応）
+    var initial = "n1779710345847gyt5";
+    var hash = location.hash || '';
+    var m = hash.match(/^#file-(.+)$/);
+    if (m && showFile(m[1])) {
+      /* ok */
+    } else if (hash.length > 1) {
+      // 見出し等のアンカー: 含まれるファイルを探して切替 → スクロール
+      var id = hash.slice(1);
+      var anchorEl = document.getElementById(id);
+      if (anchorEl) {
+        var pageEl = anchorEl.closest('.sc-page');
+        if (pageEl && pageEl.dataset.fileId) {
+          showFile(pageEl.dataset.fileId);
+        } else if (initial) {
+          showFile(initial);
+        }
+        setTimeout(function() {
+          var t = document.getElementById(id);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 30);
+      } else if (initial) {
+        showFile(initial);
+      }
+    } else if (initial) {
+      showFile(initial);
+    }
+  })();
+
+  // --- フリー接続図 静的レンダラ (HTML ノード + SVG 矢印) ---
+  (function() {
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    var DC_CELL = 20;
+    function snap(v) { return Math.round(v / DC_CELL) * DC_CELL; }
+    function svgEl(tag, attrs) {
+      var n = document.createElementNS(SVG_NS, tag);
+      if (attrs) for (var k in attrs) n.setAttribute(k, attrs[k]);
+      return n;
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;');
+    }
+    function parseMd(t) {
+      var s = esc(t || '');
+      s = s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+           .replace(/\*(.+?)\*/g,'<em>$1</em>')
+           .replace(/\n/g,'<br>');
+      return s;
+    }
+    function endpoints(s, t, idx, slotInfo) {
+      var sw = s.w||120, sh = s.h||40, tw = t.w||120, th = t.h||40;
+      var sw2 = sw/2, sh2 = sh/2, tw2 = tw/2, th2 = th/2;
+      var cs = { x: snap(s.x+sw2), y: snap(s.y+sh2) };
+      var ct = { x: snap(t.x+tw2), y: snap(t.y+th2) };
+      var dx = ct.x-cs.x, dy = ct.y-cs.y;
+      var C = DC_CELL;
+      var hGap = Math.abs(dx) - (sw2 + tw2);
+      var vGap = Math.abs(dy) - (sh2 + th2);
+      var canH = hGap >= 2*C, canV = vGap >= 2*C;
+      var rawIdx = (typeof idx === 'number' ? idx : 0);
+      var off = ((rawIdx%5)-2)*C;
+      var fromShift = (slotInfo && typeof slotInfo.fromShift === 'number') ? slotInfo.fromShift : 0;
+      var toShift   = (slotInfo && typeof slotInfo.toShift   === 'number') ? slotInfo.toShift   : 0;
+      function clamp(v,lo,hi){ return v<lo?lo:(v>hi?hi:v); }
+      function hZ() {
+        var sY = cs.y + fromShift, tY = ct.y + toShift;
+        var sx = dx>=0?1:-1;
+        var x1 = snap(s.x + (sx>0?sw:0));
+        var x2 = snap(t.x + (sx>0?0:tw));
+        if (sY === tY) return [[x1,sY],[x2,tY]];
+        var loX = Math.min(x1,x2)+C, hiX = Math.max(x1,x2)-C;
+        var xm = clamp(snap((x1+x2)/2)+off, loX, hiX);
+        return [[x1,sY],[xm,sY],[xm,tY],[x2,tY]];
+      }
+      function vZ() {
+        var sX = cs.x + fromShift, tX = ct.x + toShift;
+        var sy = dy>=0?1:-1;
+        var y1 = snap(s.y + (sy>0?sh:0));
+        var y2 = snap(t.y + (sy>0?0:th));
+        if (sX === tX) return [[sX,y1],[tX,y2]];
+        var loY = Math.min(y1,y2)+C, hiY = Math.max(y1,y2)-C;
+        var ym = clamp(snap((y1+y2)/2)+off, loY, hiY);
+        return [[sX,y1],[sX,ym],[tX,ym],[tX,y2]];
+      }
+      if (canH && (!canV || Math.abs(dx)>=Math.abs(dy))) return hZ();
+      if (canV) return vZ();
+      if (Math.abs(dx)>=Math.abs(dy)) {
+        var sTopY = snap(s.y), tTopY = snap(t.y);
+        var sxp = snap(cs.x), txp = snap(ct.x);
+        var midY = snap(Math.min(s.y,t.y) - 2*C) - (rawIdx*C);
+        return [[sxp,sTopY],[sxp,midY],[txp,midY],[txp,tTopY]];
+      } else {
+        var sLx = snap(s.x), tLx = snap(t.x);
+        var syp = snap(cs.y), typ = snap(ct.y);
+        var midX = snap(Math.min(s.x,t.x) - 2*C) - (rawIdx*C);
+        return [[sLx,syp],[midX,syp],[midX,typ],[tLx,typ]];
+      }
+    }
+    var uid = 0;
+    document.querySelectorAll('.draw-canvas-block').forEach(function(block) {
+      if (block.dataset.rendered === '1') return;
+      block.dataset.rendered = '1';
+      // 編集UI要素は削除。ヘッダ（タイトル badge）は残す。
+      var modes = block.querySelector('.draw-canvas-modes'); if (modes) modes.remove();
+      var help = block.querySelector('.draw-help-btn'); if (help) help.remove();
+      var help2 = block.querySelector('.draw-canvas-help'); if (help2) help2.remove();
+      var delBtn = block.querySelector('.box-delete-btn'); if (delBtn) delBtn.remove();
+      var rhandle = block.querySelector('.draw-resize-handle'); if (rhandle) rhandle.remove();
+      var raw = block.getAttribute('data-graph') || '{}';
+      var g; try { g = JSON.parse(raw); } catch(_) { g = {}; }
+      var nodes = g.nodes || [], edges = g.edges || [];
+      var minX=0,minY=0,maxX=0,maxY=0;
+      nodes.forEach(function(n){ var w=n.w||120,h=n.h||40; if(n.x<minX)minX=n.x; if(n.y<minY)minY=n.y; if(n.x+w>maxX)maxX=n.x+w; if(n.y+h>maxY)maxY=n.y+h; });
+      var pad = DC_CELL;
+      var bodyW = Math.max(400, maxX-minX+pad*2);
+      var bodyH = Math.max(200, maxY-minY+pad*2);
+      var oldSvg = block.querySelector('svg.draw-svg'); if (oldSvg) oldSvg.remove();
+      var body = document.createElement('div');
+      body.className = 'draw-canvas-body';
+      body.style.cssText = 'position:relative;width:100%;max-width:'+bodyW+'px;margin:0 auto;';
+      var svg = document.createElementNS(SVG_NS,'svg');
+      svg.setAttribute('class','draw-edges');
+      svg.setAttribute('viewBox','0 0 '+bodyW+' '+bodyH);
+      svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+      svg.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2';
+      var aid = 'ahgh-' + (++uid);
+      var defs = svgEl('defs');
+      defs.innerHTML = '<marker id="'+aid+'" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#5b9ae0"/></marker>';
+      svg.appendChild(defs);
+      var spacer = document.createElement('div');
+      spacer.style.cssText = 'position:relative;width:100%;padding-bottom:'+(bodyH/bodyW*100)+'%';
+      body.appendChild(spacer);
+      var inner = document.createElement('div');
+      inner.style.cssText = 'position:absolute;inset:0';
+      body.appendChild(inner);
+      nodes.forEach(function(n) {
+        var nw = n.w||120, nh = n.h||40;
+        var relX = n.x-(minX-pad), relY = n.y-(minY-pad);
+        var node = document.createElement('div');
+        node.className = 'draw-node-html';
+        if (n.color && n.color !== 'default') node.setAttribute('data-color', n.color);
+        node.style.cssText = 'position:absolute;left:'+(relX/bodyW*100)+'%;top:'+(relY/bodyH*100)+'%;width:'+(nw/bodyW*100)+'%;height:'+(nh/bodyH*100)+'%;';
+        var ta = n.textAlign || 'center', va = n.verticalAlign || 'top';
+        var vjm = { top:'flex-start', middle:'center', bottom:'flex-end' };
+        var hfm = { 1:'1.25em', 2:'1.10em', 3:'1.0em', 4:'.95em' };
+        var fs = hfm[n.headingLevel] || '.95em';
+        var fw = n.headingLevel ? '700' : '400';
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'draw-node-content';
+        contentDiv.style.cssText = 'width:100%;height:100%;display:flex;flex-direction:column;justify-content:'+(vjm[va]||'flex-start')+';text-align:'+ta+';font-size:'+fs+';font-weight:'+fw+';overflow:auto;word-break:break-word;line-height:1.5;';
+        contentDiv.innerHTML = parseMd(n.label || '');
+        node.appendChild(contentDiv);
+        inner.appendChild(node);
+      });
+      var byId = {};
+      nodes.forEach(function(n){ byId[n.id] = n; });
+      function sideAt(nodeId, e) {
+        var me = byId[nodeId];
+        var otherId = e.from===nodeId ? e.to : e.from;
+        var other = byId[otherId];
+        if (!me || !other) return 'right';
+        var meW = me.w||120, meH = me.h||40, oW = other.w||120, oH = other.h||40;
+        var dx = (other.x+oW/2) - (me.x+meW/2);
+        var dy = (other.y+oH/2) - (me.y+meH/2);
+        var hGap = Math.abs(dx) - (meW/2+oW/2);
+        var vGap = Math.abs(dy) - (meH/2+oH/2);
+        var canH = hGap >= 2*DC_CELL, canV = vGap >= 2*DC_CELL;
+        if (canH && (!canV || Math.abs(dx)>=Math.abs(dy))) return dx>=0?'right':'left';
+        if (canV) return dy>=0?'bottom':'top';
+        return Math.abs(dx)>=Math.abs(dy) ? 'top' : 'left';
+      }
+      var slotsCache = {};
+      function slotsForNode(nodeId) {
+        if (slotsCache[nodeId]) return slotsCache[nodeId];
+        var me = byId[nodeId];
+        if (!me) { slotsCache[nodeId] = {}; return slotsCache[nodeId]; }
+        var buckets = { top:[], right:[], bottom:[], left:[] };
+        edges.filter(function(e){ return e.from===nodeId||e.to===nodeId; }).forEach(function(e){
+          buckets[sideAt(nodeId,e)].push(e);
+        });
+        var margin = 4, minGap = 8;
+        var result = {};
+        ['top','right','bottom','left'].forEach(function(side){
+          var list = buckets[side]; if (list.length===0) return;
+          var halfExtent = (side==='top'||side==='bottom') ? (me.w||120)/2 : (me.h||40)/2;
+          var maxSpread = Math.max(margin, halfExtent - margin);
+          var items = list.map(function(e){
+            var otherId = e.from===nodeId ? e.to : e.from;
+            var o = byId[otherId]; var want = 0;
+            if (o) {
+              if (side==='top'||side==='bottom') want = (o.x+(o.w||120)/2) - (me.x+(me.w||120)/2);
+              else want = (o.y+(o.h||40)/2) - (me.y+(me.h||40)/2);
+            }
+            if (want > maxSpread) want = maxSpread;
+            if (want < -maxSpread) want = -maxSpread;
+            return { e:e, want:want };
+          });
+          items.sort(function(a,b){
+            var d = a.want - b.want; if (d!==0) return d;
+            return String(a.e.id).localeCompare(String(b.e.id));
+          });
+          for (var i=1; i<items.length; i++) {
+            if (items[i].want - items[i-1].want < minGap) items[i].want = items[i-1].want + minGap;
+          }
+          var overTop = items[items.length-1].want - maxSpread;
+          if (overTop > 0) for (var j=0; j<items.length; j++) items[j].want -= overTop;
+          var overBot = -maxSpread - items[0].want;
+          if (overBot > 0) for (var k=0; k<items.length; k++) items[k].want += overBot;
+          if (items[0].want < -maxSpread - 0.5 || items[items.length-1].want > maxSpread + 0.5) {
+            var step = items.length > 1 ? (2*maxSpread)/(items.length-1) : 0;
+            for (var m=0; m<items.length; m++) items[m].want = -maxSpread + m*step;
+          }
+          items.forEach(function(it){ result[it.e.id] = { shift: Math.round(it.want), side: side }; });
+        });
+        slotsCache[nodeId] = result;
+        return result;
+      }
+      function slotInfoFor(edge) {
+        var fi = slotsForNode(edge.from)[edge.id] || { shift:0 };
+        var ti = slotsForNode(edge.to)[edge.id]   || { shift:0 };
+        return { fromShift:fi.shift, toShift:ti.shift };
+      }
+      function clipToBorder(node, ext) {
+        var cx = node.x+(node.w||120)/2, cy = node.y+(node.h||40)/2;
+        var dx = ext[0]-cx, dy = ext[1]-cy;
+        if (dx===0 && dy===0) return [cx,cy];
+        var hw = (node.w||120)/2, hh = (node.h||40)/2;
+        var tx = dx===0?Infinity:hw/Math.abs(dx);
+        var ty = dy===0?Infinity:hh/Math.abs(dy);
+        var tt = Math.min(tx,ty);
+        return [Math.round(cx+dx*tt), Math.round(cy+dy*tt)];
+      }
+      edges.forEach(function(e, eidx) {
+        var s = byId[e.from], t = byId[e.to];
+        if (!s || !t) return;
+        var ss = { x:s.x-(minX-pad), y:s.y-(minY-pad), w:s.w||120, h:s.h||40 };
+        var tt = { x:t.x-(minX-pad), y:t.y-(minY-pad), w:t.w||120, h:t.h||40 };
+        var pts;
+        if (e.mode === 'manual') {
+          var wps = (e.waypoints||[]).map(function(p){ return [p[0]-(minX-pad), p[1]-(minY-pad)]; });
+          var sCtr = [ss.x+ss.w/2, ss.y+ss.h/2], tCtr = [tt.x+tt.w/2, tt.y+tt.h/2];
+          var sP, eP;
+          if (e.startPoint) { sP = [e.startPoint[0]-(minX-pad), e.startPoint[1]-(minY-pad)]; }
+          else { var firstExt = wps.length>0 ? wps[0] : (e.endPoint ? [e.endPoint[0]-(minX-pad), e.endPoint[1]-(minY-pad)] : tCtr); sP = clipToBorder(ss, firstExt); }
+          if (e.endPoint) { eP = [e.endPoint[0]-(minX-pad), e.endPoint[1]-(minY-pad)]; }
+          else { var lastExt = wps.length>0 ? wps[wps.length-1] : (e.startPoint ? [e.startPoint[0]-(minX-pad), e.startPoint[1]-(minY-pad)] : sCtr); eP = clipToBorder(tt, lastExt); }
+          pts = [sP].concat(wps).concat([eP]);
+        } else {
+          pts = endpoints(ss, tt, eidx, slotInfoFor(e));
+        }
+        var str = pts.map(function(p){ return p.join(','); }).join(' ');
+        svg.appendChild(svgEl('polyline', { 'class':'draw-edge', points:str, fill:'none', 'marker-end':'url(#'+aid+')' }));
+        if (e.label) {
+          var mi = Math.floor(pts.length/2); var a = pts[mi-1], b = pts[mi];
+          var tx = svgEl('text', { 'class':'draw-edge-label', x:(a[0]+b[0])/2, y:(a[1]+b[1])/2-5, 'text-anchor':'middle' });
+          tx.textContent = e.label;
+          svg.appendChild(tx);
+        }
+      });
+      inner.appendChild(svg);
+      block.appendChild(body);
+    });
+  })();
+  </script>
+</body>
+</html>
