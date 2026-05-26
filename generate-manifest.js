@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 // scenarios/*.html をスキャンして scenarios/manifest.json を生成するスクリプト
 // 使い方: node generate-manifest.js
+//
+// 同名の "_gm.html" と "_pl.html" は1エントリにまとめる：
+//   file   = GM版（または単独ファイル）
+//   plFile = PL版（あれば）
+// フロントエンド（index.html）は sc.plFile を優先してリンクする。
 
 const fs   = require('fs');
 const path = require('path');
@@ -26,6 +31,13 @@ function getTitle(html) {
   return '';
 }
 
+// "_gm.html" / "_pl.html" のサフィックスを除いたベース名（ペア判定用）
+function getBaseName(file) {
+  return file.replace(/_(gm|pl)\.html$/i, '');
+}
+function isGm(file) { return /_gm\.html$/i.test(file); }
+function isPl(file) { return /_pl\.html$/i.test(file); }
+
 // 既存 manifest.json を読み込んで createdAt を保持する
 let existingManifest = [];
 try {
@@ -37,29 +49,89 @@ const files = fs.readdirSync(scenariosDir)
   .filter(f => f.endsWith('.html'))
   .sort();
 
-const manifest = files.map(file => {
+// ベース名でグルーピング: { base: { gm, pl, solo } }
+const groups = new Map();
+for (const file of files) {
+  const base = getBaseName(file);
+  if (!groups.has(base)) groups.set(base, {});
+  const g = groups.get(base);
+  if      (isGm(file)) g.gm = file;
+  else if (isPl(file)) g.pl = file;
+  else                 g.solo = file;
+}
+
+function parseEntry(file) {
   const filePath = path.join(scenariosDir, file);
   const html     = fs.readFileSync(filePath, 'utf-8');
   const stat     = fs.statSync(filePath);
+  return {
+    file,
+    stat,
+    title:      getMeta(html, 'sc-title')      || getTitle(html),
+    system:     getMeta(html, 'sc-system'),
+    players:    getMeta(html, 'sc-players'),
+    playtime:   getMeta(html, 'sc-time'),
+    regulation: getMeta(html, 'sc-regulation'),
+    type:       getMeta(html, 'sc-type'),
+    tagsStr:    getMeta(html, 'sc-tags'),
+    synopsis:   getMeta(html, 'sc-synopsis'),
+    updatedMeta:getMeta(html, 'sc-updated'),
+    createdMeta:getMeta(html, 'sc-created'),
+  };
+}
 
-  const title      = getMeta(html, 'sc-title')      || getTitle(html);
-  const system     = getMeta(html, 'sc-system');
-  const players    = getMeta(html, 'sc-players');
-  const playtime   = getMeta(html, 'sc-time');
-  const regulation = getMeta(html, 'sc-regulation');
-  const type       = getMeta(html, 'sc-type');
-  const tagsStr    = getMeta(html, 'sc-tags');
+// 2つの値のうち、最初の非空を採用
+const pick = (a, b) => (a && a.trim()) ? a : (b || '');
+
+const manifest = [];
+for (const [base, g] of groups) {
+  // メタデータは PL を優先（プレイヤー向けが公開用）。空欄は GM/solo で補完
+  const primary   = g.pl ? parseEntry(g.pl) : (g.gm ? parseEntry(g.gm) : parseEntry(g.solo));
+  const secondary = g.pl && g.gm ? parseEntry(g.gm) : null;
+
+  const title      = pick(primary.title,      secondary?.title);
+  const system     = pick(primary.system,     secondary?.system);
+  const players    = pick(primary.players,    secondary?.players);
+  const playtime   = pick(primary.playtime,   secondary?.playtime);
+  const regulation = pick(primary.regulation, secondary?.regulation);
+  const type       = pick(primary.type,       secondary?.type);
+  const tagsStr    = pick(primary.tagsStr,    secondary?.tagsStr);
   const tags       = tagsStr ? tagsStr.split(',').map(t => t.trim()).filter(Boolean) : [];
-  const synopsis   = getMeta(html, 'sc-synopsis');
+  const synopsis   = pick(primary.synopsis,   secondary?.synopsis);
 
-  // 日付: meta > ファイル更新日時
-  const updatedAt  = getMeta(html, 'sc-updated') || stat.mtime.toISOString();
-  // createdAt: 既存 manifest の値を優先して保持（初回は birthtime or ctime）
-  const existing   = existingManifest.find(e => e.file === file);
-  const createdAt  = existing?.createdAt || getMeta(html, 'sc-created') || stat.birthtime?.toISOString() || stat.ctime.toISOString();
+  // 日付：両方の mtime のうち新しい方を採用
+  const mtimes = [primary, secondary].filter(Boolean).map(p => p.stat.mtime.getTime());
+  const newestMtime = new Date(Math.max(...mtimes));
+  const updatedAt = pick(primary.updatedMeta, secondary?.updatedMeta) || newestMtime.toISOString();
 
-  return { file, title, system, players, playtime, regulation, type, tags, synopsis, createdAt, updatedAt };
-});
+  // file / plFile の決定
+  // - GM ファイルを主、PL ファイルを副リンクとする（フロントエンドは plFile を優先表示する）
+  // - GM が無く PL のみなら file = PL
+  // - 単独ファイルは file = solo
+  const fileMain = g.gm || g.solo || g.pl;
+  const plFile   = (g.pl && (g.gm || g.solo)) ? g.pl : undefined;
+
+  // createdAt: 既存 manifest から file/plFile のいずれかが一致するエントリを引き継ぐ
+  const existing = existingManifest.find(e =>
+    e.file === fileMain || e.file === plFile ||
+    e.plFile === fileMain || (plFile && e.plFile === plFile)
+  );
+  const birth = primary.stat.birthtime?.toISOString() || primary.stat.ctime.toISOString();
+  const createdAt = existing?.createdAt
+    || pick(primary.createdMeta, secondary?.createdMeta)
+    || birth;
+
+  const entry = {
+    file: fileMain,
+    title, system, players, playtime, regulation, type, tags, synopsis,
+    createdAt, updatedAt
+  };
+  if (plFile) entry.plFile = plFile;
+  manifest.push(entry);
+}
+
+// ファイル名順で安定ソート
+manifest.sort((a, b) => a.file.localeCompare(b.file, 'ja'));
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
 
@@ -68,4 +140,7 @@ const jsContent = `window.__SCENARIO_MANIFEST__ = ${JSON.stringify(manifest, nul
 fs.writeFileSync(manifestJsPath, jsContent, 'utf-8');
 
 console.log(`✓ manifest.json / manifest.js を生成しました (${manifest.length} シナリオ)`);
-manifest.forEach(sc => console.log(`  - ${sc.file}: ${sc.title}`));
+manifest.forEach(sc => {
+  const pair = sc.plFile ? ` (+ ${sc.plFile})` : '';
+  console.log(`  - ${sc.file}${pair}: ${sc.title}`);
+});
