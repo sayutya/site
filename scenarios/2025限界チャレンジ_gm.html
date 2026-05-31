@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2025限界チャレンジ — シナリオ置き場</title>
+  <meta name="robots"       content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot"    content="noindex, nofollow">
+  <meta name="GPTBot"       content="noindex">
+  <meta name="anthropic-ai" content="noindex">
+  <meta name="sc-title"      content="2025限界チャレンジ">
+  <meta name="sc-system"     content="シノビガミ">
+  <meta name="sc-players"    content="２人">
+  <meta name="sc-time"       content="３～４時間">
+  <meta name="sc-regulation" content="現代編または退魔編">
+  <meta name="sc-type"       content="協力型">
+  <meta name="sc-tags"       content="">
+  <meta name="sc-synopsis"   content="所用で「羽塚市(はねづかし)」を訪れていたPCたちだが、突然市が封鎖されて怪現象が発生する。無事に脱出することができるのか。※シナリオタイトルとシナリオ内容は一切関係ありません。">
+  <meta name="sc-pagetype"   content="gm">
+  <meta name="sc-updated"    content="2026-05-31">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-scenario page-scenario-gm">
+
+  <div id="sb-overlay"></div>
+  <button id="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="site-sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-back">← 一覧に戻る</a>
+      <a href="../index.html" class="sidebar-logo">シナリオ<br>置き場</a>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="sidebar-nav-section">MENU</span>
+      <a href="../pages/hajimeni.html" class="sidebar-nav-item">はじめに</a>
+      <a href="../index.html"    class="sidebar-nav-item">シナリオ一覧</a>
+      <a href="../pages/terms.html"    class="sidebar-nav-item">利用規約</a>
+      <a href="../pages/contact.html"  class="sidebar-nav-item">お問い合わせ</a>
+    </nav>
+    <div class="sidebar-toc">
+      <div class="toc-heading">目次</div>
+      <nav id="sc-tree"><ul class="sc-tree-list"><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>概要</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780206480439fs7d" data-file-id="n1780206480439fs7d">GM向け概要</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>ハンドアウト</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780206480439dtas" data-file-id="n1780206480439dtas">PC①</a></li><li class="sc-tree-file"><a href="#file-n1780206480439ngt7" data-file-id="n1780206480439ngt7">PC②</a></li><li class="sc-tree-file"><a href="#file-n1780207021720jbf6" data-file-id="n1780207021720jbf6">羽塚市</a></li><li class="sc-tree-file"><a href="#file-n17802070233456fj1" data-file-id="n17802070233456fj1">牛王製薬羽塚研究所</a></li><li class="sc-tree-file"><a href="#file-n1780207026211kkln" data-file-id="n1780207026211kkln">硬化現象</a></li><li class="sc-tree-file"><a href="#file-n1780207024794fsci" data-file-id="n1780207024794fsci">地研 成人（ちけん なるひと）</a></li><li class="sc-tree-file"><a href="#file-n1780207562409e0wo" data-file-id="n1780207562409e0wo">幽冥</a></li><li class="sc-tree-file"><a href="#file-n1780207560951wgli" data-file-id="n1780207560951wgli">ファーメンター</a></li><li class="sc-tree-file"><a href="#file-n1780207559218c01v" data-file-id="n1780207559218c01v">プライズ「カードキー」</a></li><li class="sc-tree-file"><a href="#file-n1780207817836yfsy" data-file-id="n1780207817836yfsy">プライズ「赤い注射器」</a></li><li class="sc-tree-file"><a href="#file-n1780207027891o8lj" data-file-id="n1780207027891o8lj">プライズ「青い注射器」</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>導入フェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780206480439gny7" data-file-id="n1780206480439gny7">羽塚市</a></li><li class="sc-tree-file"><a href="#file-n178020648043913ip" data-file-id="n178020648043913ip">封鎖</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>メインフェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n178020648043900hh" data-file-id="n178020648043900hh">封鎖された羽塚市シーン表</a></li><li class="sc-tree-file"><a href="#file-n178020878416503ud" data-file-id="n178020878416503ud">イベント表</a></li><li class="sc-tree-file"><a href="#file-n1780206480439rc1v" data-file-id="n1780206480439rc1v">変身</a></li><li class="sc-tree-file"><a href="#file-n1780209111332xz9l" data-file-id="n1780209111332xz9l">羽化</a></li><li class="sc-tree-file"><a href="#file-n1780206480439e2tv" data-file-id="n1780206480439e2tv">夢</a></li><li class="sc-tree-file"><a href="#file-n1780209417063n7sm" data-file-id="n1780209417063n7sm">研究資料</a></li><li class="sc-tree-file"><a href="#file-n1780209518318fain" data-file-id="n1780209518318fain">地下</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>クライマックスフェイズ</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780206480439ef4r" data-file-id="n1780206480439ef4r">クライマックス</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>結末</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780206480439v8hb" data-file-id="n1780206480439v8hb">結末の分岐</a></li></ul></li><li class="sc-tree-folder open"><div class="sc-tree-folder-label"><span class="sc-tree-triangle">▼</span>NPC</div><ul class="sc-tree-list"><li class="sc-tree-file"><a href="#file-n1780210691339v8cx" data-file-id="n1780210691339v8cx">研究員</a></li><li class="sc-tree-file"><a href="#file-n1780211437025jrif" data-file-id="n1780211437025jrif">不完全な蛹</a></li><li class="sc-tree-file"><a href="#file-n1780211456945tset" data-file-id="n1780211456945tset">不完全な蝶</a></li><li class="sc-tree-file"><a href="#file-n17802118696568zjm" data-file-id="n17802118696568zjm">不完全な少女</a></li></ul></li></ul></nav>
+    </div>
+  </aside>
+
+  <div id="main-wrapper">
+    <div id="progress-bar"></div>
+
+    <div id="scenario-header">
+      <h1 class="scenario-title">2025限界チャレンジ</h1>
+      <div class="scenario-meta">
+        <span class="meta-pagetype meta-pagetype-gm">🔒 GM用</span>
+        <span class="meta-system">シノビガミ</span>
+        <span class="meta-item"><span class="meta-label">PL</span>２人</span>
+        <span class="meta-item"><span class="meta-label">Time</span>３～４時間</span>
+        <span class="meta-item"><span class="meta-label">Reg</span>現代編または退魔編</span>
+        <span class="meta-item"><span class="meta-label">Type</span>協力型</span>
+      </div>
+      
+    </div>
+
+    <main id="c">
+<section class="sc-page" id="file-n1780206480439fs7d" data-file-id="n1780206480439fs7d">
+<h1>GM向け概要</h1><p><span style="color:rgb(34, 34, 34)">　原因は斜歯の研究所に囚われていたハグレモノの少女の成れの果て。皮膚を持たない液状の肉塊となっている。妖魔の因子を持つハグレモノの少女だったが実験目的で捉えられ、強制的に羽化させられたところ失敗して中身だけになってしまった。常に激痛に苛まれており、殺してほしい、誰かに気がついてほしいという思いから中途半端に覚醒した妖魔の力で希死念慮を持つ人々を眷属にしていた。犠牲者が出る方式なのは過酷な苦痛に苛まれていることや妖魔の残酷さが少しずつ滲んできていることが原因。</span><br></p><p><span style="color: var(--text);"><br></span></p><h2><span style="color: var(--text);">■使用するサプリ</span></h2><ul><li><span style="color: var(--text);">正忍記・認(景色転々のルールを参考にしている)</span></li><li><span style="color: var(--text);">私立御斎学園流派ブック(特殊エネミーのルールを使用するが使用しなくてもOK)</span></li></ul><p></p><p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);"><br></span></p><p><br></p><p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);"><br></span></p><p><span style="color: var(--text);"><br></span></p><p><br></p><p><br></p><p></p><div><br></div><div><br></div><div><br></div><div><br></div><p></p>
+</section>
+<section class="sc-page" id="file-n1780206480439dtas" data-file-id="n1780206480439dtas">
+<h1 id="heading-n17802146218802swn">PC①</h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title">PC①</div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">推奨流派：なし</span><br><span style="color:rgb(34, 34, 34)">　あなたは忍者である。羽塚市(はねづかし)に所用で赴いていたところ、突然市が封鎖されて出られなくなってしまった。</span><br><span style="color:rgb(34, 34, 34)">　【使命】は「羽塚市から脱出する」ことである。</span><br><span style="color:rgb(34, 34, 34)">　このハンドアウトに【秘密】は無い。</span></div></div><p><br></p><p><span style="color:rgb(34, 34, 34)"><b>※補足</b></span></p><p><span style="color:rgb(34, 34, 34)">　所用は自由設定。</span><span style="color:rgb(34, 34, 34)">【秘密】は無いが回想シーンを行うことは可能。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1780206480439ngt7" data-file-id="n1780206480439ngt7">
+<h1 id="heading-n1780214628089iy5b">PC②</h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title">PC②</div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">推奨流派：なし</span><br><span style="color:rgb(34, 34, 34)">　あなたは忍者である。羽塚市(はねづかし)に所用で赴いていたところ、突然市が封鎖されて出られなくなってしまった。</span><br><span style="color:rgb(34, 34, 34)">　【使命】は「羽塚市から脱出する」ことである。</span><br><span style="color:rgb(34, 34, 34)">　このハンドアウトに【秘密】は無い。</span></div></div><p><br></p><p><span style="color:rgb(34, 34, 34)"><b>※補足</b></span><br><span style="color:rgb(34, 34, 34)">　所用は自由設定。</span><span style="color:rgb(34, 34, 34)">【秘密】は無いが回想シーンを行うことは可能。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1780207021720jbf6" data-file-id="n1780207021720jbf6">
+<h1 id="heading-n1780214634350htwg"><span style="color:rgb(34, 34, 34)">羽塚市</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">羽塚市</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　地方にある中小都市。市の中心部にはマンションやビルがまばらに並び、郊外に大型商業施設がある。人口流出の一方であったが、近年では企業の誘致や土地の再開発が盛んに行われている。再開発により、居住区画や行政区画、工場区画、医療福祉区画など様々な区域に分けられている。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">羽塚市</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　現在、羽塚市には比良坂機関による結界が張られており、完全に外部と遮断されている。通信機器なども不調なようだ。<br>　さらに、羽塚市について以下のことがわかる。<br>　工場区画には大企業の工場が建設され、多くの従業員が働いている。また、医療福祉区画では他市が引き受けないような緊急医療や終末医療を多く取り扱っている。<br>　数年前には八咫グループの一角である牛王製薬の研究所が誘致された。牛王製薬は製薬分野で名を馳せる企業であり、市内の研究所では新薬の開発や治験が行われている。八咫グループは斜歯忍軍の中枢だ。比良坂機関が関与してきていることもあり、何か今回の件には何か関りがあるのかもしれない。<br>　この【秘密】が公開されると「牛王製薬羽塚研究所」のハンドアウトが公開される。</div></div><p></p>
+</section>
+<section class="sc-page" id="file-n17802070233456fj1" data-file-id="n17802070233456fj1">
+<h1><span style="color:rgb(34, 34, 34)">牛王製薬羽塚研究所</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">牛王製薬羽塚研究所</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　郊外に立地する牛王製薬の研究所。広い敷地内には白くモダンな外観の研究所があり、庭木など植物が多く配置され管理されている。数十人の研究員などの職員が務めているようだ。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">牛王製薬羽塚研究所</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　この研究所では斜歯忍軍が捕らえたハグレモノや異能の力を持つ人間の人体実験を密かに行っている。被検体は厳重なセキュリティで守られた地下研究室で管理されているようだ。<div>　地下研究室に向かうためにはプライズ「カードキー」が必要となる。プライズ「カードキー」を所持している場合、自分がシーンプレイヤーのドラマシーンで地下研究室に向かうことを宣言できる。その場合、マスターシーン「地下」が発生する。<br>　この【秘密】が公開されると、マスターシーン「研究資料」が発生する。</div></div></div><p></p>
+</section>
+<section class="sc-page" id="file-n1780207026211kkln" data-file-id="n1780207026211kkln">
+<h1 id="heading-n1780214675530bz1t"><span style="color:rgb(34, 34, 34)">硬化現象</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">硬化現象</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　突然体が硬直して倒れてしまう現象。体温があり、僅かだが呼吸をしているかのような動きがみられる。現在、羽塚市のいたるところでこの現象が確認されている。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">硬化現象</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　体が硬直しているのは蛹化(ようか)によるものである。表面上は硬直だけだが、肉体の内部は溶けて混ざり合い原型をとどめていない。元の状態に戻すことは不可能だろう。徐々に蛹の脈動が大きくなってきているようだ。<br>　このシーンの直後に、マスターシーン「変身」が発生する。</div></div><p></p>
+</section>
+<section class="sc-page" id="file-n1780207024794fsci" data-file-id="n1780207024794fsci">
+<h1 id="heading-n1780214739372jh73"><span style="color:rgb(34, 34, 34)">地研 成人（ちけん なるひと）</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">地研 成人（ちけん なるひと）</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　あなたは牛王製薬羽塚研究所で研究を主導する研究員である。<div>　【使命】は「研究で成果を上げる」ことだ。<br></div></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">地研 成人（ちけん なるひと）</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　実はあなたは忍者である。階級は上忍だ。斜歯忍軍に所属するあなたは忍法狩りの実働部隊から提供された一人のハグレモノの少女に目を付けた。研究の結果、彼女には遠い昔に封印された妖魔「幽冥(ゆうめい)」の因子を持つことが判明した。妖魔の因子を研究すれば大きな成果を残せるだろう。このキャラクターはクライマックスフェイズに登場しない。<br>　あなたはプライズ「赤い注射器」とプライズ「青い注射器」を所持している。<br>　この【秘密】を獲得すると、地研 成人の【居所】を獲得する。<br>　この【秘密】を獲得すると、「幽冥」、プライズ「赤い注射器」、プライズ「青い注射器」のハンドアウトが公開される。</div></div><p></p><p><b>※補足</b></p><p><span style="color:rgb(34, 34, 34)">　研究員に戦闘を仕掛けると心底面倒そうな顔をする。裏設定としてはカードキーを落としたことに気づいており外部のセキュリティ担当者に停止と再発行を依頼しているが、結界で電波が上手くつながらず停止できていないということになっている。</span><br><span style="color:rgb(34, 34, 34)">　研究員との戦闘はできれば１回で決着をつけて欲しいのでラウンド制限は無しにしてもいい。</span><br><span style="color:rgb(34, 34, 34)"><b>PCが勝利した場合</b>：戦果を自由に奪える</span><br><span style="color:rgb(34, 34, 34)"><b>PCが敗北した場合</b>：PCに対して「侮蔑」の【感情】を獲得する</span><br></p>
+</section>
+<section class="sc-page" id="file-n1780207562409e0wo" data-file-id="n1780207562409e0wo">
+<h1><span style="color:rgb(34, 34, 34)">幽冥</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">幽冥</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　かつて存在した強大な妖魔。忍者により討伐・封印され、現在は鞍馬神流と比良坂機関が共同で管理していると言われている。美しく巨大な蝶のような姿をしていたとの記録が残っている。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">幽冥</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　幽冥は希死念慮を抱く者を惑わせて契約を持ちかけ、眷属である蛹に変容させて操る力を持つ妖魔である。精神感応能力に長け、犠牲者にテレパシーを発して生からの解放を望む気持ちを増幅させる。蛹は成熟すると羽化して人間ほどの大きさの肉蝶となり、幽冥の意思に従ってさらなる犠牲者を生む。犠牲者の魂や生命力を糧として強大な力を手にしていたが、現在でも封印されており、現世に干渉することは不可能だ。</div></div><p></p>
+</section>
+<section class="sc-page" id="file-n1780207560951wgli" data-file-id="n1780207560951wgli">
+<h1 id="heading-n17802147513184wpu"><span style="color:rgb(34, 34, 34)">ファーメンター</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">ファーメンター</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　牛王製薬羽塚研究所の地下研究室で発見した巨大なファーメンター。分厚いガラス管の中には肉色の粘度の高い液体が入っている。常に脈動して混ざり続けており、目玉や歯、口吻のような器官が時折見え隠れしている。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">ファーメンター</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　ファーメンターの中の液体は妖魔因子活性剤という特殊な薬剤を注射されたハグレモノの少女だ。強制的に妖魔因子が活性化した結果、肉塊のような姿になってしまったが現在も生きている。目玉からは涙のような液体が絶えず染み出しており、歯は規則的に動いているように見える。以降、補助判定として≪伝達術≫の判定を行うことができる。この判定にはマイナス２の修正が付く。判定に成功すると、少女の意思を読み取ることができる。<br>ファーメンターには薬剤を投与するための小さな穴があり、注射器を使用できる。注射器を使用するとクライマックスフェイズに移行する。５サイクル(５日目)終了時にいずれの注射器も使用していない場合、６日目午前にクライマックスフェイズとなる。<br>　この【秘密】をいずれかのPCが獲得すると、以降宣言があればクライマックスフェイズに移行できるようになる。</div></div><p></p><p><b>※補足</b></p><p><span style="color:rgb(34, 34, 34)">　歯が規則的に動いているのは「わたしをしなせて」と伝えたいから。少女の意思は自分を殺して苦痛から解放してもらうこと。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1780207559218c01v" data-file-id="n1780207559218c01v">
+<h1><span style="color:rgb(34, 34, 34)">プライズ「カードキー」</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「カードキー」</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">　このハンドアウトはいずれかのPCがプライズ「カードキー」を獲得すると公開される。</span><br><span style="color:rgb(34, 34, 34)">医療機関区画にある精神病院の裏口付近で拾ったカードキー。表面も裏面も無地で、名前や顔写真などは無い。</span><br><span style="color:rgb(34, 34, 34)">　このハンドアウトに【秘密】は無い。</span></div></div><p><span style="color:rgb(34, 34, 34)"><b><br></b></span></p><p><span style="color:rgb(34, 34, 34)"><b>※補足</b></span></p><p><span style="color:rgb(34, 34, 34)">　研究員が落としたもの。精神病院病棟で硬化現象が多発していることを聞きつけて様子を見に来ていた。</span><br></p>
+</section>
+<section class="sc-page" id="file-n1780207817836yfsy" data-file-id="n1780207817836yfsy">
+<h1><span style="color:rgb(34, 34, 34)">プライズ「赤い注射器」</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「赤い注射器」</span></div><div class="box-subtitle">【概要】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　赤い液体が入った注射器。液体は光を通さないほど赤く濁っている。<br>このプライズは自分がシーンプレイヤーのシーンで使用することができる。このプライズは一度使用すると消滅する。<br>　このハンドアウトに対する情報判定はこのプライズを所持していなくても行うことができる。また、プライズの所持者はこのハンドアウトの【秘密】を獲得することができる。<br></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「赤い注射器」</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">　赤い液体は妖魔因子活性剤である。妖魔因子活性剤を注入されると、妖魔の因子が強制的・急速的に活性化しその特徴や能力が発現する。これには強い肉体的負荷が伴う。妖魔の因子を持たない者が使用しても効果は無い。</div></div><p></p><p><b>※補足</b></p><p>&nbsp;　少女は研究員によって赤い注射器の投与実験を受けた結果現在のような姿になってしまっている。<br>もしPCに【鬼人】などの背景や独自の設定がある場合、１回妖魔化することにしてもいい。<br>　シナリオの意図としては、マスタシーンや地下研究室の様子から赤はネガティブなイメージと連想してもらって駄目そうと思わせること。<br></p>
+</section>
+<section class="sc-page" id="file-n1780207027891o8lj" data-file-id="n1780207027891o8lj">
+<h1><span style="color:rgb(34, 34, 34)">プライズ「青い注射器」</span><br></h1><div class="scenario-box color-gray variant-subtitle" data-box-id="n177959792146502lc" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「青い注射器」</span></div><div class="box-subtitle">【使命】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">　青い液体が入った注射器。液体は透明性があり光を反射して輝いているように見える。</span><br><span style="color:rgb(34, 34, 34)">　このプライズは自分がシーンプレイヤーのシーンで使用することができる。このプライズは一度使用すると消滅する。</span><br><span style="color:rgb(34, 34, 34)">　このハンドアウトに対する情報判定はこのプライズを所持していなくても行うことができる。また、プライズの所持者はこのハンドアウトの【秘密】を獲得することができる。</span></div></div><div class="scenario-box color-gray variant-subtitle" data-box-id="n1779597922236grxi" data-box-variant="subtitle" data-box-bgcolor="white"><div class="box-header"><div class="box-title-group"><div class="box-title"><span style="color:rgb(34, 34, 34)">プライズ「青い注射器」</span></div><div class="box-subtitle">【秘密】</div></div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body"><span style="color:rgb(34, 34, 34)">　青い液体は妖魔因子不活剤である。妖魔因子不活剤を注入されると、現在活性化している妖魔の因子を不活性化させることができる。妖魔の因子が不活性化すれば現状以上の妖魔への変貌を阻止できるが、元の姿や性質に戻すことはできない。妖魔の因子を持たない者が使用しても効果は無い。</span></div></div><p></p><p><b>※補足</b></p><p>　青い注射器は活性化しているものを不活性化させる効果なので、万が一赤い注射器と同時使用された場合には青い注射器の効果が優先される。<br>　シナリオの意図としては、マスタシーンなどから青はポジティブな色と連想してもらいたい。<br></p>
+</section>
+<section class="sc-page" id="file-n1780206480439gny7" data-file-id="n1780206480439gny7">
+<h1><span style="color:rgb(34, 34, 34)">羽塚市</span><br></h1><p>　PC①が羽塚市に滞在しているシーンになります。このシーンにはPC①とPC②が登場します。</p><p><br>　PCたちは所用で羽塚市に赴いています。羽塚市は地方にある中小都市です。市の中心部にはマンションやビルがまばらに並び、郊外に大型商業施設があります。また、羽塚市は再開発が盛んに行われている市であり、市の中心部から少し外れると、居住区画や医療機関区画、工場区画など区画ごとの整備が行われています。今日は晴天で散策日和でしょう。</p><p><span style="color: var(--text);">　PCがどのような目的で羽塚市を訪れたかを尋ね、日常を描写してください。</span></p><p>　また、市内を散策中に天気予報のニュースが放送されています。今日は晴れ渡る青空が一日中見れそうです。明日午前は晴れですが午後から雨に、明後日正午まで雨が続きます。以下の天気予報をPLに公開してください。</p><div class="scenario-box color-default" data-box-id="n17802084389751ki5" data-box-variant="normal"><div class="box-header"><div class="box-title">天気予報</div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">１サイクル１シーン目：１日目午前　晴れ<br>１サイクル２シーン目：１日目午後　晴れ<br>２サイクル１シーン目：２日目午前　晴れ<br>２サイクル２シーン目：２日目午後　雨<br>３サイクル１シーン目：３日目午前　雨<br>３サイクル２シーン目：３日目午後　晴れ<br>４サイクル１シーン目：４日目午前　雨<br>４サイクル２シーン目：４日目午後　晴れ<br>５サイクル１シーン目：５日目午前　雨<br>５サイクル２シーン目：５日目午後　晴れ<br>以降しばらく雨の予報</div></div><p></p>
+</section>
+<section class="sc-page" id="file-n178020648043913ip" data-file-id="n178020648043913ip">
+<h1 id="heading-n1780214619494p44b"><span style="color:rgb(34, 34, 34)">封鎖</span><br></h1><p>　羽塚市が突然封鎖されるシーンです。このシーンにはPC①とPC②が登場します。</p><p><br>　突然あちこちのスマートフォンからけたたましいアラートが鳴り響き、往来の人々は思わず足を止めてスマートフォンを手にします。「こちらは内閣府緊急事態対策本部です。現時刻を持って、羽塚市を完全封鎖いたします。市内にお住いの皆様は速やかにご帰宅し自宅での待機をお願いいたします。市外にお住まいの皆様はホテルなどをご利用ください。交通を規制するため、30分後に信号機を停止いたします。速やかな行動をお願いします。」にわかに人々がパニック状態になるがどうしたいいかわからないか突然の状況を飲みこめていないようですぐに動く人は少ない。<br>　誰かが「なんだあれ！？」と声を上げて上空を指さしている。上空には巨大な蝶が１匹飛んでいる。逆光になっていて姿はよく見えないが、その蝶はどんどん上空の太陽に向かって飛んでいく。しかし、やがて羽の動きがにぶくなっていき、塵のようになって消えてしまった。塵は光を反射してわずかに輝きながら落下してくる。<br>　人々が騒然としていると、群衆のうちの数人が突然倒れる。倒れた人物は口を開けたまま体全体が硬直したように動かなくなってしまった。瞬く間に混乱が広がり、人々が散り散りになっていく中、PCのスマートフォンからはアラートがなり続けていた。<br><strong>　ここで、ハンドアウト「</strong><a class="jump-link" data-target-file="n1780206480439dtas" href="#file-n1780206480439dtas">PC①</a><strong>」、「</strong><a class="jump-link" data-target-file="n1780206480439ngt7" href="#file-n1780206480439ngt7">PC②</a><strong>」、「</strong><a class="jump-link" data-target-file="n1780207021720jbf6" href="#file-n1780207021720jbf6">羽塚市</a><strong>」、「</strong><a class="jump-link" data-target-file="n1780207026211kkln" href="#file-n1780207026211kkln">硬化現象</a><strong>」を公開してください。</strong></p><p><b><br></b></p><p><b>※補足<br></b>・精神病院から飛んできた蝶で、逆光で見えないが肉感があってグロテスク。<br>・塵(鱗粉)を浴びた人々の中で希死念慮を抱えている人が影響を受けて倒れる。希死念慮に反応するのは妖魔「幽冥」の性質から。救助不可。<br></p><p><br></p><p><br></p><p></p>
+</section>
+<section class="sc-page" id="file-n178020648043900hh" data-file-id="n178020648043900hh">
+<h1><span style="color:rgb(34, 34, 34)">封鎖された羽塚市シーン表</span><br></h1><p>​　<span style="color: var(--text);">メインフェイズのドラマシーンには以下のシーン表の使用を推奨します。</span></p><p><span style="color: var(--text);"><br></span></p>　この表はココフォリアの/roll-tableコマンドに対応しています。<br>　本シナリオでは「景色転々」(正忍p134)のルールを一部採用しています。一度出たSイベントは発生せず、未発生の最も高い番号のイベントが発生します。全てのシーンが既出の場合、以降はランダムに発生します。<div><br></div><div><div class="scenario-box color-default" data-box-id="n1780208740530ztv5" data-box-variant="normal"><div class="box-header"><div class="box-title">封鎖された羽塚市シーン表</div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">/roll-table<br>封鎖された羽塚市シーン表<br>1d6<br>1:医療福祉区画にある巨大な精神病院。普段は厳重に封鎖されているはずの窓が開け放たれている。初めてこのシーンが選択された場合、裏口付近でプライズ「カードキー」を獲得する。<br>2:医療福祉区画の総合病院。封鎖された正面入り口からは不安そうな顔をした看護師や事務員が慌しく行き来している光景が見える。<br>3:工場区画に新設された大工場。自宅に帰らずに工場の中で待機することを選んだ人もいるようだ。工場の従業員のものらしき駐車場には多数の新車が並んでいる。<br>4:行政機関区間。少し古い建物が目立つ。役所では緊急事態に対応するために多数の職員が働いている。正面玄関には警備員が複数おり、助けを求める人々を止めている。<br>5:居住区画。整備が始まったばかりのニュータウンであり若い家族が多いようだ。しかし、誰一人として道を歩く者はいない。<br>6:郊外のショッピングモール。普段は人々でにぎわっているが閑散としている。シーンプレイヤーは任意の忍具を１個獲得することができる。</div></div><p></p><br></div>
+</section>
+<section class="sc-page" id="file-n178020878416503ud" data-file-id="n178020878416503ud">
+<h1><span style="color:rgb(34, 34, 34)">イベント表</span><br></h1><p>　​<span style="color: var(--text);">毎サイクルに一回ずつ、ドラマシーン内で宣言があればイベント表を振ることができます。イベント表では妥当な任意特技で判定を行います。この判定はPC①とPC②が挑戦でき、どちらか一人が成功すれば成功として扱います。判定に一人でも成功すると有利な効果が必ず発生します。判定に二人とも失敗すると不利な効果が発生する場合があります。</span></p><p><span style="color: var(--text);"><br></span></p>　同じイベント表のシーン番号を引いた場合、一つ上のシーン番号のイベントが発生します。<br><div><br></div><div><div class="scenario-box color-default" data-box-id="n1780208890528uwoc" data-box-variant="normal"><div class="box-header"><div class="box-title">イベント表</div><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button" title="本文のみコピー">コピー</button></div><div class="box-body">/roll-table<br>イベント表<br>1d5<br>1: <span style="color:rgb(34, 34, 34)">パニックになった男が意味不明の怒声を上げながら暴れている。取り押さえようとした人々を振り払い、男はPCたちに向かって手にしたバールを振り下ろそうとしてくる。好きな特技で判定を行う。一人でも成功すれば、以降に行う全ての情報判定にプラス１の修正を得る。二人とも失敗した場合、任意のPC一人が射撃戦ダメージ１点を受ける。</span><br>2: <span style="color:rgb(34, 34, 34)">泣いている子供を発見する。どうやら混乱の中で親とはぐれてしまったようだ。好きな特技で判定を行うことができる。一人でも成功すれば、子供の親を発見できる。PCそれぞれは任意の忍具を一つ獲得する。</span><br>3: <span style="color:rgb(34, 34, 34)">自動販売機を破壊して盗みをしようとする集団を発見する。好きな特技で判定を行うことができる。一人でも成功すれば、PCたちが以降に行う全ての戦闘で１ラウンド目に行うあらゆる判定にプラス１の修正が付く。二人とも失敗した場合、ランダムなPC一人が射撃戦ダメージ１点を受ける。</span><br>4: <span style="color:rgb(34, 34, 34)">信号機の無い道路を走行する車同士があちこちで事故を起こしている。PCたちのすぐ横を通った車が直後に他の車と衝突して炎上し始めた。好きな特技で判定を行うことができる。一人でも成功すれば、燃える車から搭乗者を救出することができる。PCそれぞれは任意の忍具を一つ獲得する。二人とも失敗した場合、PC二人は射撃戦ダメージを受ける。</span><br>5: <span style="color:rgb(34, 34, 34)">突然前方を歩いていた若い女性が倒れる。駆け寄って声をかけるべきだろうか？</span><br><span style="color:rgb(34, 34, 34)">声をかける→女性の顔色は悪いが、硬化現象が始まっている様子はない。「す、すみません急に目の前が暗くなって…」どうやら貧血か栄養失調のようだ。好きな特技で判定を行うことができる。一人でも成功すると、PCそれぞれは以降１度だけ任意の判定の達成値にプラス１の修正を行うことができる。失敗した場合、特に何も起こらない。</span><br></div></div><p></p></div><div><b>※補足</b></div><div>イベント表の5で立ち去った場合、<span style="color: rgb(34, 34, 34);">特に何も起こらない。</span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780206480439rc1v" data-file-id="n1780206480439rc1v">
+<h1 id="heading-n1776659762221kv09"><span style="color:rgb(34, 34, 34)">変身</span><br></h1><p>　「硬化現象」の【秘密】を獲得したシーンの直後に発生。PC①とPC②が登場する。<br>晴れの場合と雨の場合で演出が違う。</p><p><br></p><h2>■晴れの場合</h2>　硬直して倒れていた人々が大きく脈動する。腹や四肢を破いて一匹の人間ほどの大きさの蝶が現れる。その蝶は肉色で羽には血管がむき出しで張り付いている。しぼんでいた羽が徐々に伸びて開いていくと、その蝶は太陽を目指しているかのように上空に向かって高く飛び始める。次々と蛹から蝶が羽化して飛び立っていくが、いずれも上空で塵になって消えてしまった。塵が降り注ぎ、どこかでまた人が倒れたのか悲鳴が聞こえる。<br><p><br></p><h2>■雨の場合</h2>　だんだん雨が痛いほど強くなる。硬直して倒れていた人々が大きく脈動する。腹や四肢を破いて一匹の人間ほどの大きさの蝶が現れる。その蝶は肉色で羽には血管がむき出しで張り付いている。しぼんでいた羽が雨に打たれて更にしぼんでいく。他の場所でも同様の現象が起こっており、次々と肉の蝶が羽化している。蝶は突然PC①のほうを向くと、ゆっくりと迫ってくる。「蛹」２体との戦闘。<p><br></p><h3>〇戦闘</h3><b>参加者</b>：PC①、PC②、蛹２体<br><b>エネミー</b>：蛹２体<br><b>ラウンド制限</b>：４<br><b>戦場</b>：悪天候<br><b>特殊</b>：PCに敵対行動されるまで蛹は攻撃しない<br><b>勝利</b>：蝶が潰れる。戦果として神通丸１個獲得。<br><b>引き分け</b>：蝶がゆっくりと崩壊していく(長時間は生きられないから)<br><b>敗北</b>：PCにすり寄ってくるがやがてゆっくりと崩壊していく(長時間は生きられないから)<br>雨の場合は晴れのパターンを見せたいので３サイクル目開始時にマスターシーン「羽化」を発生させる。<p><br></p><p><b>※補足</b></p><ul><li>不完全に覚醒した妖魔の力で眷属を作っているので眷属も不完全で非常に短命。</li><li>目指すべき青空や光がないのでどうしたいいかわからずに助けを求めてPCに近寄ってきていた。</li></ul><p></p><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780209111332xz9l" data-file-id="n1780209111332xz9l">
+<h1 id="heading-n1776659762221kv09"><span style="color:rgb(34, 34, 34)">羽化</span><br></h1><p>　​<span style="color: var(--text);">マスターシーン「変身」で雨だった場合、３サイクル目開始時に１シーン目として発生させる。このシーンにはPC①とPC②が登場する。</span></p><p><span style="color: var(--text);"><br></span></p>　良く晴れた朝、青空が広がっている。空を見上げると十数羽の巨大な蝶が空に飛んでいく光景を目撃する。蝶たちはかつて見たように上空で塵になってしまった。<br><br><div><b>※補足</b></div><div>被害が連鎖的に広がっているので蝶が多い。<br></div>
+</section>
+<section class="sc-page" id="file-n1780206480439e2tv" data-file-id="n1780206480439e2tv">
+<h1><span style="color:rgb(34, 34, 34)">夢</span><br></h1><p>　２サイクル目終了時に発生。このシーンにはPC①とPC②が登場する。</p><p><br>　PC①とPC②はそれぞれ同じ内容の夢を見ている。夢の中でもPCは羽塚市にいた。羽塚市を訪れた時のような青い空と穏やかな光に包まれている様子だが、車の往来や人々の姿は全くなく、不自然な静けさが広がっている。突然、夕焼けと言うには不自然なほど赤い光が街を照らす。上空を見上げるとさきほどまで頭上に見えた太陽が沈みかけていた。気が付くと、PCの回りを１匹の小さな蝶が飛び回っている。蝶はPCの眼の前でしばらくはばたくと、どこかに飛んでいく。どこからか弱弱しい声で「わたしを×××て」と聞こえた気がした。</p><p><br></p><p><b>※補足</b><br></p><ul><li>ハグレモノの少女が助けを求めている。わたしをしなせてと言っている。</li><li>赤い光なのは地下室の光。青い光と反対という意図</li></ul><p></p><div><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780209417063n7sm" data-file-id="n1780209417063n7sm">
+<h1 id="heading-n1780214737688zeeq"><span style="color:rgb(34, 34, 34)">研究資料</span><br></h1><p>　「牛王製薬羽塚研究所」のハンドアウトが公開されたときに発生する。このシーンにはPC①とPC②が登場する。</p><p><br>　資料室などを調査していると、地下研究室の権限は「地研 成人（ちけん なるひと）」が管理していることがわかる。<br><strong>　ここで、ハンドアウト「</strong><a class="jump-link" data-target-file="n1780207024794fsci" href="#file-n1780207024794fsci">地研 成人（ちけん なるひと）</a><strong>」を公開する。</strong><br>　落ちている神通丸１個獲得できる。</p><p><br><b>※補足</b></p><p>　神通丸はサイクルがカツカツなので調整用<br></p><div><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780209518318fain" data-file-id="n1780209518318fain">
+<h1 id="heading-n1780214749695vbls"><span style="color:rgb(34, 34, 34)">地下</span><br></h1><p>　「牛王製薬羽塚研究所」のハンドアウトが公開され、さらに、条件を満たして地下研究室へ向かう旨が宣言された直後のシーンとして発生する。</p><p><br>　地下には薄暗いコンクリートの廊下がある。進んでいくと、両脇にいくつかの部屋があり、突き当りには実験室と書かれた部屋がある。扉が開いており、中から赤い光が漏れている。実験室の中に入ると機械の駆動音が低く重く響いている。赤い光をたよりに室内を見渡すと、大きなファーメンター(培養槽みたいなやつのこと)を発見する。<br><br><strong>　ここで、ハンドアウト「</strong><a class="jump-link" data-target-file="n1780207560951wgli" href="#file-n1780207560951wgli">ファーメンター</a><strong>」を公開する。</strong><br></p><div><span><br></span></div><div><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780206480439ef4r" data-file-id="n1780206480439ef4r">
+<h1 id="heading-n17765982902259uh5">クライマックスフェイズ</h1><p>　下記の条件で分岐する。</p><p><br></p><h2 id="heading-n1780214813301maex">■注射器をファーメンターに使用しなかった場合</h2>　地下研究室に向かうと、肉の塊が更に歪に蠢きだす。徐々にガラスにひびが入り、中から肉が飛び出すと、その場で蛹化し始める。このまま放っておけば妖魔として羽化する可能性が高いだろう。<p><br></p><h3 id="heading-n1780214813301ly3w">〇戦闘</h3><b>エネミー</b>：<a class="jump-link" data-target-file="n1780211437025jrif" href="#file-n1780211437025jrif">不完全な蛹</a><br><b>ラウンド制限</b>：無し<br><b>戦場</b>：平地<br><b>勝利条件</b>：不完全な蛹の【生命力】を０点にすること<br><b>戦果</b>：自由<p><br></p><h2 id="heading-n1780214813301scan">■赤い注射器をファーメンターに使用した場合(晴れの場合)</h2>　赤い注射器を注入すると、肉の塊が更に歪に蠢きだす。その尋常でない異様な蠢きからは苦痛を感じる。目玉からは涙があふれている。ガラスを突き破って不完全でグロテスクな肉がしたたり落ちる人の大きさを優に超える巨大な蝶が生まれる。妖魔へと変態したのだ。羽のはためきで地下の天井を破ると外にはい出していく。PCたちが後を追いかけると、蝶は萎んでぐちゃぐちゃになっていた羽を完全に伸ばしていく。光に目を細めるようなしぐさを見せるとPCのほうを向き直り襲い掛かってくる。<p><br></p><h3 id="heading-n1780214813301ooeu">〇戦闘</h3><b>エネミー</b>：<a class="jump-link" data-target-file="n1780211456945tset" href="#file-n1780211456945tset">不完全な蝶</a><br><b>ラウンド制限</b>：無し<br><b>戦場</b>：高所<br><b>勝利条件</b>：不完全な蝶の【生命力】を０点にすること<br><b>戦果</b>：自由<p></p><h2 id="heading-n1780214813301rx67">■赤い注射器をファーメンターに使用した場合(雨の場合)</h2>赤い注射器を注入すると、肉の塊が更に歪に蠢きだす。その尋常でない異様な蠢きからは苦痛を感じる。目玉からは涙があふれている。ガラスを突き破って不完全でグロテスクな肉がしたたり落ちる人の大きさを優に超える巨大な蝶が生まれる。妖魔へと変態したのだ。羽のはためきで地下の天井を破ると外にはい出していく。PCたちが後を追いかけると、蝶は萎んでぐちゃぐちゃになっていた羽を伸ばそうとしているが雨のせいで伸びきらない。PCのほうを向き直り襲い掛かってくる。<p><br></p><h3 id="heading-n1780214813301vnz9">〇戦闘</h3><b>エネミー</b>：<a class="jump-link" data-target-file="n1780211456945tset" href="#file-n1780211456945tset">不完全な蝶</a><br><b>ラウンド制限</b>：無し<br><b>戦場</b>：悪天候<br><b>勝利条件</b>：不完全な蝶の【生命力】を０点にすること<br><b>戦果</b>：自由<p><br></p><h2 id="heading-n1780214813301gl0a">■青い注射器をファーメンターに使用した場合（赤い注射器と併用した場合も含む）</h2>青い注射器を注入すると、ファーメンターの中の肉の塊がゆっくりと脈動している。肉塊は徐々に肉蝶の羽が生えた少女のような姿を取り始めるがすぐに崩れては再構築されていく。少女はかろうじて構築された口を必死に動かして「わたしをし××て」と伝える。<br>※妖魔の性質が残っているので攻撃性がある<p><br></p><h3 id="heading-n17802148133013zlv">〇戦闘</h3><p><b>エネミー</b>：<a class="jump-link" data-target-file="n17802118696568zjm" href="#file-n17802118696568zjm">不完全な少女</a></p><b>ラウンド制限</b>：無し<br><b>戦場</b>：平地<br><b>勝利条件</b>：不完全な少女の【生命力】を０点にすること<br><b>戦果</b>：自由<br><p></p><p><br></p><p><br></p><p><br></p><div><span><br></span></div><div style="text-align: left;"><br></div><p><br></p>
+</section>
+<section class="sc-page" id="file-n1780206480439v8hb" data-file-id="n1780206480439v8hb">
+<h1 id="heading-n1777112676172p6dp">結末の分岐</h1><h2>​<span style="color: var(--text);">​</span><span style="color: var(--text);">■注射器をファーメンターに使用しなかった場合</span></h2>蛹化が止まる。肉塊はPCに向かって助けを求めるように蠢くと、途中で力尽きて動かなくなる。<div><br><h2>■赤い注射器をファーメンターに使用した場合（晴れの場合）</h2>巨体が溶けて形を保てなくなり崩れていく。青空で光を放つ太陽に向かって羽ばたこうとするが、崩壊していく羽では不可能だった。太陽の方に頭を上げると、全身の力が抜けたように崩れ落ち、塵となって消滅する。</div><div><br><h2>■赤い注射器をファーメンターに使用した場合（雨の場合）</h2>巨体が溶けて形を保てなくなり崩れていく。空の方に頭を上げると、全身の力が抜けたように崩れ落ち、塵となって消滅する。</div><div><br><h2>■青い注射器をファーメンターに使用した場合（赤い注射器と併用した場合も含む）</h2>少女はPC①に弱弱しい声で、「わたしをみつけてくれてありがとう」と伝える。少女から羽が無くなっている。少女は外に連れて行って欲しいと頼む。外に連れ出すと雲一つない青空が広がっていた。少女は太陽の光を浴びて眩しそうにするとゆっくりと上空に向かって手を伸ばした。その瞬間、少女の体は溶け落ちて消滅する。</div><div><br><h2>■共通演出</h2>この後比良坂機関がなんとかしてくれます。<br><p><span style="color: var(--text);"><br></span></p><!--StartFragment--><!--EndFragment--></div>
+</section>
+<section class="sc-page" id="file-n1780210691339v8cx" data-file-id="n1780210691339v8cx">
+<h1><span style="color:rgb(34, 34, 34)">地研 成人</span><br></h1><p><span style="color: var(--text);">　特殊エネミー(御斎p31)として扱う。「狂的科学者(基本p186)」の改造版。</span></p><p><span style="color: var(--text);"><br></span></p><h2>○運用方法</h2>　ほどほどに倒せそうな感じをイメージ。クライマックスフェイズには出ない。<div><br><h2>○階級</h2>上忍</div><div><br><h2>○流派</h2>斜歯忍軍</div><div><br><h2>○信念</h2>我</div><div><br><h2>○生命力</h2>６点</div><div><br><h2>○特技</h2>≪火術≫<br>≪衣装術≫<br>≪拷問術≫<br>≪経済力≫<br>≪用兵術≫</div><div><br><h2>○忍法</h2>【接近戦攻撃】≪経済力≫(基本p78)<br>【万華鏡】≪用兵術≫(基本p)<br>【爆破】≪火術≫(基本p)<br>【痛打】≪拷問術≫(基本p)<br>【魔界工学】≪なし≫(基本p)</div><div><br><h2>○奥義</h2>判定妨害/続き・回数制限/≪拷問術≫<br>不死身/≪経済力≫</div><div><br><h2>○忍具</h2>無し<br></div><div><br></div><div><div class="scenario-box ccfolia-card color-default" data-box-id="n1780210822996fm0t" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">地研 成人</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"><br></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪経済力≫
+2SG@12#2&gt;=5　命中判定【万華鏡】≪用兵術≫ 
+2SG@12#2&gt;=5　命中判定【爆破】≪火術≫ 
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+2SG@12#2&gt;=5　サポート忍法の判定 【痛打】≪拷問術≫
+判定妨害/続き・回数制限/≪拷問術≫<br>不死身/≪経済力≫<br></div></div></div><p></p></div>
+</section>
+<section class="sc-page" id="file-n1780211437025jrif" data-file-id="n1780211437025jrif">
+<h1 id="heading-n1780214824796tpwz"><span style="color:rgb(34, 34, 34)">不完全な蛹</span><br></h1><p><span style="color: var(--text);">　特殊エネミー(御斎p31)として扱う。</span></p><p><br></p><h2 id="heading-n1780214824796s4pc">○運用方法</h2>　火力低め。<p><br></p><h2 id="heading-n17802148247968e1y">○階級</h2>中級妖魔<p><br></p><h2 id="heading-n1780214824796gkij">○信念</h2>凶<p><br></p><h2 id="heading-n17802148247966ydb">○生命力</h2>10点<p><br></p><h2 id="heading-n1780214824796ywte">○特技</h2>≪怪力≫<br>≪生存術≫<br>≪鳥獣術≫<br>≪異形化≫<br>≪結界術≫<br>≪言霊術≫<p><br></p><h2 id="heading-n1780214824796fv7h">○忍法</h2>【接近戦攻撃】≪異形化≫(基本p78)<br>【天牛】≪怪力≫(基本p78)<br>【裏真言】≪言霊術≫(基本p106)<br>【胡蝶】≪鳥獣術≫(基本p110)<br>【見越】≪なし≫(基本p172)<br>【飢渇】≪なし≫(基本p84)<p><br></p><h2 id="heading-n1780214824796tzbg">○奥義</h2>さざめき/判定妨害/≪鳥獣術≫<br>崩れかけの殻/不死身/≪結界術≫<p><br></p><h2 id="heading-n1780214824796b386">○忍具</h2>無し<br><p><br></p><div><div class="scenario-box ccfolia-card color-default" data-box-id="n1780210822996fm0t" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">地研 成人</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">生命力</td><td class="ccfolia-stat-val">4</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">4</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"><br></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪異形化≫
+2SG@12#2&gt;=5　命中判定【天牛】≪怪力≫ 
+2SG@12#2&gt;=5　命中判定【裏真言】≪言霊術≫ 
+2SG@12#2&gt;=5　命中判定【胡蝶】≪鳥獣術≫ 
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+さざめき/判定妨害/≪鳥獣術≫<br>崩れかけの殻/不死身/≪結界術≫<br></div></div></div><p></p></div>
+</section>
+<section class="sc-page" id="file-n1780211456945tset" data-file-id="n1780211456945tset">
+<h1 id="heading-n1780214816008g2pt"><span style="color:rgb(34, 34, 34)">不完全な蝶</span><br></h1><p><span style="color: var(--text);">　特殊エネミー(御斎p31)として扱う。</span></p><p><span style="color: var(--text);"><br></span></p><h2 id="heading-n1780214816008yscz"><span style="color: var(--text);">○運用方法</span></h2><div><br></div><div><br><h2 id="heading-n17802148160083yz4">○階級</h2>中級妖魔</div><div><br><h2 id="heading-n1780214816008w5ss">○信念</h2>凶</div><div><br><h2 id="heading-n17802148160082pxm">○生命力</h2>14点</div><div><br><h2 id="heading-n1780214816008jh1u">○特技</h2>≪怪力≫<br>≪生存術≫<br>≪鳥獣術≫<br>≪異形化≫<br>≪結界術≫<br>≪言霊術≫</div><div><br><h2 id="heading-n1780214816008dryo">○忍法</h2>【接近戦攻撃】≪異形化≫(基本p78)<br>【裏真言】≪言霊術≫(基本p106)<br>【胡蝶】≪鳥獣術≫(基本p110)<br>【浮足】≪身体操術≫(基本p115)<br>【夜雀】≪なし≫(基本p172)<br>【見越】≪なし≫(基本p172)<br>【飢渇】≪なし≫(基本p84)</div><div><br><h2 id="heading-n1780214816008100r">○奥義</h2>さざめき/判定妨害/≪鳥獣術≫<br>変容する肉体/範囲攻撃/≪異形化≫</div><p><br></p><h2 id="heading-n1780214816008o2vx">〇忍具</h2><p>無し</p><p><br></p><div><div class="scenario-box ccfolia-card color-default" data-box-id="n1780210822996fm0t" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">不完全な蝶</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">生命力</td><td class="ccfolia-stat-val">8</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">8</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"><br></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪異形化≫<br>2SG@12#2&gt;=5　命中判定【裏真言】≪言霊術≫ <br>2SG@12#2&gt;=5　命中判定【胡蝶】≪鳥獣術≫ 
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+2SG@12#2&gt;=5　サポート忍法の判定 【浮足】≪身体操術≫
+さざめき/判定妨害/≪鳥獣術≫<br>変容する肉体/範囲攻撃/≪異形化≫<br></div></div></div><p></p></div>
+</section>
+<section class="sc-page" id="file-n17802118696568zjm" data-file-id="n17802118696568zjm">
+<h1 id="heading-n1780214840153rlwk"><span style="color:rgb(34, 34, 34)">不完全な少女</span><br></h1><p>&nbsp;　特殊エネミー(御斎p31)として扱う。</p><p><br></p><h2 id="heading-n17802148401530nxj">○運用方法</h2>　書いてあると助かる場合が多いしわかりやすい。<p><br></p><h2 id="heading-n1780214840153h1ak">○階級</h2>中級妖魔<p><br></p><h2 id="heading-n1780214840153hq8o">○信念</h2>凶<p><br></p><h2 id="heading-n1780214840153ymll">○生命力</h2>12点<p><br></p><h2 id="heading-n178021484015314a0">○特技</h2>≪怪力≫<br>≪傀儡の術≫<br>≪鳥獣術≫<br>≪異形化≫<br>≪結界術≫<br>≪言霊術≫<p><br></p><h2 id="heading-n1780214840153tmq5">○忍法</h2>【接近戦攻撃】≪異形化≫(基本p78)<br>【夢浄瑠璃】≪傀儡の術≫(基本p80)<br>【裏真言】≪言霊術≫(基本p106)<br>【胡蝶】≪鳥獣術≫(基本p110)<br>【見越】≪なし≫(基本p172)<br>【飢渇】≪なし≫(基本p84)<p><br></p><h2 id="heading-n1780214840153w63e">○奥義</h2>さざめき/判定妨害/≪鳥獣術≫<br>こぼれた肉体/不死身/≪異形化≫<p><br></p><h2 id="heading-n1780214840153s409">○忍具</h2>無し<br><p><br></p><div><div class="scenario-box ccfolia-card color-default" data-box-id="n1780210822996fm0t" data-box-type="ccfolia" data-cc-color="#4a5a6a" style="border-top:3px solid #4a5a6a"><div class="box-header"><div class="box-title"><span style="color:rgb(34, 34, 34)">不完全な蝶</span><br></div><button class="ccfolia-copy-btn" type="button" title="CoCo Folia形式でクリップボードにコピー">📋 ココフォリア用コピー</button><button class="box-copy-title-btn" type="button" title="タイトル込みでコピー">T+コピー</button><button class="box-copy-btn" type="button">コピー</button></div><div class="box-body"><div class="ccfolia-section-title">ステータス</div><table class="ccfolia-status-table"><colgroup><col style="width:14px"><col style="width:66%"><col style="width:15%"><col style="width:4%"><col style="width:15%"></colgroup><thead><tr><th>名前</th><th colspan="3" style="text-align:right">現在値 / 最大値</th></tr></thead><tbody><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">器術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">体術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">忍術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">謀術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">戦術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">妖術</td><td class="ccfolia-stat-val">1</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">1</td></tr><tr data-cc-stat="" draggable="true"><td class="ccfolia-stat-label">生命力</td><td class="ccfolia-stat-val">6</td><td class="ccfolia-stat-sep">/</td><td class="ccfolia-stat-max">6</td></tr></tbody></table><div class="ccfolia-section-title">メモ</div><div class="ccfolia-memo-block"><br></div><div class="ccfolia-section-title">コマンド</div><div class="ccfolia-commands-block">2SG@12#2&gt;=5　命中判定【接近戦攻撃】≪異形化≫
+2SG@12#2&gt;=5　命中判定【夢浄瑠璃】≪傀儡の術≫ 
+2SG@12#2&gt;=5　命中判定【裏真言】≪言霊術≫ 
+2SG@12#2&gt;=5　命中判定【胡蝶】≪鳥獣術≫  
+2SG@12#2&gt;=5　回避判定
+2SG@12#2&gt;=5　奥義破り判定
+さざめき/判定妨害/≪鳥獣術≫<br>こぼれた肉体/不死身/≪異形化≫<br></div></div></div><p></p></div>
+</section>
+
+    </main>
+
+    <!-- PL/GM ページ切り替えバー（JS で表示・リンク設定） -->
+    <div class="page-link-bar hidden" id="page-link-bar">
+      <div class="page-link-inner">
+        <div class="page-link-note" id="page-link-note"></div>
+        <a href="#" id="page-partner-btn" class="page-partner-btn"></a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <a href="../index.html">← シナリオ一覧に戻る</a>
+      <div class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> シナリオ置き場 — All Rights Reserved.</div>
+      <div class="footer-note">当サイトで公開しているシナリオは個人が制作した二次創作物です。各TRPGシステムの著作権は各権利者に帰属します。無断転載・商用利用・AI学習への利用を禁止します。</div>
+    </footer>
+  </div>
+
+  <style>
+    /* シナリオツリーサイドバー */
+    #sc-tree { font-size: 13px; }
+    #sc-tree ul.sc-tree-list { list-style: none; padding: 0; margin: 0; }
+    #sc-tree ul.sc-tree-list ul.sc-tree-list { padding-left: 14px; }
+    #sc-tree .sc-tree-file > a {
+      display: block; padding: 3px 8px; color: inherit; text-decoration: none;
+      border-radius: 4px; word-break: break-all; line-height: 1.4;
+    }
+    #sc-tree .sc-tree-file > a { color: #bbbbbb; }
+    #sc-tree .sc-tree-file > a:hover { background: rgba(255,255,255,.06); color: #eeeeee; }
+    #sc-tree .sc-tree-file > a.active { background: rgba(255,255,255,.10); color: #f5f5f5; font-weight: 600; }
+    #sc-tree .sc-tree-folder-label {
+      display: flex; align-items: center; gap: 4px;
+      padding: 3px 6px; cursor: pointer; border-radius: 4px;
+      user-select: none; font-weight: 600;
+      color: #d4d4d4;
+    }
+    #sc-tree .sc-tree-folder-label:hover { background: rgba(255,255,255,.08); color: #ffffff; }
+    #sc-tree .sc-tree-triangle {
+      display: inline-block; width: 12px; font-size: 10px;
+      transition: transform .15s; flex-shrink: 0;
+    }
+    #sc-tree .sc-tree-folder:not(.open) > .sc-tree-folder-label .sc-tree-triangle {
+      transform: rotate(-90deg);
+    }
+    #sc-tree .sc-tree-folder:not(.open) > ul.sc-tree-list { display: none; }
+    /* セクション切替: ツリーで選択中のセクションのみ表示 (PL/GM共通) */
+    .sc-page { display: none; }
+    .sc-page.active { display: block; }
+    .sc-page-title {
+      font-size: 1.6em; margin: 0 0 .8em; padding-bottom: .3em;
+      border-bottom: 2px solid rgba(127,127,127,.3);
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function() {
+    // --- PL/GM パートナーリンク ---
+    var partner = "2025限界チャレンジ_pl.html";
+    var bar  = document.getElementById('page-link-bar');
+    var note = document.getElementById('page-link-note');
+    var btn  = document.getElementById('page-partner-btn');
+    var btnTop = document.getElementById('page-partner-btn-top');
+    var isPL = false;
+    var label = isPL ? '🔒 GM用ページを見る →' : '👥 PL用ページを見る →';
+    if (bar && btn && partner) {
+      bar.classList.remove('hidden');
+      if (isPL) {
+        if (note) note.innerHTML = '<strong>このページはPL用です。</strong> GMの方は以下からGM用ページをご覧ください。';
+        btn.href = partner; btn.textContent = label; btn.classList.add('btn-gm');
+      } else {
+        if (note) note.innerHTML = '<strong>このページはGM用です。</strong> PL用ページも用意されています。';
+        btn.href = partner; btn.textContent = label; btn.classList.add('btn-pl');
+      }
+    }
+    if (btnTop && partner) { btnTop.href = partner; btnTop.textContent = label; }
+
+    // --- シナリオツリー動作（GMページのみ） ---
+    var tree = document.getElementById('sc-tree');
+    if (!tree) return;  // PLページなど、ツリーなしなら何もしない
+
+    // フォルダ展開トグル
+    tree.addEventListener('click', function(e) {
+      var lbl = e.target.closest('.sc-tree-folder-label');
+      if (lbl && tree.contains(lbl)) {
+        lbl.parentElement.classList.toggle('open');
+      }
+    });
+
+    // ファイルリンククリック: セクション切替
+    var allSections = document.querySelectorAll('.sc-page');
+    var allLinks    = tree.querySelectorAll('.sc-tree-file > a');
+
+    function showFile(id) {
+      var found = false;
+      allSections.forEach(function(s) {
+        var on = s.dataset.fileId === id;
+        s.classList.toggle('active', on);
+        if (on) found = true;
+      });
+      allLinks.forEach(function(a) {
+        a.classList.toggle('active', a.dataset.fileId === id);
+      });
+      if (found) {
+        var mw = document.getElementById('main-wrapper');
+        if (mw) mw.scrollTop = 0;
+        else window.scrollTo(0, 0);
+      }
+      return found;
+    }
+
+    tree.addEventListener('click', function(e) {
+      var a = e.target.closest('.sc-tree-file > a');
+      if (!a) return;
+      e.preventDefault();
+      var id = a.dataset.fileId;
+      showFile(id);
+      history.replaceState(null, '', '#file-' + id);
+    });
+
+    // ジャンプリンク（クロスファイル + PL/GM横断対応）
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a.jump-link');
+      if (!link) return;
+      var fileId = link.getAttribute('data-target-file');
+      var targetId = link.getAttribute('data-target');
+      if (!fileId && !targetId) return;
+      e.preventDefault();
+      // まず自ページ内で解決を試みる
+      var handled = false;
+      if (fileId) {
+        if (showFile(fileId)) handled = true;
+      } else if (targetId) {
+        // fileId 指定なし → 現在表示中のまま見出しへスクロール
+        var t0 = document.getElementById(targetId);
+        if (t0) { t0.scrollIntoView({ behavior: 'smooth', block: 'start' }); handled = true; }
+        else if (document.getElementById(targetId)) { handled = true; }
+      }
+      if (handled) {
+        if (targetId) {
+          setTimeout(function() {
+            var t = document.getElementById(targetId);
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 30);
+        }
+        return;
+      }
+      // 自ページに該当無し → パートナーページ（PL↔GM）へリダイレクト
+      if (partner) {
+        var hashPart = targetId ? ('#' + targetId) : (fileId ? ('#file-' + fileId) : '');
+        window.location.href = partner + hashPart;
+      }
+    });
+
+    // 初期表示（#file-xxx / #heading-xxx どちらにも対応）
+    var initial = "n1780206480439fs7d";
+    var hash = location.hash || '';
+    var m = hash.match(/^#file-(.+)$/);
+    if (m && showFile(m[1])) {
+      /* ok */
+    } else if (hash.length > 1) {
+      // 見出し等のアンカー: 含まれるファイルを探して切替 → スクロール
+      var id = hash.slice(1);
+      var anchorEl = document.getElementById(id);
+      if (anchorEl) {
+        var pageEl = anchorEl.closest('.sc-page');
+        if (pageEl && pageEl.dataset.fileId) {
+          showFile(pageEl.dataset.fileId);
+        } else if (initial) {
+          showFile(initial);
+        }
+        setTimeout(function() {
+          var t = document.getElementById(id);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 30);
+      } else if (initial) {
+        showFile(initial);
+      }
+    } else if (initial) {
+      showFile(initial);
+    }
+  })();
+
+  // --- フリー接続図 静的レンダラ (HTML ノード + SVG 矢印) ---
+  (function() {
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    var DC_CELL = 20;
+    function snap(v) { return Math.round(v / DC_CELL) * DC_CELL; }
+    function svgEl(tag, attrs) {
+      var n = document.createElementNS(SVG_NS, tag);
+      if (attrs) for (var k in attrs) n.setAttribute(k, attrs[k]);
+      return n;
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;');
+    }
+    function parseMd(t) {
+      var s = esc(t || '');
+      s = s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+           .replace(/\*(.+?)\*/g,'<em>$1</em>')
+           .replace(/\n/g,'<br>');
+      return s;
+    }
+    function endpoints(s, t, idx, slotInfo) {
+      var sw = s.w||120, sh = s.h||40, tw = t.w||120, th = t.h||40;
+      var sw2 = sw/2, sh2 = sh/2, tw2 = tw/2, th2 = th/2;
+      var cs = { x: snap(s.x+sw2), y: snap(s.y+sh2) };
+      var ct = { x: snap(t.x+tw2), y: snap(t.y+th2) };
+      var dx = ct.x-cs.x, dy = ct.y-cs.y;
+      var C = DC_CELL;
+      var hGap = Math.abs(dx) - (sw2 + tw2);
+      var vGap = Math.abs(dy) - (sh2 + th2);
+      var canH = hGap >= 2*C, canV = vGap >= 2*C;
+      var rawIdx = (typeof idx === 'number' ? idx : 0);
+      var off = ((rawIdx%5)-2)*C;
+      var fromShift = (slotInfo && typeof slotInfo.fromShift === 'number') ? slotInfo.fromShift : 0;
+      var toShift   = (slotInfo && typeof slotInfo.toShift   === 'number') ? slotInfo.toShift   : 0;
+      function clamp(v,lo,hi){ return v<lo?lo:(v>hi?hi:v); }
+      function hZ() {
+        var sY = cs.y + fromShift, tY = ct.y + toShift;
+        var sx = dx>=0?1:-1;
+        var x1 = snap(s.x + (sx>0?sw:0));
+        var x2 = snap(t.x + (sx>0?0:tw));
+        if (sY === tY) return [[x1,sY],[x2,tY]];
+        var loX = Math.min(x1,x2)+C, hiX = Math.max(x1,x2)-C;
+        var xm = clamp(snap((x1+x2)/2)+off, loX, hiX);
+        return [[x1,sY],[xm,sY],[xm,tY],[x2,tY]];
+      }
+      function vZ() {
+        var sX = cs.x + fromShift, tX = ct.x + toShift;
+        var sy = dy>=0?1:-1;
+        var y1 = snap(s.y + (sy>0?sh:0));
+        var y2 = snap(t.y + (sy>0?0:th));
+        if (sX === tX) return [[sX,y1],[tX,y2]];
+        var loY = Math.min(y1,y2)+C, hiY = Math.max(y1,y2)-C;
+        var ym = clamp(snap((y1+y2)/2)+off, loY, hiY);
+        return [[sX,y1],[sX,ym],[tX,ym],[tX,y2]];
+      }
+      if (canH && (!canV || Math.abs(dx)>=Math.abs(dy))) return hZ();
+      if (canV) return vZ();
+      if (Math.abs(dx)>=Math.abs(dy)) {
+        var sTopY = snap(s.y), tTopY = snap(t.y);
+        var sxp = snap(cs.x), txp = snap(ct.x);
+        var midY = snap(Math.min(s.y,t.y) - 2*C) - (rawIdx*C);
+        return [[sxp,sTopY],[sxp,midY],[txp,midY],[txp,tTopY]];
+      } else {
+        var sLx = snap(s.x), tLx = snap(t.x);
+        var syp = snap(cs.y), typ = snap(ct.y);
+        var midX = snap(Math.min(s.x,t.x) - 2*C) - (rawIdx*C);
+        return [[sLx,syp],[midX,syp],[midX,typ],[tLx,typ]];
+      }
+    }
+    var uid = 0;
+    document.querySelectorAll('.draw-canvas-block').forEach(function(block) {
+      if (block.dataset.rendered === '1') return;
+      block.dataset.rendered = '1';
+      // 編集UI要素は削除。ヘッダ（タイトル badge）は残す。
+      var modes = block.querySelector('.draw-canvas-modes'); if (modes) modes.remove();
+      var help = block.querySelector('.draw-help-btn'); if (help) help.remove();
+      var help2 = block.querySelector('.draw-canvas-help'); if (help2) help2.remove();
+      var delBtn = block.querySelector('.box-delete-btn'); if (delBtn) delBtn.remove();
+      var rhandle = block.querySelector('.draw-resize-handle'); if (rhandle) rhandle.remove();
+      var raw = block.getAttribute('data-graph') || '{}';
+      var g; try { g = JSON.parse(raw); } catch(_) { g = {}; }
+      var nodes = g.nodes || [], edges = g.edges || [];
+      var minX=0,minY=0,maxX=0,maxY=0;
+      nodes.forEach(function(n){ var w=n.w||120,h=n.h||40; if(n.x<minX)minX=n.x; if(n.y<minY)minY=n.y; if(n.x+w>maxX)maxX=n.x+w; if(n.y+h>maxY)maxY=n.y+h; });
+      var pad = DC_CELL;
+      var bodyW = Math.max(400, maxX-minX+pad*2);
+      var bodyH = Math.max(200, maxY-minY+pad*2);
+      var oldSvg = block.querySelector('svg.draw-svg'); if (oldSvg) oldSvg.remove();
+      var body = document.createElement('div');
+      body.className = 'draw-canvas-body';
+      body.style.cssText = 'position:relative;width:100%;max-width:'+bodyW+'px;margin:0 auto;';
+      var svg = document.createElementNS(SVG_NS,'svg');
+      svg.setAttribute('class','draw-edges');
+      svg.setAttribute('viewBox','0 0 '+bodyW+' '+bodyH);
+      svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+      svg.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2';
+      var aid = 'ahgh-' + (++uid);
+      var defs = svgEl('defs');
+      defs.innerHTML = '<marker id="'+aid+'" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#5b9ae0"/></marker>';
+      svg.appendChild(defs);
+      var spacer = document.createElement('div');
+      spacer.style.cssText = 'position:relative;width:100%;padding-bottom:'+(bodyH/bodyW*100)+'%';
+      body.appendChild(spacer);
+      var inner = document.createElement('div');
+      inner.style.cssText = 'position:absolute;inset:0';
+      body.appendChild(inner);
+      nodes.forEach(function(n) {
+        var nw = n.w||120, nh = n.h||40;
+        var relX = n.x-(minX-pad), relY = n.y-(minY-pad);
+        var node = document.createElement('div');
+        node.className = 'draw-node-html';
+        if (n.color && n.color !== 'default') node.setAttribute('data-color', n.color);
+        node.style.cssText = 'position:absolute;left:'+(relX/bodyW*100)+'%;top:'+(relY/bodyH*100)+'%;width:'+(nw/bodyW*100)+'%;height:'+(nh/bodyH*100)+'%;';
+        var ta = n.textAlign || 'center', va = n.verticalAlign || 'top';
+        var vjm = { top:'flex-start', middle:'center', bottom:'flex-end' };
+        var hfm = { 1:'1.25em', 2:'1.10em', 3:'1.0em', 4:'.95em' };
+        var fs = hfm[n.headingLevel] || '.95em';
+        var fw = n.headingLevel ? '700' : '400';
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'draw-node-content';
+        contentDiv.style.cssText = 'width:100%;height:100%;display:flex;flex-direction:column;justify-content:'+(vjm[va]||'flex-start')+';text-align:'+ta+';font-size:'+fs+';font-weight:'+fw+';overflow:auto;word-break:break-word;line-height:1.5;';
+        contentDiv.innerHTML = parseMd(n.label || '');
+        node.appendChild(contentDiv);
+        inner.appendChild(node);
+      });
+      var byId = {};
+      nodes.forEach(function(n){ byId[n.id] = n; });
+      function sideAt(nodeId, e) {
+        var me = byId[nodeId];
+        var otherId = e.from===nodeId ? e.to : e.from;
+        var other = byId[otherId];
+        if (!me || !other) return 'right';
+        var meW = me.w||120, meH = me.h||40, oW = other.w||120, oH = other.h||40;
+        var dx = (other.x+oW/2) - (me.x+meW/2);
+        var dy = (other.y+oH/2) - (me.y+meH/2);
+        var hGap = Math.abs(dx) - (meW/2+oW/2);
+        var vGap = Math.abs(dy) - (meH/2+oH/2);
+        var canH = hGap >= 2*DC_CELL, canV = vGap >= 2*DC_CELL;
+        if (canH && (!canV || Math.abs(dx)>=Math.abs(dy))) return dx>=0?'right':'left';
+        if (canV) return dy>=0?'bottom':'top';
+        return Math.abs(dx)>=Math.abs(dy) ? 'top' : 'left';
+      }
+      var slotsCache = {};
+      function slotsForNode(nodeId) {
+        if (slotsCache[nodeId]) return slotsCache[nodeId];
+        var me = byId[nodeId];
+        if (!me) { slotsCache[nodeId] = {}; return slotsCache[nodeId]; }
+        var buckets = { top:[], right:[], bottom:[], left:[] };
+        edges.filter(function(e){ return e.from===nodeId||e.to===nodeId; }).forEach(function(e){
+          buckets[sideAt(nodeId,e)].push(e);
+        });
+        var margin = 4, minGap = 8;
+        var result = {};
+        ['top','right','bottom','left'].forEach(function(side){
+          var list = buckets[side]; if (list.length===0) return;
+          var halfExtent = (side==='top'||side==='bottom') ? (me.w||120)/2 : (me.h||40)/2;
+          var maxSpread = Math.max(margin, halfExtent - margin);
+          var items = list.map(function(e){
+            var otherId = e.from===nodeId ? e.to : e.from;
+            var o = byId[otherId]; var want = 0;
+            if (o) {
+              if (side==='top'||side==='bottom') want = (o.x+(o.w||120)/2) - (me.x+(me.w||120)/2);
+              else want = (o.y+(o.h||40)/2) - (me.y+(me.h||40)/2);
+            }
+            if (want > maxSpread) want = maxSpread;
+            if (want < -maxSpread) want = -maxSpread;
+            return { e:e, want:want };
+          });
+          items.sort(function(a,b){
+            var d = a.want - b.want; if (d!==0) return d;
+            return String(a.e.id).localeCompare(String(b.e.id));
+          });
+          for (var i=1; i<items.length; i++) {
+            if (items[i].want - items[i-1].want < minGap) items[i].want = items[i-1].want + minGap;
+          }
+          var overTop = items[items.length-1].want - maxSpread;
+          if (overTop > 0) for (var j=0; j<items.length; j++) items[j].want -= overTop;
+          var overBot = -maxSpread - items[0].want;
+          if (overBot > 0) for (var k=0; k<items.length; k++) items[k].want += overBot;
+          if (items[0].want < -maxSpread - 0.5 || items[items.length-1].want > maxSpread + 0.5) {
+            var step = items.length > 1 ? (2*maxSpread)/(items.length-1) : 0;
+            for (var m=0; m<items.length; m++) items[m].want = -maxSpread + m*step;
+          }
+          items.forEach(function(it){ result[it.e.id] = { shift: Math.round(it.want), side: side }; });
+        });
+        slotsCache[nodeId] = result;
+        return result;
+      }
+      function slotInfoFor(edge) {
+        var fi = slotsForNode(edge.from)[edge.id] || { shift:0 };
+        var ti = slotsForNode(edge.to)[edge.id]   || { shift:0 };
+        return { fromShift:fi.shift, toShift:ti.shift };
+      }
+      function clipToBorder(node, ext) {
+        var cx = node.x+(node.w||120)/2, cy = node.y+(node.h||40)/2;
+        var dx = ext[0]-cx, dy = ext[1]-cy;
+        if (dx===0 && dy===0) return [cx,cy];
+        var hw = (node.w||120)/2, hh = (node.h||40)/2;
+        var tx = dx===0?Infinity:hw/Math.abs(dx);
+        var ty = dy===0?Infinity:hh/Math.abs(dy);
+        var tt = Math.min(tx,ty);
+        return [Math.round(cx+dx*tt), Math.round(cy+dy*tt)];
+      }
+      edges.forEach(function(e, eidx) {
+        var s = byId[e.from], t = byId[e.to];
+        if (!s || !t) return;
+        var ss = { x:s.x-(minX-pad), y:s.y-(minY-pad), w:s.w||120, h:s.h||40 };
+        var tt = { x:t.x-(minX-pad), y:t.y-(minY-pad), w:t.w||120, h:t.h||40 };
+        var pts;
+        if (e.mode === 'manual') {
+          var wps = (e.waypoints||[]).map(function(p){ return [p[0]-(minX-pad), p[1]-(minY-pad)]; });
+          var sCtr = [ss.x+ss.w/2, ss.y+ss.h/2], tCtr = [tt.x+tt.w/2, tt.y+tt.h/2];
+          var sP, eP;
+          if (e.startPoint) { sP = [e.startPoint[0]-(minX-pad), e.startPoint[1]-(minY-pad)]; }
+          else { var firstExt = wps.length>0 ? wps[0] : (e.endPoint ? [e.endPoint[0]-(minX-pad), e.endPoint[1]-(minY-pad)] : tCtr); sP = clipToBorder(ss, firstExt); }
+          if (e.endPoint) { eP = [e.endPoint[0]-(minX-pad), e.endPoint[1]-(minY-pad)]; }
+          else { var lastExt = wps.length>0 ? wps[wps.length-1] : (e.startPoint ? [e.startPoint[0]-(minX-pad), e.startPoint[1]-(minY-pad)] : sCtr); eP = clipToBorder(tt, lastExt); }
+          pts = [sP].concat(wps).concat([eP]);
+        } else {
+          pts = endpoints(ss, tt, eidx, slotInfoFor(e));
+        }
+        var str = pts.map(function(p){ return p.join(','); }).join(' ');
+        svg.appendChild(svgEl('polyline', { 'class':'draw-edge', points:str, fill:'none', 'marker-end':'url(#'+aid+')' }));
+        if (e.label) {
+          var mi = Math.floor(pts.length/2); var a = pts[mi-1], b = pts[mi];
+          var tx = svgEl('text', { 'class':'draw-edge-label', x:(a[0]+b[0])/2, y:(a[1]+b[1])/2-5, 'text-anchor':'middle' });
+          tx.textContent = e.label;
+          svg.appendChild(tx);
+        }
+      });
+      inner.appendChild(svg);
+      block.appendChild(body);
+    });
+  })();
+  </script>
+</body>
+</html>
