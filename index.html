@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シナリオ置き場</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="CCBot" content="noindex">
+  <meta name="GPTBot" content="noindex">
+  <meta name="anthropic-ai" content="noindex">
+  <meta name="Claude-Web" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-index">
+
+  <!-- Sidebar overlay (mobile) -->
+  <div id="sb-overlay"></div>
+
+  <!-- Hamburger button (mobile) -->
+  <button id="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Black Sidebar -->
+  <aside id="site-sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">シナリオ<br>置き場</span>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="sidebar-nav-section">MENU</span>
+      <a href="pages/hajimeni.html" class="sidebar-nav-item">はじめに</a>
+      <a href="index.html"          class="sidebar-nav-item active">シナリオ一覧</a>
+      <a href="pages/terms.html"    class="sidebar-nav-item">利用規約</a>
+      <a href="pages/contact.html"  class="sidebar-nav-item">お問い合わせ</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div id="main-wrapper">
+
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-label">Private Scenario Archive</div>
+      <h1 class="hero-title">
+        シナリオ<br>
+        <span class="title-accent">置き場</span>
+      </h1>
+      <p class="hero-sub">
+
+        <b style="color: red; size: 2em;">現在このサイトはテスト中です。</b><br>
+
+        自作の非公式同人シナリオのアーカイブです。
+        <br>当サイトの掲載物を利用する前に、必ず「はじめに」と「利用規約」をご一読ください。
+        <b>
+          <br>このサイトにあるシナリオは全て、次の著作物の二次創作作品です。
+          <br>『忍術バトルRPG シノビガミ』
+          <br>著：河嶋陶一朗／冒険企画局、新紀元社 が権利を有します。
+          <br>(C) 冒険企画局／新紀元社／河嶋陶一朗 「忍術バトルRPG シノビガミ」</b>
+      </p>
+    </section>
+
+    <!-- Scenario Grid -->
+    <section id="scenario-grid-section">
+      <div class="section-header">
+        <span class="section-title">All Scenarios</span>
+        <span class="section-count" id="scenario-count"></span>
+      </div>
+
+      <div id="tag-filter-bar"></div>
+
+      <div id="sort-bar" class="sort-bar">
+        <span class="sort-bar-label">並び順：</span>
+        <button type="button" class="sort-btn active" data-sort="date-desc">新しい順</button>
+        <button type="button" class="sort-btn" data-sort="date-asc">古い順</button>
+      </div>
+
+      <div class="scenario-grid" id="scenario-grid">
+        <div class="empty-grid" id="loading-msg">シナリオがまだありません</div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-copy">
+        &copy; <span id="footer-year"></span> シナリオ置き場 — All Rights Reserved.
+      </div>
+      <div class="footer-note">
+        当サイトで公開しているシナリオは個人が制作した二次創作物です。
+        各TRPGシステムの著作権は各権利者に帰属します。
+        無断転載・商用利用・AI学習への利用を禁止します。
+      </div>
+    </footer>
+  </div>
+
+  <!-- manifest.js が存在しない場合は空配列でフォールバック -->
+  <script>window.__SCENARIO_MANIFEST__ = null;</script>
+  <script src="scenarios/manifest.js" onerror="window.__SCENARIO_MANIFEST__ = [];"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function () {
+    const scenarios = window.__SCENARIO_MANIFEST__ || [];
+    const grid      = document.getElementById('scenario-grid');
+    const countEl   = document.getElementById('scenario-count');
+    const bar       = document.getElementById('tag-filter-bar');
+    const sortBar   = document.getElementById('sort-bar');
+    let currentSort = 'date-desc';
+    let cardRefs    = []; // {card, scenario}
+
+    function escHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function buildCard(sc) {
+      const a = document.createElement('a');
+      // PLページがあればそちらを優先リンク、なければGMページ
+      a.href = 'scenarios/' + (sc.plFile || sc.file);
+      a.className = 'scenario-card';
+
+      const metaParts = [];
+      if (sc.players)  metaParts.push(`<span>PL ${escHtml(sc.players)}</span>`);
+      if (sc.players && sc.playtime) metaParts.push('<span class="card-meta-sep">·</span>');
+      if (sc.playtime) metaParts.push(`<span>${escHtml(sc.playtime)}</span>`);
+
+      const tagHtml = (sc.tags || [])
+        .map(t => `<span class="card-tag">${escHtml(t)}</span>`).join('');
+
+      const dateStr = sc.updatedAt
+        ? new Date(sc.updatedAt).toLocaleDateString('ja-JP', {year:'numeric',month:'2-digit',day:'2-digit'})
+        : '';
+
+      a.innerHTML =
+        (sc.system ? `<div class="card-system">${escHtml(sc.system)}</div>` : '') +
+        `<div class="card-title">${escHtml(sc.title)}</div>` +
+        `<div class="card-synopsis">${escHtml(sc.synopsis || '')}</div>` +
+        `<div class="card-footer">` +
+          (metaParts.length ? `<span class="card-meta">${metaParts.join('')}</span>` : '') +
+          tagHtml +
+          (dateStr ? `<span class="card-date">${dateStr}</span>` : '') +
+        `</div>`;
+      return a;
+    }
+
+    function buildTagFilter(cards) {
+      const tagSet = new Set();
+      scenarios.forEach(sc => (sc.tags || []).forEach(t => tagSet.add(t)));
+      if (tagSet.size === 0) return;
+
+      const active = new Set();
+
+      function applyFilter() {
+        cards.forEach((card, i) => {
+          if (active.size === 0) {
+            card.style.display = '';
+          } else {
+            // 複数選択時は AND 条件（すべてのタグを含むカードのみ表示）
+            const cardTags = scenarios[i].tags || [];
+            const match = Array.from(active).every(t => cardTags.includes(t));
+            card.style.display = match ? '' : 'none';
+          }
+        });
+      }
+
+      function makeBtn(label, tag) {
+        const btn = document.createElement('button');
+        btn.className = 'tag-filter-btn' + (tag === 'all' ? ' active' : '');
+        btn.textContent = label;
+        btn.dataset.tag = tag;
+        btn.addEventListener('click', () => {
+          const allBtn = bar.querySelector('[data-tag="all"]');
+          if (tag === 'all') {
+            active.clear();
+            bar.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          } else {
+            if (active.has(tag)) { active.delete(tag); btn.classList.remove('active'); }
+            else                 { active.add(tag);    btn.classList.add('active');    }
+            if (allBtn) allBtn.classList.toggle('active', active.size === 0);
+          }
+          applyFilter();
+        });
+        return btn;
+      }
+
+      bar.appendChild(makeBtn('すべて', 'all'));
+      tagSet.forEach(tag => bar.appendChild(makeBtn(tag, tag)));
+    }
+
+    // manifest.js がまだ読み込まれていない場合（null）は少し待つ
+    function init() {
+      if (window.__SCENARIO_MANIFEST__ === null) {
+        setTimeout(init, 50);
+        return;
+      }
+
+      grid.innerHTML = '';
+
+      if (scenarios.length === 0) {
+        grid.innerHTML = '<div class="empty-grid">シナリオがまだありません</div>';
+        if (countEl) countEl.textContent = '0 シナリオ';
+        return;
+      }
+
+      const cards = scenarios.map(sc => { const c = buildCard(sc); grid.appendChild(c); return c; });
+      cardRefs = cards.map((c, i) => ({ card: c, scenario: scenarios[i] }));
+      if (countEl) countEl.textContent = scenarios.length + ' シナリオ';
+      buildTagFilter(cards);
+      setupSortBar();
+      applySort(currentSort);
+    }
+
+    function applySort(order) {
+      const getTime = sc => {
+        const t = sc && sc.updatedAt ? Date.parse(sc.updatedAt) : NaN;
+        return isNaN(t) ? -Infinity : t; // 日付なしは最古扱い
+      };
+      const sorted = cardRefs.slice().sort((a, b) => {
+        const ta = getTime(a.scenario), tb = getTime(b.scenario);
+        return order === 'date-asc' ? (ta - tb) : (tb - ta);
+      });
+      // DOM を並び替え（appendChild で末尾に移動すれば順序が確定）
+      sorted.forEach(ref => grid.appendChild(ref.card));
+    }
+
+    function setupSortBar() {
+      if (!sortBar) return;
+      sortBar.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const order = btn.dataset.sort;
+          if (order === currentSort) return;
+          currentSort = order;
+          sortBar.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b === btn));
+          applySort(order);
+        });
+      });
+    }
+
+    init();
+  })();
+  </script>
+</body>
+</html>

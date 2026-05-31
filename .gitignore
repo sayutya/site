@@ -1,0 +1,34 @@
+# ===== OS 生成ファイル =====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ===== エディタ / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== 一時ファイル / バックアップ =====
+*.bak
+*.tmp
+*.temp
+*~
+*.log
+
+# ===== ローカル作業用 =====
+.cache/
+.tmp/
+draft/
+_draft/
+private/
+_private/
+
+# ===== 環境変数 =====
+.env
+.env.local
+
+# ===== Node（もし使う場合）=====
+node_modules/

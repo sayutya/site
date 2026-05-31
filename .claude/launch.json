@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "GitHub Pages (静的サイト)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "--listen", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "シナリオエディタ (Electron)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "cwd": "../シナリオエディタ",
+      "port": null
+    }
+  ]
+}
