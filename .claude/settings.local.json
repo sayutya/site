@@ -33,7 +33,12 @@
       "Bash(awk 'NR>=3129 && NR<=3151' \"C:/Users/yui36/Documents/Claude制作物/シナリオエディタ/renderer.js\")",
       "Bash(awk 'NR==3129' \"C:/Users/yui36/Documents/Claude制作物/シナリオエディタ/renderer.js\")",
       "Bash(xxd)",
-      "PowerShell(pip install openpyxl -q)"
+      "PowerShell(pip install openpyxl -q)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(mkdir -p \"C:/Users/yui36/Documents/Claude制作物/3d-box-viewer\")",
+      "Bash(mv \"C:/Users/yui36/Documents/Claude制作物/github pages用/3d-box-viewer/\"* \"C:/Users/yui36/Documents/Claude制作物/3d-box-viewer/\")",
+      "Read(//c/Users/yui36/Documents/Claude制作物/**)",
+      "Bash(git add *)"
     ]
   }
 }
