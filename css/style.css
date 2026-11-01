@@ -7,11 +7,15 @@
 :root {
   /* Sidebar (dark) */
   --sb-w:       260px;
-  --sb-bg:      #0d0d0d;
-  --sb-border:  #1c1c1c;
-  --sb-text:    #686868;
-  --sb-text-h:  #aaaaaa;
-  --sb-text-a:  #eeeeee;
+  --sb-bg:      #0e0f13;
+  --sb-border:  rgba(255,255,255,.06);
+  --sb-text:    #8b8e99;
+  --sb-text-h:  #d9dbe1;
+  --sb-text-a:  #ffffff;
+  --sb-faint:   #50535e;
+  --sb-hover:   rgba(255,255,255,.045);
+  --sb-active:  rgba(255,255,255,.08);
+  --sb-accent:  linear-gradient(180deg,#7b8cff,#a78bfa);
 
   /* Content area (light — follows editor light-mode) */
   --ct-bg:        #f4f6fb;
@@ -66,7 +70,7 @@ img { max-width: 100%; height: auto; display: block; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--ct-border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ct-muted); }
-#site-sidebar::-webkit-scrollbar-thumb { background: #282828; }
+#site-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); }
 
 /* =====================================================
    Sidebar (fixed, black)
@@ -75,7 +79,9 @@ img { max-width: 100%; height: auto; display: block; }
   position: fixed;
   left: 0; top: 0; bottom: 0;
   width: var(--sb-w);
-  background: var(--sb-bg);
+  background:
+    radial-gradient(120% 50% at 0% 0%, rgba(123,140,255,.10), transparent 60%),
+    var(--sb-bg);
   border-right: 1px solid var(--sb-border);
   display: flex;
   flex-direction: column;
@@ -84,33 +90,57 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .sidebar-header {
-  padding: 22px 16px 18px;
+  padding: 26px 20px 22px;
   border-bottom: 1px solid var(--sb-border);
   flex-shrink: 0;
 }
 
+/* ロゴ：左にアクセントの縦線 */
 .sidebar-logo {
+  position: relative;
   display: block;
-  font-size: 11px;
+  padding-left: 14px;
+  font-size: 17px;
   font-weight: 800;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  letter-spacing: .06em;
   color: var(--sb-text-a);
-  line-height: 1.7;
+  line-height: 1.35;
   text-decoration: none;
+}
+.sidebar-logo::after {
+  content: 'Scenario Archive';
+  display: block;
+  margin-top: 6px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sb-faint);
+}
+.sidebar-logo::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 3px; bottom: 22px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--sb-accent);
 }
 
 .sidebar-back {
   display: inline-flex;
   align-items: center;
   gap: 0; /* アイコンの余白は書き出し側の style で付く */
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--sb-text);
   text-decoration: none;
-  margin-bottom: 14px;
-  transition: color var(--tr);
+  margin-bottom: 18px;
+  padding: 5px 12px 5px 10px;
+  border: 1px solid var(--sb-border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.02);
+  transition: color var(--tr), background var(--tr), border-color var(--tr);
 }
-.sidebar-back:hover { color: var(--sb-text-h); }
+.sidebar-back:hover { color: var(--sb-text-h); background: var(--sb-hover); border-color: rgba(255,255,255,.12); }
 
 /* Page type switcher */
 .sidebar-page-switch {
@@ -121,52 +151,52 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .sidebar-switch-label {
   display: block;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  color: #333;
+  color: var(--sb-faint);
   margin-bottom: 6px;
 }
 .sidebar-switch-link {
   display: block;
   font-size: 12px;
   color: var(--sb-text-h);
-  padding: 5px 8px;
-  border-radius: 4px;
-  background: #161616;
-  border: 1px solid #2a2a2a;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--sb-border);
   text-align: center;
   transition: background var(--tr), color var(--tr);
   cursor: pointer;
   text-decoration: none;
 }
 .sidebar-switch-link:hover {
-  background: #222;
+  background: var(--sb-active);
   color: #fff;
 }
 
 /* TOC in sidebar */
-.sidebar-toc { padding: 16px 12px; flex: 1; }
+.sidebar-toc { padding: 8px 12px 24px; flex: 1; }
 
 .toc-heading {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  color: #363636;
-  margin-bottom: 10px;
-  padding: 0 4px;
+  color: var(--sb-faint);
+  margin-bottom: 8px;
+  padding: 12px 10px 0;
 }
 
-#toc-list { display: flex; flex-direction: column; gap: 1px; }
+#toc-list { display: flex; flex-direction: column; gap: 2px; }
 
 .toc-item {
   display: block;
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--sb-text);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 5px 10px;
+  border-radius: 8px;
   line-height: 1.5;
   cursor: pointer;
   text-decoration: none;
@@ -175,38 +205,93 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.toc-item:hover { color: var(--sb-text-h); background: #181818; }
-.toc-item.active { color: var(--sb-text-a); background: #222222; }
-.toc-item.toc-h2 { padding-left: 18px; font-size: 11px; }
-.toc-item.toc-h3 { padding-left: 28px; font-size: 10px; }
+.toc-item:hover { color: var(--sb-text-h); background: var(--sb-hover); }
+.toc-item.active { color: var(--sb-text-a); background: var(--sb-active); }
+.toc-item.toc-h2 { padding-left: 20px; font-size: 12px; }
+.toc-item.toc-h3 { padding-left: 30px; font-size: 11px; }
+
+/* シナリオページの目次ツリー（書き出しページ内の style より優先させる） */
+#site-sidebar #sc-tree .sc-tree-folder-label {
+  color: var(--sb-text-h);
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-size: 12.5px;
+}
+#site-sidebar #sc-tree .sc-tree-folder-label:hover { background: var(--sb-hover); color: #fff; }
+#site-sidebar #sc-tree ul.sc-tree-list ul.sc-tree-list {
+  margin-left: 13px;
+  padding-left: 8px;
+  border-left: 1px solid var(--sb-border);
+}
+#site-sidebar #sc-tree .sc-tree-file > a {
+  position: relative;
+  color: var(--sb-text);
+  padding: 5px 10px;
+  margin: 1px 0;
+  border-radius: 8px;
+  font-size: 12.5px;
+  transition: color var(--tr), background var(--tr);
+}
+#site-sidebar #sc-tree .sc-tree-file > a:hover { background: var(--sb-hover); color: var(--sb-text-h); }
+#site-sidebar #sc-tree .sc-tree-file > a.active { background: var(--sb-active); color: var(--sb-text-a); font-weight: 600; }
 
 /* Sidebar nav */
-.sidebar-nav { padding: 10px 12px; display: flex; flex-direction: column; gap: 1px; }
+.sidebar-nav { padding: 8px 12px; display: flex; flex-direction: column; gap: 2px; }
 .sidebar-nav-sep {
   height: 1px;
   background: var(--sb-border);
   margin: 8px 8px;
 }
 .sidebar-nav-section {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  color: #333;
-  padding: 10px 8px 4px;
+  color: var(--sb-faint);
+  padding: 12px 10px 6px;
 }
 .sidebar-nav-item {
-  display: block;
-  font-size: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--sb-text);
-  padding: 5px 8px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
   transition: color var(--tr), background var(--tr);
   cursor: pointer;
   text-decoration: none;
 }
-.sidebar-nav-item:hover { color: var(--sb-text-h); background: #181818; }
-.sidebar-nav-item.active { color: var(--sb-text-a); background: #181818; }
+.sidebar-nav-item:hover { color: var(--sb-text-h); background: var(--sb-hover); }
+.sidebar-nav-item.active { color: var(--sb-text-a); background: var(--sb-active); font-weight: 600; }
+/* メニューの線画アイコン（リンク先ごと。HTMLを変えずに全ページへ反映） */
+.sidebar-nav-item::after {
+  content: '';
+  order: -1;
+  flex: 0 0 15px;
+  height: 15px;
+  background: currentColor;
+  opacity: .75;
+  -webkit-mask: var(--nav-ic) center / contain no-repeat;
+          mask: var(--nav-ic) center / contain no-repeat;
+}
+.sidebar-nav-item:hover::after,
+.sidebar-nav-item.active::after { opacity: 1; }
+.sidebar-nav-item[href$="hajimeni.html"] { --nav-ic: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M8 14.2A6.2 6.2 0 1 0 8 1.8a6.2 6.2 0 0 0 0 12.4zM8 7.3v3.9M8 4.9v.1%22/%3E%3C/svg%3E"); }
+.sidebar-nav-item[href$="index.html"] { --nav-ic: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M2.5 3.5h11M2.5 8h11M2.5 12.5h11%22/%3E%3C/svg%3E"); }
+.sidebar-nav-item[href$="terms.html"] { --nav-ic: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M4 1.8h5.5L12.5 4.8v9.4H4zM9.3 1.8v3.2h3.2M6 8h4.5M6 10.8h4.5%22/%3E%3C/svg%3E"); }
+.sidebar-nav-item[href$="contact.html"] { --nav-ic: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M2 3.5h12v9H2zM2.3 3.8L8 8.6l5.7-4.8%22/%3E%3C/svg%3E"); }
+/* 現在のページ：左端にアクセントの縦線 */
+.sidebar-nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px; bottom: 9px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--sb-accent);
+}
 
 /* =====================================================
    Main Wrapper (right of sidebar)
@@ -274,17 +359,19 @@ img { max-width: 100%; height: auto; display: block; }
 #sb-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* =====================================================
-   Index Page / Info Pages — shared grid background
+   Index / Info / Scenario Pages — shared grid background
    ===================================================== */
-.page-index #main-wrapper,
-.page-info  #main-wrapper {
+.page-index    #main-wrapper,
+.page-info     #main-wrapper,
+.page-scenario #main-wrapper {
   background: #ffffff;
   position: relative;
 }
 
 /* Grid background — subtle, recessed look */
-.page-index #main-wrapper::before,
-.page-info  #main-wrapper::before {
+.page-index    #main-wrapper::before,
+.page-info     #main-wrapper::before,
+.page-scenario #main-wrapper::before {
   content: '';
   position: fixed;
   top: 0; right: 0; bottom: 0;
@@ -300,8 +387,9 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 0;
 }
 
-.page-index #main-wrapper > *,
-.page-info  #main-wrapper > * { position: relative; z-index: 1; }
+.page-index    #main-wrapper > *,
+.page-info     #main-wrapper > *,
+.page-scenario #main-wrapper > *:not(#progress-bar) { position: relative; z-index: 1; }
 
 .page-index #hero {
   padding: 64px 56px 52px;
@@ -1055,7 +1143,7 @@ mark.esh.esh-active { background: rgba(255,160,0,.65); color: #1a2238; }
   #hamburger-btn { display: flex; }
   #main-wrapper { margin-left: 0; }
   #progress-bar { left: 0; }
-  .page-index #main-wrapper::before { left: 0; }
+  .page-index #main-wrapper::before, .page-info #main-wrapper::before, .page-scenario #main-wrapper::before { left: 0; }
   #scenario-header, #c, .page-index #hero { padding-left: 20px; padding-right: 20px; }
   .page-index #scenario-grid-section { padding-left: 16px; padding-right: 16px; }
   .site-footer { padding-left: 20px; padding-right: 20px; }
