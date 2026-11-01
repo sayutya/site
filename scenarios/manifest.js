@@ -39,7 +39,7 @@ window.__SCENARIO_MANIFEST__ = [
     ],
     "synopsis": "タイミーとかで依頼を受けます。",
     "createdAt": "2026-05-26T22:46:22.586Z",
-    "updatedAt": "2026-11-01T02:04:36.993Z"
+    "updatedAt": "2026-11-01T02:44:59.782Z"
   },
   {
     "file": "平安蹴鞠_gm.html",
